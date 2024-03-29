@@ -53,11 +53,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Usuarios\Form_RegistroUsuarios.cs">
+    <Compile Include="Usuarios\Form_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Usuarios\Form_RegistroUsuarios.Designer.cs">
-      <DependentUpon>Form_RegistroUsuarios.cs</DependentUpon>
+    <Compile Include="Usuarios\Form_Principal.Designer.cs">
+      <DependentUpon>Form_Principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,8 +77,8 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Contrroles\RJTextBox.Designer.cs" />
-    <EmbeddedResource Include="Usuarios\Form_RegistroUsuarios.resx">
-      <DependentUpon>Form_RegistroUsuarios.cs</DependentUpon>
+    <EmbeddedResource Include="Usuarios\Form_Principal.resx">
+      <DependentUpon>Form_Principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

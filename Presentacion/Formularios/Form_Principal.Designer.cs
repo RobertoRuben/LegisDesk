@@ -291,9 +291,8 @@ namespace Presentacion
             this.lblRol.Font = new System.Drawing.Font("Century Gothic", 9.5F);
             this.lblRol.Location = new System.Drawing.Point(791, 43);
             this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(98, 17);
+            this.lblRol.Size = new System.Drawing.Size(0, 17);
             this.lblRol.TabIndex = 15;
-            this.lblRol.Text = "Administrador";
             // 
             // lblUsuario
             // 
@@ -302,9 +301,8 @@ namespace Presentacion
             this.lblUsuario.Font = new System.Drawing.Font("Century Gothic", 9.5F);
             this.lblUsuario.Location = new System.Drawing.Point(790, 20);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(208, 17);
+            this.lblUsuario.Size = new System.Drawing.Size(0, 17);
             this.lblUsuario.TabIndex = 14;
-            this.lblUsuario.Text = "Roberto Ruben Chavez Vargas";
             // 
             // label2
             // 

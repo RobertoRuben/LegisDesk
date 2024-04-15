@@ -4,38 +4,65 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
+using Presentacion.Formularios.CategoriaNormas;
+using Presentacion.Formularios.Normas;
+using Presentacion.Formularios.Usuarios;
 
 namespace Presentacion
 {
-    public partial class Form_Main : Form
+    public partial class Form_Principal : Form
     {
         //Fields
         private IconButton currentBtn;
         private Panel leftBorderBtn;
+        private Form formularioHijoActual;
 
-        public Form_Main()
+        public int IdUsuario;
+        public string usuario;
+        public string nombre;
+        public string rol;
+
+        public Form_Principal()
         {
             InitializeComponent();
             PersonalizarDiseño();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
             pMenuLateral.Controls.Add(leftBorderBtn);
+
+            this.ControlBox = false;
+            //Ocultar barra de titulo
+            this.Text = string.Empty;
+            
+            this.DoubleBuffered = true;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            
         }
+
         private void Form_Main_Load(object sender, EventArgs e)
         {
-           
+            lblUsuario.Text = usuario;
+            lblRol.Text = rol;
+            lblFormularioHijo.Text = "Bienvenido " + nombre;
         }
 
         private void PersonalizarDiseño()
         {
+            pSubMenuNormas.Visible = false;
             pSubMenuUsuarios.Visible = false;
         }
         private void OcultarSubMenu()
         {
+            if(pSubMenuNormas.Visible == true)
+            {
+
+                pSubMenuNormas.Visible = false;
+            }
             if(pSubMenuUsuarios.Visible == true)
             {
                 pSubMenuUsuarios.Visible = false;
@@ -103,13 +130,18 @@ namespace Presentacion
         private void btnNormas_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color);
-            MostrarSubMenu(pSubMenuUsuarios);
+            lblFormularioHijo.Text = "Gestión de Normas";
+            MostrarSubMenu(pSubMenuNormas);
+            AbrirFormularioHijo(new Form_Normas());
+            
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            OcultarSubMenu();
+            lblFormularioHijo.Text = "Gestión de Usuarios";
+            MostrarSubMenu(pSubMenuUsuarios);
             ActivateButton(sender, RGBColors.color);
+            AbrirFormularioHijo(new Form_Usuarios());
             
         }
 
@@ -117,21 +149,72 @@ namespace Presentacion
         {
             ActivateButton(sender, RGBColors.color2);
             OcultarSubMenu();
-            this.Close();
+            Application.Exit();
         }
 
         //Sub Menu Normas
-        private void btnArticulos_Click(object sender, EventArgs e)
-        {
-            //Proximo Codigo
-
-            OcultarSubMenu();
-        }
 
         private void btnCategoria_Click(object sender, EventArgs e)
         {
             //Proximo Codigo
+            lblFormularioHijo.Text = "Categorías de Normas";
+            AbrirFormularioHijo(new Form_CategoriaNormas());
+            
+        }
+
+        //Drag Form
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        private void pBarraSuperior_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnMaximizar_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+                WindowState = FormWindowState.Maximized;
+            else
+                WindowState = FormWindowState.Normal;
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            Reiniciar();
+        }
+        private void Reiniciar()
+        {
             OcultarSubMenu();
+            DisableButton();
+            leftBorderBtn.Visible = false;
+        }
+        private void AbrirFormularioHijo(Form formularioHijo)
+        {
+            if (formularioHijoActual != null)
+            {
+                formularioHijoActual.Close();
+            }
+            formularioHijoActual = formularioHijo;
+            formularioHijo.TopLevel = false;
+            formularioHijo.FormBorderStyle = FormBorderStyle.None;
+            formularioHijo.Dock = DockStyle.Fill;
+            pContenedor.Controls.Add(formularioHijo);
+            pContenedor.Tag = formularioHijo;
+            formularioHijo.BringToFront();
+            formularioHijo.Show();
         }
     }
 }

@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
 
-namespace Datos.Conexion
+namespace Datos.Conector
 {
     public class Conexion
     {
@@ -41,10 +41,10 @@ namespace Datos.Conexion
                     cadena.ConnectionString = cadena.ConnectionString + "User Id=" + this.usuario + ";Password=" + this.contraseña;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 cadena = null;
-                throw ex; 
+                throw ex;
 
             }
             return cadena;
@@ -60,5 +60,4 @@ namespace Datos.Conexion
         }
 
     }
-
 }

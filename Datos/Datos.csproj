@@ -41,15 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Conexion\Conexion.cs" />
-    <Compile Include="Datos\UsuarioDatos.cs" />
+    <Compile Include="Conector\Conexion.cs" />
+    <Compile Include="Operaciones\DCategoriaNorma.cs" />
+    <Compile Include="Operaciones\DRol.cs" />
+    <Compile Include="Operaciones\DTrabajadores.cs" />
+    <Compile Include="Operaciones\DUsuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Entidad\Entidad.csproj">
+    <ProjectReference Include="..\Entidad\Entidades.csproj">
       <Project>{03ca85bd-9641-467e-8052-34baf16afda3}</Project>
-      <Name>Entidad</Name>
+      <Name>Entidades</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

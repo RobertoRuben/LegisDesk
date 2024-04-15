@@ -41,12 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DetalleNormatividad.cs" />
-    <Compile Include="Normatividad.cs" />
+    <Compile Include="Clases\Articulo.cs" />
+    <Compile Include="Clases\Rol.cs" />
+    <Compile Include="Clases\CategoriaDeNorma.cs" />
+    <Compile Include="Clases\Trabajador.cs" />
+    <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rol.cs" />
-    <Compile Include="TipoNorma.cs" />
-    <Compile Include="Usuario.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

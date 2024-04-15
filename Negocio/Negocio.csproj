@@ -42,15 +42,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seguridad\PasswordEncryptor.cs" />
+    <Compile Include="Servicios\NCategoriasNormas.cs" />
+    <Compile Include="Servicios\NUsuarios.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.csproj">
       <Project>{f2bacc78-0a13-4050-9e06-840c71d667c3}</Project>
       <Name>Datos</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Entidad\Entidad.csproj">
+    <ProjectReference Include="..\Entidad\Entidades.csproj">
       <Project>{03ca85bd-9641-467e-8052-34baf16afda3}</Project>
-      <Name>Entidad</Name>
+      <Name>Entidades</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

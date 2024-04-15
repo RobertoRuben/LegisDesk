@@ -38,6 +38,7 @@ namespace Presentacion.CustomControls
         {
             //Created by designer
             InitializeComponent();
+            textBox1.ScrollBars = ScrollBars.Vertical;
         }
 
         #region -> Properties

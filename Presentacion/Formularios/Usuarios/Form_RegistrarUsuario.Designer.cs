@@ -30,24 +30,24 @@ namespace Presentacion.Usuarios
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cboxCargo = new Presentacion.CustomControls.RJComboBox();
+            this.cboxRol = new Presentacion.CustomControls.RJComboBox();
+            this.cboxTrabajadores = new Presentacion.CustomControls.RJComboBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.rjTextBox1 = new Presentacion.CustomControls.RJTextBox();
+            this.tboxNombreUsuario = new Presentacion.CustomControls.RJTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.rbtnInactivo = new Presentacion.CustomControls.RJRadioButton();
             this.rbtnActivo = new Presentacion.CustomControls.RJRadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.tboxApellidoMaterno = new Presentacion.CustomControls.RJTextBox();
-            this.tboxApellidoPaterno = new Presentacion.CustomControls.RJTextBox();
+            this.tboxContraseña = new Presentacion.CustomControls.RJTextBox();
+            this.tboxConfirmacion = new Presentacion.CustomControls.RJTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
-            this.rjComboBox1 = new Presentacion.CustomControls.RJComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -55,19 +55,19 @@ namespace Presentacion.Usuarios
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
-            this.panel1.Controls.Add(this.rjComboBox1);
-            this.panel1.Controls.Add(this.cboxCargo);
+            this.panel1.Controls.Add(this.cboxRol);
+            this.panel1.Controls.Add(this.cboxTrabajadores);
             this.panel1.Controls.Add(this.iconPictureBox1);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.rjTextBox1);
+            this.panel1.Controls.Add(this.tboxNombreUsuario);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.rbtnInactivo);
             this.panel1.Controls.Add(this.rbtnActivo);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.tboxApellidoMaterno);
-            this.panel1.Controls.Add(this.tboxApellidoPaterno);
+            this.panel1.Controls.Add(this.tboxContraseña);
+            this.panel1.Controls.Add(this.tboxConfirmacion);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 23);
@@ -75,27 +75,49 @@ namespace Presentacion.Usuarios
             this.panel1.Size = new System.Drawing.Size(1020, 428);
             this.panel1.TabIndex = 46;
             // 
-            // cboxCargo
+            // cboxRol
             // 
-            this.cboxCargo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cboxCargo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboxCargo.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cboxCargo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.cboxCargo.BorderSize = 1;
-            this.cboxCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cboxCargo.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.cboxCargo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
-            this.cboxCargo.IconColor = System.Drawing.Color.Silver;
-            this.cboxCargo.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.cboxCargo.ListTextColor = System.Drawing.Color.DimGray;
-            this.cboxCargo.Location = new System.Drawing.Point(13, 91);
-            this.cboxCargo.MinimumSize = new System.Drawing.Size(200, 30);
-            this.cboxCargo.Name = "cboxCargo";
-            this.cboxCargo.Padding = new System.Windows.Forms.Padding(1);
-            this.cboxCargo.SelectedValue = null;
-            this.cboxCargo.Size = new System.Drawing.Size(987, 30);
-            this.cboxCargo.TabIndex = 49;
-            this.cboxCargo.Texts = "";
+            this.cboxRol.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboxRol.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboxRol.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cboxRol.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
+            this.cboxRol.BorderSize = 1;
+            this.cboxRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cboxRol.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.cboxRol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
+            this.cboxRol.IconColor = System.Drawing.Color.Silver;
+            this.cboxRol.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cboxRol.ListTextColor = System.Drawing.Color.DimGray;
+            this.cboxRol.Location = new System.Drawing.Point(15, 373);
+            this.cboxRol.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cboxRol.Name = "cboxRol";
+            this.cboxRol.Padding = new System.Windows.Forms.Padding(1);
+            this.cboxRol.SelectedValue = null;
+            this.cboxRol.Size = new System.Drawing.Size(476, 34);
+            this.cboxRol.TabIndex = 50;
+            this.cboxRol.Texts = "";
+            // 
+            // cboxTrabajadores
+            // 
+            this.cboxTrabajadores.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboxTrabajadores.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboxTrabajadores.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cboxTrabajadores.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
+            this.cboxTrabajadores.BorderSize = 1;
+            this.cboxTrabajadores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cboxTrabajadores.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.cboxTrabajadores.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
+            this.cboxTrabajadores.IconColor = System.Drawing.Color.Silver;
+            this.cboxTrabajadores.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cboxTrabajadores.ListTextColor = System.Drawing.Color.DimGray;
+            this.cboxTrabajadores.Location = new System.Drawing.Point(13, 91);
+            this.cboxTrabajadores.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cboxTrabajadores.Name = "cboxTrabajadores";
+            this.cboxTrabajadores.Padding = new System.Windows.Forms.Padding(1);
+            this.cboxTrabajadores.SelectedValue = null;
+            this.cboxTrabajadores.Size = new System.Drawing.Size(987, 34);
+            this.cboxTrabajadores.TabIndex = 49;
+            this.cboxTrabajadores.Texts = "";
             // 
             // iconPictureBox1
             // 
@@ -121,28 +143,28 @@ namespace Presentacion.Usuarios
             this.label6.TabIndex = 45;
             this.label6.Text = "Nombre de Usuario";
             // 
-            // rjTextBox1
+            // tboxNombreUsuario
             // 
-            this.rjTextBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.rjTextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.rjTextBox1.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.rjTextBox1.BorderRadius = 1;
-            this.rjTextBox1.BorderSize = 1;
-            this.rjTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.rjTextBox1.Location = new System.Drawing.Point(13, 159);
-            this.rjTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.rjTextBox1.Multiline = false;
-            this.rjTextBox1.Name = "rjTextBox1";
-            this.rjTextBox1.Padding = new System.Windows.Forms.Padding(7);
-            this.rjTextBox1.PasswordChar = false;
-            this.rjTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox1.PlaceholderText = "";
-            this.rjTextBox1.ReadOnly = false;
-            this.rjTextBox1.Size = new System.Drawing.Size(987, 31);
-            this.rjTextBox1.TabIndex = 44;
-            this.rjTextBox1.Texts = "";
-            this.rjTextBox1.UnderlinedStyle = false;
+            this.tboxNombreUsuario.BackColor = System.Drawing.SystemColors.Window;
+            this.tboxNombreUsuario.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
+            this.tboxNombreUsuario.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.tboxNombreUsuario.BorderRadius = 1;
+            this.tboxNombreUsuario.BorderSize = 1;
+            this.tboxNombreUsuario.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.tboxNombreUsuario.ForeColor = System.Drawing.Color.DimGray;
+            this.tboxNombreUsuario.Location = new System.Drawing.Point(13, 159);
+            this.tboxNombreUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.tboxNombreUsuario.Multiline = false;
+            this.tboxNombreUsuario.Name = "tboxNombreUsuario";
+            this.tboxNombreUsuario.Padding = new System.Windows.Forms.Padding(7);
+            this.tboxNombreUsuario.PasswordChar = false;
+            this.tboxNombreUsuario.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.tboxNombreUsuario.PlaceholderText = "";
+            this.tboxNombreUsuario.ReadOnly = false;
+            this.tboxNombreUsuario.Size = new System.Drawing.Size(987, 35);
+            this.tboxNombreUsuario.TabIndex = 0;
+            this.tboxNombreUsuario.Texts = "";
+            this.tboxNombreUsuario.UnderlinedStyle = false;
             // 
             // label9
             // 
@@ -168,7 +190,6 @@ namespace Presentacion.Usuarios
             this.rbtnInactivo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.rbtnInactivo.Size = new System.Drawing.Size(99, 24);
             this.rbtnInactivo.TabIndex = 20;
-            this.rbtnInactivo.TabStop = true;
             this.rbtnInactivo.Text = "Inactivo";
             this.rbtnInactivo.UnCheckedColor = System.Drawing.Color.Gray;
             this.rbtnInactivo.UseVisualStyleBackColor = false;
@@ -177,6 +198,7 @@ namespace Presentacion.Usuarios
             // 
             this.rbtnActivo.AutoSize = true;
             this.rbtnActivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            this.rbtnActivo.Checked = true;
             this.rbtnActivo.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.rbtnActivo.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.rbtnActivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
@@ -224,51 +246,51 @@ namespace Presentacion.Usuarios
             this.label5.TabIndex = 18;
             this.label5.Text = "Estado";
             // 
-            // tboxApellidoMaterno
+            // tboxContraseña
             // 
-            this.tboxApellidoMaterno.BackColor = System.Drawing.SystemColors.Window;
-            this.tboxApellidoMaterno.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.tboxApellidoMaterno.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.tboxApellidoMaterno.BorderRadius = 1;
-            this.tboxApellidoMaterno.BorderSize = 1;
-            this.tboxApellidoMaterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxApellidoMaterno.ForeColor = System.Drawing.Color.DimGray;
-            this.tboxApellidoMaterno.Location = new System.Drawing.Point(15, 230);
-            this.tboxApellidoMaterno.Margin = new System.Windows.Forms.Padding(4);
-            this.tboxApellidoMaterno.Multiline = false;
-            this.tboxApellidoMaterno.Name = "tboxApellidoMaterno";
-            this.tboxApellidoMaterno.Padding = new System.Windows.Forms.Padding(7);
-            this.tboxApellidoMaterno.PasswordChar = false;
-            this.tboxApellidoMaterno.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tboxApellidoMaterno.PlaceholderText = "";
-            this.tboxApellidoMaterno.ReadOnly = false;
-            this.tboxApellidoMaterno.Size = new System.Drawing.Size(985, 31);
-            this.tboxApellidoMaterno.TabIndex = 13;
-            this.tboxApellidoMaterno.Texts = "";
-            this.tboxApellidoMaterno.UnderlinedStyle = false;
+            this.tboxContraseña.BackColor = System.Drawing.SystemColors.Window;
+            this.tboxContraseña.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
+            this.tboxContraseña.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.tboxContraseña.BorderRadius = 1;
+            this.tboxContraseña.BorderSize = 1;
+            this.tboxContraseña.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.tboxContraseña.ForeColor = System.Drawing.Color.DimGray;
+            this.tboxContraseña.Location = new System.Drawing.Point(15, 230);
+            this.tboxContraseña.Margin = new System.Windows.Forms.Padding(4);
+            this.tboxContraseña.Multiline = false;
+            this.tboxContraseña.Name = "tboxContraseña";
+            this.tboxContraseña.Padding = new System.Windows.Forms.Padding(7);
+            this.tboxContraseña.PasswordChar = true;
+            this.tboxContraseña.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.tboxContraseña.PlaceholderText = "";
+            this.tboxContraseña.ReadOnly = false;
+            this.tboxContraseña.Size = new System.Drawing.Size(985, 35);
+            this.tboxContraseña.TabIndex = 0;
+            this.tboxContraseña.Texts = "";
+            this.tboxContraseña.UnderlinedStyle = false;
             // 
-            // tboxApellidoPaterno
+            // tboxConfirmacion
             // 
-            this.tboxApellidoPaterno.BackColor = System.Drawing.SystemColors.Window;
-            this.tboxApellidoPaterno.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.tboxApellidoPaterno.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.tboxApellidoPaterno.BorderRadius = 1;
-            this.tboxApellidoPaterno.BorderSize = 1;
-            this.tboxApellidoPaterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxApellidoPaterno.ForeColor = System.Drawing.Color.DimGray;
-            this.tboxApellidoPaterno.Location = new System.Drawing.Point(15, 303);
-            this.tboxApellidoPaterno.Margin = new System.Windows.Forms.Padding(4);
-            this.tboxApellidoPaterno.Multiline = false;
-            this.tboxApellidoPaterno.Name = "tboxApellidoPaterno";
-            this.tboxApellidoPaterno.Padding = new System.Windows.Forms.Padding(7);
-            this.tboxApellidoPaterno.PasswordChar = false;
-            this.tboxApellidoPaterno.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tboxApellidoPaterno.PlaceholderText = "";
-            this.tboxApellidoPaterno.ReadOnly = false;
-            this.tboxApellidoPaterno.Size = new System.Drawing.Size(985, 31);
-            this.tboxApellidoPaterno.TabIndex = 12;
-            this.tboxApellidoPaterno.Texts = "";
-            this.tboxApellidoPaterno.UnderlinedStyle = false;
+            this.tboxConfirmacion.BackColor = System.Drawing.SystemColors.Window;
+            this.tboxConfirmacion.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
+            this.tboxConfirmacion.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.tboxConfirmacion.BorderRadius = 1;
+            this.tboxConfirmacion.BorderSize = 1;
+            this.tboxConfirmacion.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.tboxConfirmacion.ForeColor = System.Drawing.Color.DimGray;
+            this.tboxConfirmacion.Location = new System.Drawing.Point(15, 303);
+            this.tboxConfirmacion.Margin = new System.Windows.Forms.Padding(4);
+            this.tboxConfirmacion.Multiline = false;
+            this.tboxConfirmacion.Name = "tboxConfirmacion";
+            this.tboxConfirmacion.Padding = new System.Windows.Forms.Padding(7);
+            this.tboxConfirmacion.PasswordChar = true;
+            this.tboxConfirmacion.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.tboxConfirmacion.PlaceholderText = "";
+            this.tboxConfirmacion.ReadOnly = false;
+            this.tboxConfirmacion.Size = new System.Drawing.Size(985, 35);
+            this.tboxConfirmacion.TabIndex = 0;
+            this.tboxConfirmacion.Texts = "";
+            this.tboxConfirmacion.UnderlinedStyle = false;
             // 
             // label2
             // 
@@ -297,6 +319,7 @@ namespace Presentacion.Usuarios
             this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
@@ -311,12 +334,14 @@ namespace Presentacion.Usuarios
             this.btnGuardar.TabIndex = 55;
             this.btnGuardar.Text = "    Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
@@ -337,6 +362,7 @@ namespace Presentacion.Usuarios
             this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(21)))), ((int)(((byte)(30)))));
             this.btnSalir.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(21)))), ((int)(((byte)(30)))));
+            this.btnSalir.FlatAppearance.BorderSize = 0;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnSalir.ForeColor = System.Drawing.Color.White;
@@ -352,28 +378,6 @@ namespace Presentacion.Usuarios
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // rjComboBox1
-            // 
-            this.rjComboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.rjComboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.rjComboBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.rjComboBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.rjComboBox1.BorderSize = 1;
-            this.rjComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.rjComboBox1.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.rjComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
-            this.rjComboBox1.IconColor = System.Drawing.Color.Silver;
-            this.rjComboBox1.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.rjComboBox1.ListTextColor = System.Drawing.Color.DimGray;
-            this.rjComboBox1.Location = new System.Drawing.Point(15, 373);
-            this.rjComboBox1.MinimumSize = new System.Drawing.Size(200, 30);
-            this.rjComboBox1.Name = "rjComboBox1";
-            this.rjComboBox1.Padding = new System.Windows.Forms.Padding(1);
-            this.rjComboBox1.SelectedValue = null;
-            this.rjComboBox1.Size = new System.Drawing.Size(459, 30);
-            this.rjComboBox1.TabIndex = 50;
-            this.rjComboBox1.Texts = "";
             // 
             // Form_RegistrarUsuario
             // 
@@ -399,12 +403,9 @@ namespace Presentacion.Usuarios
         #endregion
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
-        private CustomControls.RJTextBox rjTextBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private CustomControls.RJTextBox tboxApellidoMaterno;
-        private CustomControls.RJTextBox tboxApellidoPaterno;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         public CustomControls.RJRadioButton rbtnInactivo;
@@ -414,7 +415,10 @@ namespace Presentacion.Usuarios
         private FontAwesome.Sharp.IconButton btnCancelar;
         private FontAwesome.Sharp.IconButton btnSalir;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        public CustomControls.RJComboBox cboxCargo;
-        public CustomControls.RJComboBox rjComboBox1;
+        public CustomControls.RJComboBox cboxTrabajadores;
+        public CustomControls.RJComboBox cboxRol;
+        public CustomControls.RJTextBox tboxNombreUsuario;
+        public CustomControls.RJTextBox tboxContraseña;
+        public CustomControls.RJTextBox tboxConfirmacion;
     }
 }

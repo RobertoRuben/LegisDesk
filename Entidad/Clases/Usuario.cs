@@ -13,6 +13,6 @@ namespace Entidad.Clases
         public int CodRol { get; set; }
         public string NombreUsuario { get; set; }
         public string Contraseña { get; set; }
-        public int Estado { get; set; }
+        public string Estado { get; set; }
     }
 }

@@ -40,17 +40,17 @@ namespace Presentacion.Formularios.Normas
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.rbtnFemino = new Presentacion.CustomControls.RJRadioButton();
+            this.rbtnActivo = new Presentacion.CustomControls.RJRadioButton();
             this.label7 = new System.Windows.Forms.Label();
+            this.rjTextBox3 = new Presentacion.CustomControls.RJTextBox();
+            this.rjTextBox2 = new Presentacion.CustomControls.RJTextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.rjTextBox1 = new Presentacion.CustomControls.RJTextBox();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.rbtnFemino = new Presentacion.CustomControls.RJRadioButton();
-            this.rbtnActivo = new Presentacion.CustomControls.RJRadioButton();
-            this.rjTextBox3 = new Presentacion.CustomControls.RJTextBox();
-            this.rjTextBox2 = new Presentacion.CustomControls.RJTextBox();
-            this.rjTextBox1 = new Presentacion.CustomControls.RJTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -207,7 +207,7 @@ namespace Presentacion.Formularios.Normas
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 12.25F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(73)))), ((int)(((byte)(85)))));
-            this.label8.Location = new System.Drawing.Point(245, 301);
+            this.label8.Location = new System.Drawing.Point(226, 298);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(66, 19);
             this.label8.TabIndex = 65;
@@ -216,10 +216,46 @@ namespace Presentacion.Formularios.Normas
             // numericUpDown1
             // 
             this.numericUpDown1.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.numericUpDown1.Location = new System.Drawing.Point(249, 325);
+            this.numericUpDown1.Location = new System.Drawing.Point(230, 322);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(120, 25);
             this.numericUpDown1.TabIndex = 64;
+            // 
+            // rbtnFemino
+            // 
+            this.rbtnFemino.AutoSize = true;
+            this.rbtnFemino.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            this.rbtnFemino.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
+            this.rbtnFemino.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.rbtnFemino.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
+            this.rbtnFemino.Location = new System.Drawing.Point(109, 323);
+            this.rbtnFemino.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rbtnFemino.Name = "rbtnFemino";
+            this.rbtnFemino.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.rbtnFemino.Size = new System.Drawing.Size(99, 24);
+            this.rbtnFemino.TabIndex = 54;
+            this.rbtnFemino.Text = "Inactivo";
+            this.rbtnFemino.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rbtnFemino.UseVisualStyleBackColor = false;
+            // 
+            // rbtnActivo
+            // 
+            this.rbtnActivo.AutoSize = true;
+            this.rbtnActivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            this.rbtnActivo.Checked = true;
+            this.rbtnActivo.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.rbtnActivo.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.rbtnActivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
+            this.rbtnActivo.Location = new System.Drawing.Point(17, 323);
+            this.rbtnActivo.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rbtnActivo.Name = "rbtnActivo";
+            this.rbtnActivo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.rbtnActivo.Size = new System.Drawing.Size(86, 24);
+            this.rbtnActivo.TabIndex = 53;
+            this.rbtnActivo.TabStop = true;
+            this.rbtnActivo.Text = "Activo";
+            this.rbtnActivo.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rbtnActivo.UseVisualStyleBackColor = false;
             // 
             // label7
             // 
@@ -232,6 +268,52 @@ namespace Presentacion.Formularios.Normas
             this.label7.TabIndex = 52;
             this.label7.Text = "Estado";
             // 
+            // rjTextBox3
+            // 
+            this.rjTextBox3.BackColor = System.Drawing.SystemColors.Window;
+            this.rjTextBox3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
+            this.rjTextBox3.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.rjTextBox3.BorderRadius = 1;
+            this.rjTextBox3.BorderSize = 1;
+            this.rjTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjTextBox3.ForeColor = System.Drawing.Color.DimGray;
+            this.rjTextBox3.Location = new System.Drawing.Point(17, 220);
+            this.rjTextBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.rjTextBox3.Multiline = true;
+            this.rjTextBox3.Name = "rjTextBox3";
+            this.rjTextBox3.Padding = new System.Windows.Forms.Padding(7);
+            this.rjTextBox3.PasswordChar = false;
+            this.rjTextBox3.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.rjTextBox3.PlaceholderText = "";
+            this.rjTextBox3.ReadOnly = false;
+            this.rjTextBox3.Size = new System.Drawing.Size(988, 65);
+            this.rjTextBox3.TabIndex = 51;
+            this.rjTextBox3.Texts = "";
+            this.rjTextBox3.UnderlinedStyle = false;
+            // 
+            // rjTextBox2
+            // 
+            this.rjTextBox2.BackColor = System.Drawing.SystemColors.Window;
+            this.rjTextBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
+            this.rjTextBox2.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.rjTextBox2.BorderRadius = 1;
+            this.rjTextBox2.BorderSize = 1;
+            this.rjTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjTextBox2.ForeColor = System.Drawing.Color.DimGray;
+            this.rjTextBox2.Location = new System.Drawing.Point(17, 150);
+            this.rjTextBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.rjTextBox2.Multiline = false;
+            this.rjTextBox2.Name = "rjTextBox2";
+            this.rjTextBox2.Padding = new System.Windows.Forms.Padding(7);
+            this.rjTextBox2.PasswordChar = false;
+            this.rjTextBox2.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.rjTextBox2.PlaceholderText = "";
+            this.rjTextBox2.ReadOnly = false;
+            this.rjTextBox2.Size = new System.Drawing.Size(988, 31);
+            this.rjTextBox2.TabIndex = 50;
+            this.rjTextBox2.Texts = "";
+            this.rjTextBox2.UnderlinedStyle = false;
+            // 
             // label6
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -243,6 +325,30 @@ namespace Presentacion.Formularios.Normas
             this.label6.Size = new System.Drawing.Size(130, 19);
             this.label6.TabIndex = 49;
             this.label6.Text = "Denominacíon";
+            // 
+            // rjTextBox1
+            // 
+            this.rjTextBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.rjTextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
+            this.rjTextBox1.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.rjTextBox1.BorderRadius = 1;
+            this.rjTextBox1.BorderSize = 1;
+            this.rjTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjTextBox1.ForeColor = System.Drawing.Color.DimGray;
+            this.rjTextBox1.Location = new System.Drawing.Point(14, 82);
+            this.rjTextBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.rjTextBox1.Multiline = false;
+            this.rjTextBox1.Name = "rjTextBox1";
+            this.rjTextBox1.Padding = new System.Windows.Forms.Padding(7);
+            this.rjTextBox1.PasswordChar = false;
+            this.rjTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.rjTextBox1.PlaceholderText = "";
+            this.rjTextBox1.ReadOnly = false;
+            this.rjTextBox1.Size = new System.Drawing.Size(988, 31);
+            this.rjTextBox1.TabIndex = 48;
+            this.rjTextBox1.Texts = "";
+            this.rjTextBox1.UnderlinedStyle = false;
+            this.rjTextBox1._TextChanged += new System.EventHandler(this.rjTextBox1__TextChanged);
             // 
             // iconPictureBox2
             // 
@@ -291,112 +397,6 @@ namespace Presentacion.Formularios.Normas
             this.label5.TabIndex = 19;
             this.label5.Text = "Artículo:";
             this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // rbtnFemino
-            // 
-            this.rbtnFemino.AutoSize = true;
-            this.rbtnFemino.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
-            this.rbtnFemino.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
-            this.rbtnFemino.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.rbtnFemino.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
-            this.rbtnFemino.Location = new System.Drawing.Point(109, 323);
-            this.rbtnFemino.MinimumSize = new System.Drawing.Size(0, 21);
-            this.rbtnFemino.Name = "rbtnFemino";
-            this.rbtnFemino.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbtnFemino.Size = new System.Drawing.Size(99, 24);
-            this.rbtnFemino.TabIndex = 54;
-            this.rbtnFemino.TabStop = true;
-            this.rbtnFemino.Text = "Inactivo";
-            this.rbtnFemino.UnCheckedColor = System.Drawing.Color.Gray;
-            this.rbtnFemino.UseVisualStyleBackColor = false;
-            // 
-            // rbtnActivo
-            // 
-            this.rbtnActivo.AutoSize = true;
-            this.rbtnActivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
-            this.rbtnActivo.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
-            this.rbtnActivo.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.rbtnActivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
-            this.rbtnActivo.Location = new System.Drawing.Point(17, 323);
-            this.rbtnActivo.MinimumSize = new System.Drawing.Size(0, 21);
-            this.rbtnActivo.Name = "rbtnActivo";
-            this.rbtnActivo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbtnActivo.Size = new System.Drawing.Size(86, 24);
-            this.rbtnActivo.TabIndex = 53;
-            this.rbtnActivo.TabStop = true;
-            this.rbtnActivo.Text = "Activo";
-            this.rbtnActivo.UnCheckedColor = System.Drawing.Color.Gray;
-            this.rbtnActivo.UseVisualStyleBackColor = false;
-            // 
-            // rjTextBox3
-            // 
-            this.rjTextBox3.BackColor = System.Drawing.SystemColors.Window;
-            this.rjTextBox3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.rjTextBox3.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.rjTextBox3.BorderRadius = 1;
-            this.rjTextBox3.BorderSize = 1;
-            this.rjTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox3.ForeColor = System.Drawing.Color.DimGray;
-            this.rjTextBox3.Location = new System.Drawing.Point(17, 220);
-            this.rjTextBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.rjTextBox3.Multiline = true;
-            this.rjTextBox3.Name = "rjTextBox3";
-            this.rjTextBox3.Padding = new System.Windows.Forms.Padding(7);
-            this.rjTextBox3.PasswordChar = false;
-            this.rjTextBox3.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox3.PlaceholderText = "";
-            this.rjTextBox3.ReadOnly = false;
-            this.rjTextBox3.Size = new System.Drawing.Size(988, 65);
-            this.rjTextBox3.TabIndex = 51;
-            this.rjTextBox3.Texts = "";
-            this.rjTextBox3.UnderlinedStyle = false;
-            // 
-            // rjTextBox2
-            // 
-            this.rjTextBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.rjTextBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.rjTextBox2.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.rjTextBox2.BorderRadius = 1;
-            this.rjTextBox2.BorderSize = 1;
-            this.rjTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.rjTextBox2.Location = new System.Drawing.Point(17, 150);
-            this.rjTextBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.rjTextBox2.Multiline = false;
-            this.rjTextBox2.Name = "rjTextBox2";
-            this.rjTextBox2.Padding = new System.Windows.Forms.Padding(7);
-            this.rjTextBox2.PasswordChar = false;
-            this.rjTextBox2.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox2.PlaceholderText = "";
-            this.rjTextBox2.ReadOnly = false;
-            this.rjTextBox2.Size = new System.Drawing.Size(988, 31);
-            this.rjTextBox2.TabIndex = 50;
-            this.rjTextBox2.Texts = "";
-            this.rjTextBox2.UnderlinedStyle = false;
-            // 
-            // rjTextBox1
-            // 
-            this.rjTextBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.rjTextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.rjTextBox1.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.rjTextBox1.BorderRadius = 1;
-            this.rjTextBox1.BorderSize = 1;
-            this.rjTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.rjTextBox1.Location = new System.Drawing.Point(14, 82);
-            this.rjTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.rjTextBox1.Multiline = false;
-            this.rjTextBox1.Name = "rjTextBox1";
-            this.rjTextBox1.Padding = new System.Windows.Forms.Padding(7);
-            this.rjTextBox1.PasswordChar = false;
-            this.rjTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox1.PlaceholderText = "";
-            this.rjTextBox1.ReadOnly = false;
-            this.rjTextBox1.Size = new System.Drawing.Size(988, 31);
-            this.rjTextBox1.TabIndex = 48;
-            this.rjTextBox1.Texts = "";
-            this.rjTextBox1.UnderlinedStyle = false;
-            this.rjTextBox1._TextChanged += new System.EventHandler(this.rjTextBox1__TextChanged);
             // 
             // Form_RegistrarArticulos
             // 

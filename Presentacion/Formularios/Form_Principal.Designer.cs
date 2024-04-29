@@ -29,6 +29,7 @@ namespace Presentacion
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pMenuLateral = new System.Windows.Forms.Panel();
             this.pSubMenuUsuarios = new System.Windows.Forms.Panel();
             this.btnRoles = new FontAwesome.Sharp.IconButton();
@@ -52,12 +53,16 @@ namespace Presentacion
             this.btnMaximizar = new FontAwesome.Sharp.IconButton();
             this.btnCerrar = new FontAwesome.Sharp.IconButton();
             this.pContenedor = new System.Windows.Forms.Panel();
+            this.lblHora = new System.Windows.Forms.Label();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.timerHoraFecha = new System.Windows.Forms.Timer(this.components);
             this.pMenuLateral.SuspendLayout();
             this.pSubMenuUsuarios.SuspendLayout();
             this.pSubMenuNormas.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
             this.pBarraSuperior.SuspendLayout();
+            this.pContenedor.SuspendLayout();
             this.SuspendLayout();
             // 
             // pMenuLateral
@@ -104,6 +109,7 @@ namespace Presentacion
             this.btnRoles.Text = "Roles";
             this.btnRoles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRoles.UseVisualStyleBackColor = true;
+            this.btnRoles.Click += new System.EventHandler(this.btnRoles_Click);
             // 
             // btnTrabajadores
             // 
@@ -123,6 +129,7 @@ namespace Presentacion
             this.btnTrabajadores.Text = "Trabajadores";
             this.btnTrabajadores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTrabajadores.UseVisualStyleBackColor = true;
+            this.btnTrabajadores.Click += new System.EventHandler(this.btnTrabajadores_Click);
             // 
             // btnSalir
             // 
@@ -412,11 +419,42 @@ namespace Presentacion
             // pContenedor
             // 
             this.pContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
+            this.pContenedor.Controls.Add(this.lblFecha);
+            this.pContenedor.Controls.Add(this.lblHora);
             this.pContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pContenedor.Location = new System.Drawing.Point(220, 71);
             this.pContenedor.Name = "pContenedor";
             this.pContenedor.Size = new System.Drawing.Size(1044, 610);
             this.pContenedor.TabIndex = 2;
+            // 
+            // lblHora
+            // 
+            this.lblHora.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblHora.AutoSize = true;
+            this.lblHora.Font = new System.Drawing.Font("Century Gothic", 42F, System.Drawing.FontStyle.Bold);
+            this.lblHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.lblHora.Location = new System.Drawing.Point(394, 179);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(284, 66);
+            this.lblHora.TabIndex = 0;
+            this.lblHora.Text = "hh:mm:ss";
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Font = new System.Drawing.Font("Century Gothic", 32F, System.Drawing.FontStyle.Bold);
+            this.lblFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.lblFecha.Location = new System.Drawing.Point(220, 280);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(644, 49);
+            this.lblFecha.TabIndex = 1;
+            this.lblFecha.Text = "Domingo, 20 de Abril del 2024";
+            // 
+            // timerHoraFecha
+            // 
+            this.timerHoraFecha.Enabled = true;
+            this.timerHoraFecha.Tick += new System.EventHandler(this.timerHoraFecha_Tick);
             // 
             // Form_Principal
             // 
@@ -439,6 +477,8 @@ namespace Presentacion
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
             this.pBarraSuperior.ResumeLayout(false);
             this.pBarraSuperior.PerformLayout();
+            this.pContenedor.ResumeLayout(false);
+            this.pContenedor.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -468,5 +508,8 @@ namespace Presentacion
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblFecha;
+        private System.Windows.Forms.Label lblHora;
+        private System.Windows.Forms.Timer timerHoraFecha;
     }
 }

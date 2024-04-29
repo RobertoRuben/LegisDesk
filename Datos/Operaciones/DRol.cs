@@ -21,7 +21,7 @@ namespace Datos.Operaciones
             try
             {
                 sqlCon = Conexion.getInstancia().CrearConexion();
-                SqlCommand cmd = new SqlCommand("Sp_RolListar", sqlCon);
+                SqlCommand cmd = new SqlCommand("Sp_Rol_Listar", sqlCon);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 sqlCon.Open();
@@ -41,7 +41,7 @@ namespace Datos.Operaciones
             return tabla;
         }
 
-        public string Registrar(Rol objRol)
+        public string RegistrarRol(Rol objRol)
         {
             string rpta;
             SqlConnection sqlCon = new SqlConnection();
@@ -49,12 +49,17 @@ namespace Datos.Operaciones
             try
             {
                 sqlCon = Conexion.getInstancia().CrearConexion();
-                SqlCommand cmd = new SqlCommand("Sp_RolRegistrar", sqlCon);
+                SqlCommand cmd = new SqlCommand("Sp_Roles_Insertar", sqlCon);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@NombreRol", SqlDbType.NVarChar).Value = objRol.NombreDeRol;
 
+                SqlParameter parametro = new SqlParameter();
+                parametro.ParameterName = "@Rpta";
+                parametro.SqlDbType = SqlDbType.Int;
+                parametro.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(parametro);
                 sqlCon.Open();
-                rpta = cmd.ExecuteNonQuery() == 1 ? "Ok" : "No se pudieron insertar los registro";
+                rpta = cmd.ExecuteNonQuery() > 0 ? "Ok" : "No se pudo realizar el registrar";
             }
             catch(Exception e)
             {
@@ -66,6 +71,79 @@ namespace Datos.Operaciones
             }
 
             return rpta;
+        }
+
+        public string ActualzarRol(int codUsuario, int codRol, string nombreRol)
+        {
+            string rpta;
+            SqlConnection sqlCon = new SqlConnection();
+
+            try
+            {
+                sqlCon = Conexion.getInstancia().CrearConexion();
+                SqlCommand cmd = new SqlCommand("Sp_Rol_Modificar", sqlCon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@CodUsuario", SqlDbType.Int).Value = codUsuario;
+                cmd.Parameters.Add("@CodRol", SqlDbType.Int).Value = codRol;
+                cmd.Parameters.Add("@NombreRol", SqlDbType.NVarChar).Value = nombreRol;
+
+                SqlParameter parametro = new SqlParameter();
+                parametro.ParameterName = "@Rpta";
+                parametro.SqlDbType = SqlDbType.Int;
+                parametro.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(parametro);
+
+                sqlCon.Open();
+                cmd.ExecuteNonQuery();
+
+                // Leer el parámetro de salida después de ejecutar el procedimiento
+                rpta = Convert.ToInt32(parametro.Value) > 0 ? "Ok" : "No se pudo actualizar el registro";
+
+            }
+            catch(Exception e)
+            {
+                rpta = e.Message;
+            }
+            finally
+            {
+                if (sqlCon.State == ConnectionState.Open) sqlCon.Close();
+            }
+            return rpta;
+        }
+        public string ExisteRol(string valor)
+        {
+            string rpta;
+            SqlConnection sqlCon = new SqlConnection();
+
+            try
+            {
+                sqlCon = Conexion.getInstancia().CrearConexion();
+                SqlCommand cmd = new SqlCommand("Sp_Normas_VerificarNumero", sqlCon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@Valor", SqlDbType.NVarChar).Value = valor;
+
+                SqlParameter parametro = new SqlParameter();
+                parametro.ParameterName = "@Rpta";
+                parametro.SqlDbType = SqlDbType.Int;
+                parametro.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(parametro);
+                sqlCon.Open();
+
+                cmd.ExecuteNonQuery();
+                rpta = Convert.ToString(parametro.Value);
+
+            }
+            catch (Exception e)
+            {
+                rpta = e.Message;
+            }
+            finally
+            {
+                if (sqlCon.State == ConnectionState.Open) sqlCon.Close();
+            }
+
+            return rpta;
+
         }
     }
 }

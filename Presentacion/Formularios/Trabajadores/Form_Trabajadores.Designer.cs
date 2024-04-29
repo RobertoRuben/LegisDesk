@@ -1,7 +1,7 @@
 ﻿
-namespace Presentacion.Formularios.CategoriaNormas
+namespace Presentacion.Formularios.Trabajadores
 {
-    partial class Form_CategoriaNormas
+    partial class Form_Trabajadores
     {
         /// <summary>
         /// Required designer variable.
@@ -31,53 +31,31 @@ namespace Presentacion.Formularios.CategoriaNormas
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label10 = new System.Windows.Forms.Label();
-            this.lblResultados = new System.Windows.Forms.Label();
-            this.dgvCategoriaNormas = new System.Windows.Forms.DataGridView();
-            this.tbxBusqueda = new Presentacion.CustomControls.RJTextBox();
+            this.dgvTrabajadores = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.label13 = new System.Windows.Forms.Label();
+            this.tbxBusqueda = new Presentacion.CustomControls.RJTextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lblResultados = new System.Windows.Forms.Label();
             this.btnModificar = new FontAwesome.Sharp.IconButton();
             this.btnNuevo = new FontAwesome.Sharp.IconButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCategoriaNormas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTrabajadores)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label10
+            // dgvTrabajadores
             // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(12, 73);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(213, 22);
-            this.label10.TabIndex = 60;
-            this.label10.Text = "Categorias Registradas";
-            // 
-            // lblResultados
-            // 
-            this.lblResultados.AutoSize = true;
-            this.lblResultados.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.lblResultados.Location = new System.Drawing.Point(12, 421);
-            this.lblResultados.Name = "lblResultados";
-            this.lblResultados.Size = new System.Drawing.Size(150, 20);
-            this.lblResultados.TabIndex = 59;
-            this.lblResultados.Text = "Registro mostrados:";
-            // 
-            // dgvCategoriaNormas
-            // 
-            this.dgvCategoriaNormas.AllowUserToAddRows = false;
-            this.dgvCategoriaNormas.AllowUserToDeleteRows = false;
-            this.dgvCategoriaNormas.AllowUserToOrderColumns = true;
-            this.dgvCategoriaNormas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvTrabajadores.AllowUserToAddRows = false;
+            this.dgvTrabajadores.AllowUserToDeleteRows = false;
+            this.dgvTrabajadores.AllowUserToOrderColumns = true;
+            this.dgvTrabajadores.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvCategoriaNormas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvCategoriaNormas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvCategoriaNormas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(225)))), ((int)(((byte)(230)))));
-            this.dgvCategoriaNormas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvCategoriaNormas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvTrabajadores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTrabajadores.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvTrabajadores.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(225)))), ((int)(((byte)(230)))));
+            this.dgvTrabajadores.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvTrabajadores.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(210)))), ((int)(((byte)(218)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
@@ -85,47 +63,24 @@ namespace Presentacion.Formularios.CategoriaNormas
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(210)))), ((int)(((byte)(218)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCategoriaNormas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvCategoriaNormas.ColumnHeadersHeight = 40;
-            this.dgvCategoriaNormas.EnableHeadersVisualStyles = false;
-            this.dgvCategoriaNormas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(225)))), ((int)(((byte)(230)))));
-            this.dgvCategoriaNormas.Location = new System.Drawing.Point(12, 95);
-            this.dgvCategoriaNormas.Name = "dgvCategoriaNormas";
-            this.dgvCategoriaNormas.ReadOnly = true;
-            this.dgvCategoriaNormas.RowHeadersVisible = false;
-            this.dgvCategoriaNormas.RowHeadersWidth = 35;
+            this.dgvTrabajadores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvTrabajadores.ColumnHeadersHeight = 40;
+            this.dgvTrabajadores.EnableHeadersVisualStyles = false;
+            this.dgvTrabajadores.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(225)))), ((int)(((byte)(230)))));
+            this.dgvTrabajadores.Location = new System.Drawing.Point(12, 98);
+            this.dgvTrabajadores.Name = "dgvTrabajadores";
+            this.dgvTrabajadores.ReadOnly = true;
+            this.dgvTrabajadores.RowHeadersVisible = false;
+            this.dgvTrabajadores.RowHeadersWidth = 35;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(251)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(225)))), ((int)(((byte)(230)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvCategoriaNormas.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvCategoriaNormas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCategoriaNormas.Size = new System.Drawing.Size(1017, 308);
-            this.dgvCategoriaNormas.TabIndex = 57;
-            // 
-            // tbxBusqueda
-            // 
-            this.tbxBusqueda.BackColor = System.Drawing.SystemColors.Window;
-            this.tbxBusqueda.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.tbxBusqueda.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
-            this.tbxBusqueda.BorderRadius = 1;
-            this.tbxBusqueda.BorderSize = 1;
-            this.tbxBusqueda.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.tbxBusqueda.ForeColor = System.Drawing.Color.DimGray;
-            this.tbxBusqueda.Location = new System.Drawing.Point(75, 6);
-            this.tbxBusqueda.Margin = new System.Windows.Forms.Padding(4);
-            this.tbxBusqueda.Multiline = false;
-            this.tbxBusqueda.Name = "tbxBusqueda";
-            this.tbxBusqueda.Padding = new System.Windows.Forms.Padding(7);
-            this.tbxBusqueda.PasswordChar = false;
-            this.tbxBusqueda.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tbxBusqueda.PlaceholderText = "";
-            this.tbxBusqueda.ReadOnly = false;
-            this.tbxBusqueda.Size = new System.Drawing.Size(358, 35);
-            this.tbxBusqueda.TabIndex = 19;
-            this.tbxBusqueda.Texts = "";
-            this.tbxBusqueda.UnderlinedStyle = false;
+            this.dgvTrabajadores.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvTrabajadores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTrabajadores.Size = new System.Drawing.Size(1017, 308);
+            this.dgvTrabajadores.TabIndex = 70;
             // 
             // panel2
             // 
@@ -138,7 +93,7 @@ namespace Presentacion.Formularios.CategoriaNormas
             this.panel2.Location = new System.Drawing.Point(12, 13);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1020, 46);
-            this.panel2.TabIndex = 58;
+            this.panel2.TabIndex = 69;
             // 
             // iconButton2
             // 
@@ -167,6 +122,51 @@ namespace Presentacion.Formularios.CategoriaNormas
             this.label13.TabIndex = 21;
             this.label13.Text = "Buscar:";
             // 
+            // tbxBusqueda
+            // 
+            this.tbxBusqueda.BackColor = System.Drawing.SystemColors.Window;
+            this.tbxBusqueda.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
+            this.tbxBusqueda.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
+            this.tbxBusqueda.BorderRadius = 1;
+            this.tbxBusqueda.BorderSize = 1;
+            this.tbxBusqueda.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.tbxBusqueda.ForeColor = System.Drawing.Color.DimGray;
+            this.tbxBusqueda.Location = new System.Drawing.Point(75, 6);
+            this.tbxBusqueda.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxBusqueda.Multiline = false;
+            this.tbxBusqueda.Name = "tbxBusqueda";
+            this.tbxBusqueda.Padding = new System.Windows.Forms.Padding(7);
+            this.tbxBusqueda.PasswordChar = false;
+            this.tbxBusqueda.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.tbxBusqueda.PlaceholderText = "";
+            this.tbxBusqueda.ReadOnly = false;
+            this.tbxBusqueda.Size = new System.Drawing.Size(358, 35);
+            this.tbxBusqueda.TabIndex = 19;
+            this.tbxBusqueda.Texts = "";
+            this.tbxBusqueda.UnderlinedStyle = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(12, 73);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(233, 22);
+            this.label10.TabIndex = 68;
+            this.label10.Text = "Trabajadores Registrados";
+            // 
+            // lblResultados
+            // 
+            this.lblResultados.AutoSize = true;
+            this.lblResultados.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.lblResultados.Location = new System.Drawing.Point(12, 420);
+            this.lblResultados.Name = "lblResultados";
+            this.lblResultados.Size = new System.Drawing.Size(150, 20);
+            this.lblResultados.TabIndex = 67;
+            this.lblResultados.Text = "Registro mostrados:";
+            // 
             // btnModificar
             // 
             this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -176,18 +176,17 @@ namespace Presentacion.Formularios.CategoriaNormas
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            this.btnModificar.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
             this.btnModificar.IconColor = System.Drawing.Color.White;
             this.btnModificar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnModificar.IconSize = 32;
             this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificar.Location = new System.Drawing.Point(166, 558);
+            this.btnModificar.Location = new System.Drawing.Point(166, 557);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(148, 40);
-            this.btnModificar.TabIndex = 56;
+            this.btnModificar.TabIndex = 66;
             this.btnModificar.Text = "  Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnNuevo
             // 
@@ -198,35 +197,36 @@ namespace Presentacion.Formularios.CategoriaNormas
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnNuevo.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
             this.btnNuevo.IconColor = System.Drawing.Color.White;
             this.btnNuevo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnNuevo.IconSize = 32;
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(12, 558);
+            this.btnNuevo.Location = new System.Drawing.Point(12, 557);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(148, 40);
-            this.btnNuevo.TabIndex = 55;
+            this.btnNuevo.TabIndex = 65;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // Form_CategoriaNormas
+            // Form_Trabajadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1044, 610);
+            this.Controls.Add(this.dgvTrabajadores);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.lblResultados);
-            this.Controls.Add(this.dgvCategoriaNormas);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnNuevo);
-            this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form_CategoriaNormas";
-            this.Text = "Form_CategoriaNormas";
-            this.Load += new System.EventHandler(this.Form_CategoriaNormas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCategoriaNormas)).EndInit();
+            this.Name = "Form_Trabajadores";
+            this.Text = "Form_Trabajadores";
+            this.Load += new System.EventHandler(this.Form_Trabajadores_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTrabajadores)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -236,14 +236,14 @@ namespace Presentacion.Formularios.CategoriaNormas
 
         #endregion
 
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label lblResultados;
-        public System.Windows.Forms.DataGridView dgvCategoriaNormas;
-        private CustomControls.RJTextBox tbxBusqueda;
+        public System.Windows.Forms.DataGridView dgvTrabajadores;
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconButton iconButton2;
         private System.Windows.Forms.Label label13;
-        public FontAwesome.Sharp.IconButton btnModificar;
-        public FontAwesome.Sharp.IconButton btnNuevo;
+        private CustomControls.RJTextBox tbxBusqueda;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblResultados;
+        private FontAwesome.Sharp.IconButton btnModificar;
+        private FontAwesome.Sharp.IconButton btnNuevo;
     }
 }

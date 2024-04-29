@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Articulo.cs" />
+    <Compile Include="Clases\Normas.cs" />
     <Compile Include="Clases\Rol.cs" />
     <Compile Include="Clases\CategoriaDeNorma.cs" />
     <Compile Include="Clases\Trabajador.cs" />

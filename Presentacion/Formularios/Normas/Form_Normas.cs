@@ -12,6 +12,8 @@ namespace Presentacion.Formularios.Normas
 {
     public partial class Form_Normas : Form
     {
+        public int codUsuario;
+        public string operacion = "";
         public Form_Normas()
         {
             InitializeComponent();
@@ -20,12 +22,16 @@ namespace Presentacion.Formularios.Normas
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             Form_RegistrarNormas frmRegistro = new Form_RegistrarNormas();
+            frmRegistro.codUsuario = codUsuario;
+            frmRegistro.operacion = "Insertar";
             frmRegistro.ShowDialog();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
             Form_RegistrarNormas frmRegistro = new Form_RegistrarNormas();
+            frmRegistro.codUsuario = codUsuario;
+            frmRegistro.operacion = "Modificar";
             frmRegistro.ShowDialog();
         }
 

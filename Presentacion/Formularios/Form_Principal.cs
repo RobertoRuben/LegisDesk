@@ -12,6 +12,8 @@ using FontAwesome.Sharp;
 using Presentacion.Formularios.CategoriaNormas;
 using Presentacion.Formularios.Normas;
 using Presentacion.Formularios.Usuarios;
+using Presentacion.Formularios.Trabajadores;
+using Presentacion.Formularios.Roles;
 
 namespace Presentacion
 {
@@ -127,22 +129,56 @@ namespace Presentacion
             
         }
 
+        /***Gestion de Normas***/
         private void btnNormas_Click(object sender, EventArgs e)
         {
+            Form_Normas form_Normas = new Form_Normas();
+            form_Normas.codUsuario = IdUsuario;
             ActivateButton(sender, RGBColors.color);
             lblFormularioHijo.Text = "Gestión de Normas";
             MostrarSubMenu(pSubMenuNormas);
-            AbrirFormularioHijo(new Form_Normas());
+            AbrirFormularioHijo(form_Normas);
             
         }
+        //Categoria de Normas
+        private void btnCategoria_Click(object sender, EventArgs e)
+        {
+            //Proximo Codigo
+            lblFormularioHijo.Text = "Categorías de Normas";
+            Form_CategoriaNormas form_CategoriaNormas = new Form_CategoriaNormas();
+            form_CategoriaNormas.codUsuario = IdUsuario;
+            AbrirFormularioHijo(form_CategoriaNormas);
+            Console.WriteLine("COD USUARIO: " + form_CategoriaNormas.codUsuario);
+        }
 
+        /*** Gestion de Usuarios ***/
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             lblFormularioHijo.Text = "Gestión de Usuarios";
             MostrarSubMenu(pSubMenuUsuarios);
             ActivateButton(sender, RGBColors.color);
-            AbrirFormularioHijo(new Form_Usuarios());
+            Form_Usuarios form_Usuarios = new Form_Usuarios();
+            form_Usuarios.idUsuarioSesion = IdUsuario;
+            AbrirFormularioHijo(form_Usuarios);
             
+        }
+        //Roles de Usuario
+        private void btnRoles_Click(object sender, EventArgs e)
+        {
+            lblFormularioHijo.Text = "Gestion de Roles";
+            Form_Roles form_Roles = new Form_Roles();
+            form_Roles.codUsuario = IdUsuario;
+            AbrirFormularioHijo(form_Roles);
+
+        }
+
+        //Trabajadores
+        private void btnTrabajadores_Click(object sender, EventArgs e)
+        {
+            lblFormularioHijo.Text = "Gestion de Trabajadores";
+            Form_Trabajadores form_Trabajadores = new Form_Trabajadores();
+            form_Trabajadores.codUsuario = IdUsuario;
+            AbrirFormularioHijo(form_Trabajadores);
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -153,14 +189,6 @@ namespace Presentacion
         }
 
         //Sub Menu Normas
-
-        private void btnCategoria_Click(object sender, EventArgs e)
-        {
-            //Proximo Codigo
-            lblFormularioHijo.Text = "Categorías de Normas";
-            AbrirFormularioHijo(new Form_CategoriaNormas());
-            
-        }
 
         //Drag Form
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -215,6 +243,12 @@ namespace Presentacion
             pContenedor.Tag = formularioHijo;
             formularioHijo.BringToFront();
             formularioHijo.Show();
+        }
+
+        private void timerHoraFecha_Tick(object sender, EventArgs e)
+        {
+            lblHora.Text = DateTime.Now.ToString("HH:mm:ss");
+            lblFecha.Text = DateTime.Now.ToString("dddd, dd 'de' MMMM 'del' yyyy");
         }
     }
 }

@@ -10,9 +10,9 @@ using Entidad.Clases;
 
 namespace Datos.Operaciones
 {
-    public class DTrabajadores
+    public class DNormas
     {
-        public DataTable Listar()
+        public DataTable ListarNormas()
         {
             SqlDataReader resultado;
             DataTable tabla = new DataTable();
@@ -21,14 +21,14 @@ namespace Datos.Operaciones
             try
             {
                 sqlCon = Conexion.getInstancia().CrearConexion();
-                SqlCommand cmd = new SqlCommand("Sp_Trabajadores_Listar", sqlCon);
+                SqlCommand cmd = new SqlCommand("Sp_Normas_Listar", sqlCon);
                 cmd.CommandType = CommandType.StoredProcedure;
                 sqlCon.Open();
                 resultado = cmd.ExecuteReader();
                 tabla.Load(resultado);
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -41,7 +41,7 @@ namespace Datos.Operaciones
 
         }
 
-        public string Registrar(Trabajador objTrabajador)
+        public string RegistrarNormas(Normas objNormas)
         {
             string rpta;
             SqlConnection sqlCon = new SqlConnection();
@@ -49,18 +49,32 @@ namespace Datos.Operaciones
             try
             {
                 sqlCon = Conexion.getInstancia().CrearConexion();
-                SqlCommand cmd = new SqlCommand("SP_TrabajadoresRegistrar", sqlCon);
+                SqlCommand cmd = new SqlCommand("Sp_Normas_Registrar", sqlCon);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@Dni", SqlDbType.Int).Value = objTrabajador.Dni;
-                cmd.Parameters.Add("@Nombre", SqlDbType.NVarChar).Value = objTrabajador.Nombre;
-                cmd.Parameters.Add("@ApellidoPaterno", SqlDbType.NVarChar).Value = objTrabajador.ApellidoPaterno;
-                cmd.Parameters.Add("@ApellidoMaterno", SqlDbType.NVarChar).Value = objTrabajador.ApellidoMaterno;
-                cmd.Parameters.Add("@Sexo", SqlDbType.NVarChar).Value = objTrabajador.Sexo;
+                cmd.Parameters.Add("@CodUsuario", SqlDbType.Int).Value = objNormas.CodUsuario;
+                cmd.Parameters.Add("@CodTipoNorma", SqlDbType.Int).Value = objNormas.CodTipoNorma;
+                cmd.Parameters.Add("@NumeroNorma", SqlDbType.NVarChar).Value = objNormas.NumeroNorma;
+                cmd.Parameters.Add("@NombreNorma", SqlDbType.NVarChar).Value = objNormas.NombreNorma;
+                cmd.Parameters.Add("@FechaPublicacion", SqlDbType.NVarChar).Value = objNormas.FechaPublicacion;
+                cmd.Parameters.Add("@CantidadDePaginas", SqlDbType.Int).Value = objNormas.CantidadDePaginas;
+                cmd.Parameters.Add("@MedioPublicacion", SqlDbType.NVarChar).Value = objNormas.MedioPublicacion;
+                cmd.Parameters.Add("@LinkDocumentos", SqlDbType.NVarChar).Value = objNormas.LinkDocumento;
+                cmd.Parameters.Add("@Estado", SqlDbType.NVarChar).Value = objNormas.Estado;
+
+                SqlParameter parametro = new SqlParameter();
+                parametro.ParameterName = "@Rpta";
+                parametro.SqlDbType = SqlDbType.Int;
+                parametro.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(parametro);
+
                 sqlCon.Open();
-                rpta = cmd.ExecuteNonQuery()==1?"Ok":"No se pudo insertar el registro";
-               
+                cmd.ExecuteNonQuery();
+
+                // Leer el parámetro de salida después de ejecutar el procedimiento
+                rpta = Convert.ToInt32(parametro.Value) > 0 ? "Ok" : "No se pudo insertar el registro";
+
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 rpta = e.Message;
             }
@@ -91,7 +105,7 @@ namespace Datos.Operaciones
                 sqlCon.Open();
                 rpta = cmd.ExecuteNonQuery() == 1 ? "Ok" : "No se pudo Actualizar el Registro";
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 rpta = e.Message;
             }
@@ -104,3 +118,4 @@ namespace Datos.Operaciones
         }
     }
 }
+

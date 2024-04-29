@@ -9,7 +9,7 @@ namespace Negocio.Seguridad
 {
     public class PasswordEncryptor
     {
-        public string Encryptor(string contraseña)
+        public static string Encryptor(string contraseña)
         {
             using (SHA256 sha256Hash = SHA256.Create())
             {

@@ -59,6 +59,12 @@
     <Compile Include="Formularios\CategoriaNormas\Form_CategoriaNormas.Designer.cs">
       <DependentUpon>Form_CategoriaNormas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\CategoriaNormas\Form_RegistroCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\CategoriaNormas\Form_RegistroCategoria.Designer.cs">
+      <DependentUpon>Form_RegistroCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Form_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,24 @@
     <Compile Include="Formularios\Normas\Form_RegistrarNormas.Designer.cs">
       <DependentUpon>Form_RegistrarNormas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Roles\Form_RegistroRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Roles\Form_RegistroRoles.Designer.cs">
+      <DependentUpon>Form_RegistroRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Roles\Form_Roles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Roles\Form_Roles.Designer.cs">
+      <DependentUpon>Form_Roles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Trabajadores\Form_Trabajadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Trabajadores\Form_Trabajadores.Designer.cs">
+      <DependentUpon>Form_Trabajadores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Usuarios\Form_Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,11 +137,11 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Contrroles\RJTextBox.Designer.cs" />
-    <Compile Include="Formularios\Usuarios\Frm_Trabajadores.cs">
+    <Compile Include="Formularios\Trabajadores\Frm_RegistroTrabajadores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Usuarios\Frm_Trabajadores.Designer.cs">
-      <DependentUpon>Frm_Trabajadores.cs</DependentUpon>
+    <Compile Include="Formularios\Trabajadores\Frm_RegistroTrabajadores.Designer.cs">
+      <DependentUpon>Frm_RegistroTrabajadores.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Usuarios\Form_RegistrarUsuario.cs">
       <SubType>Form</SubType>
@@ -127,6 +151,9 @@
     </Compile>
     <EmbeddedResource Include="Formularios\CategoriaNormas\Form_CategoriaNormas.resx">
       <DependentUpon>Form_CategoriaNormas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\CategoriaNormas\Form_RegistroCategoria.resx">
+      <DependentUpon>Form_RegistroCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Form_Principal.resx">
       <DependentUpon>Form_Principal.cs</DependentUpon>
@@ -143,6 +170,15 @@
     <EmbeddedResource Include="Formularios\Normas\Form_RegistrarNormas.resx">
       <DependentUpon>Form_RegistrarNormas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Roles\Form_RegistroRoles.resx">
+      <DependentUpon>Form_RegistroRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Roles\Form_Roles.resx">
+      <DependentUpon>Form_Roles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Trabajadores\Form_Trabajadores.resx">
+      <DependentUpon>Form_Trabajadores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Usuarios\Form_Usuarios.resx">
       <DependentUpon>Form_Usuarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,8 +193,8 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Contrroles\RJTextBox.resx" />
-    <EmbeddedResource Include="Formularios\Usuarios\Frm_Trabajadores.resx">
-      <DependentUpon>Frm_Trabajadores.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Trabajadores\Frm_RegistroTrabajadores.resx">
+      <DependentUpon>Frm_RegistroTrabajadores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Usuarios\Form_RegistrarUsuario.resx">
       <DependentUpon>Form_RegistrarUsuario.cs</DependentUpon>
@@ -201,5 +237,6 @@
   <ItemGroup>
     <None Include="Resources\Justicia.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

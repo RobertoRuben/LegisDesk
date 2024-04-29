@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio.Servicios;
 using Presentacion.Formularios;
+using Negocio.Seguridad;
 namespace Presentacion.Formularios.Login
 {
     public partial class Form_Login : Form
@@ -32,7 +33,7 @@ namespace Presentacion.Formularios.Login
             try
             {
                 DataTable tabla = new DataTable();
-                tabla = NUsuarios.Login((tboxUsuario.Texts.Trim()), (tboxContraseña.Texts.Trim()));
+                tabla = NUsuarios.Login((tboxUsuario.Texts.Trim()), (PasswordEncryptor.Encryptor(tboxContraseña.Texts.Trim())));
                 if (tabla.Rows.Count <= 0)
                 {
                     MessageBox.Show("Usuario o Contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -52,7 +53,10 @@ namespace Presentacion.Formularios.Login
                         form_Principal.rol = Convert.ToString(tabla.Rows[0][3]);
                         form_Principal.nombre = Convert.ToString(tabla.Rows[0][4]);
 
-                        form_Principal.ShowDialog();
+
+                        Console.WriteLine("id usuario"+ form_Principal.IdUsuario);
+                        // Muestra el formulario principal
+                        form_Principal.Show();
                         this.Hide();
                     }
                 }

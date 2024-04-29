@@ -19,10 +19,10 @@ namespace Datos.Conector
 
         private Conexion()
         {
-            this.dataBase = "SistemaDeNormatividad";
+            this.dataBase = "LegisDesk";
             this.servidor = "localhost";
-            this.usuario = "sa";
-            this.contraseña = "oracle";
+            this.usuario = "UserLegis";
+            this.contraseña = "Muni@Esperanza";
             this.seguridad = true;
         }
 

@@ -10,9 +10,12 @@ using System.Windows.Forms;
 
 namespace Presentacion.Usuarios
 {
-    public partial class Frm_Trabajadores : Form
+    public partial class Frm_RegistroTrabajadores : Form
     {
-        public Frm_Trabajadores()
+        public int codUsuario;
+        public string operacion;
+
+        public Frm_RegistroTrabajadores()
         {
             InitializeComponent();
         }
@@ -30,6 +33,15 @@ namespace Presentacion.Usuarios
         private void Frm_Normas_Load(object sender, EventArgs e)
         {
 
+        }
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("ID: " + codUsuario);
         }
     }
 }

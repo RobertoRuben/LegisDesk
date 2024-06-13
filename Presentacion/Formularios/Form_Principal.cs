@@ -14,6 +14,7 @@ using Presentacion.Formularios.Normas;
 using Presentacion.Formularios.Usuarios;
 using Presentacion.Formularios.Trabajadores;
 using Presentacion.Formularios.Roles;
+using Presentacion.Formularios.Consultas;
 
 namespace Presentacion
 {
@@ -124,8 +125,11 @@ namespace Presentacion
 
         private void btnConsultas_Click(object sender, EventArgs e)
         {
-            OcultarSubMenu();
+            Form_ConsultasNormas form_ConsultasNormas = new Form_ConsultasNormas();
             ActivateButton(sender, RGBColors.color);
+            lblFormularioHijo.Text = "Consulta de Normas";
+            MostrarSubMenu(pSubMenuNormas);
+            AbrirFormularioHijo(form_ConsultasNormas);
             
         }
 
@@ -249,6 +253,14 @@ namespace Presentacion
         {
             lblHora.Text = DateTime.Now.ToString("HH:mm:ss");
             lblFecha.Text = DateTime.Now.ToString("dddd, dd 'de' MMMM 'del' yyyy");
+        }
+
+        private void btnPerfil_Click(object sender, EventArgs e)
+        {
+            Form_UsuarioActualizarCredenciales form_UsuarioActualizarCredenciales = new Form_UsuarioActualizarCredenciales();
+            form_UsuarioActualizarCredenciales.codUsuario = IdUsuario;
+            form_UsuarioActualizarCredenciales.tboxNombreUsuario.Texts = usuario;
+            form_UsuarioActualizarCredenciales.ShowDialog();
         }
     }
 }

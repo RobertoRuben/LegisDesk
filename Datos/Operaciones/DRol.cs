@@ -12,7 +12,7 @@ namespace Datos.Operaciones
 {
     public class DRol
     {
-        public DataTable Listar()
+        public DataTable ListarRol()
         {
             SqlDataReader resultado;
             DataTable tabla = new DataTable();
@@ -30,6 +30,34 @@ namespace Datos.Operaciones
 
             }
             catch(Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                if (sqlCon.State == ConnectionState.Open) sqlCon.Close();
+            }
+
+            return tabla;
+        }
+
+        public DataTable BuscarRol(string palabra)
+        {
+            SqlDataReader resultado;
+            DataTable tabla = new DataTable();
+            SqlConnection sqlCon = new SqlConnection();
+
+            try
+            {
+                sqlCon = Conexion.getInstancia().CrearConexion();
+                SqlCommand cmd = new SqlCommand("Sp_Rol_Buscar", sqlCon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@Palabra", SqlDbType.NVarChar).Value = palabra;
+                sqlCon.Open();
+                resultado = cmd.ExecuteReader();
+                tabla.Load(resultado);
+            }
+            catch (Exception e)
             {
                 throw e;
             }
@@ -110,6 +138,41 @@ namespace Datos.Operaciones
             }
             return rpta;
         }
+        public string EliminarRol(int codRol)
+        {
+            string rpta;
+            SqlConnection sqlCon = new SqlConnection();
+
+            try
+            {
+                sqlCon = Conexion.getInstancia().CrearConexion();
+                SqlCommand cmd = new SqlCommand("Sp_Roles_Eliminar", sqlCon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@CodRol", SqlDbType.Int).Value = codRol;
+
+                SqlParameter parametro = new SqlParameter();
+                parametro.ParameterName = "@Rpta";
+                parametro.SqlDbType = SqlDbType.Int;
+                parametro.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(parametro);
+
+                sqlCon.Open();
+                cmd.ExecuteNonQuery();
+
+                // Leer el parámetro de salida después de ejecutar el procedimiento
+                rpta = Convert.ToInt32(parametro.Value) == 1 ? "Ok" : "No se pudo eliminar el registro";
+
+            }
+            catch (Exception e)
+            {
+                rpta = e.Message;
+            }
+            finally
+            {
+                if (sqlCon.State == ConnectionState.Open) sqlCon.Close();
+            }
+            return rpta;
+        }
         public string ExisteRol(string valor)
         {
             string rpta;
@@ -118,7 +181,7 @@ namespace Datos.Operaciones
             try
             {
                 sqlCon = Conexion.getInstancia().CrearConexion();
-                SqlCommand cmd = new SqlCommand("Sp_Normas_VerificarNumero", sqlCon);
+                SqlCommand cmd = new SqlCommand("Sp_Rol_Existe", sqlCon);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@Valor", SqlDbType.NVarChar).Value = valor;
 

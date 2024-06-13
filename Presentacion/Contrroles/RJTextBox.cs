@@ -8,37 +8,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace Presentacion.CustomControls
 {
     [DefaultEvent("_TextChanged")]
     public partial class RJTextBox : UserControl
     {
         #region -> Fields
-        //Fields
         private Color borderColor = Color.MediumSlateBlue;
         private Color borderFocusColor = Color.HotPink;
         private int borderSize = 2;
         private bool underlinedStyle = false;
         private bool isFocused = false;
-
         private int borderRadius = 0;
         private Color placeholderColor = Color.DarkGray;
         private string placeholderText = "";
         private bool isPlaceholder = false;
         private bool isPasswordChar = false;
 
-        //Events
         public event EventHandler _TextChanged;
 
         #endregion
 
-        //-> Constructor
         public RJTextBox()
         {
-            //Created by designer
             InitializeComponent();
             textBox1.ScrollBars = ScrollBars.Vertical;
+            textBox1.Enter += textBox1_Enter; // Añadir el evento Enter
         }
 
         #region -> Properties
@@ -163,7 +158,7 @@ namespace Presentacion.CustomControls
                 if (value >= 0)
                 {
                     borderRadius = value;
-                    this.Invalidate();//Redraw control
+                    this.Invalidate(); // Redraw control
                 }
             }
         }
@@ -199,9 +194,6 @@ namespace Presentacion.CustomControls
             set { textBox1.ReadOnly = value; }
         }
 
-
-
-
         #endregion
 
         #region -> Overridden methods
@@ -211,19 +203,20 @@ namespace Presentacion.CustomControls
             if (this.DesignMode)
                 UpdateControlHeight();
         }
+
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
             UpdateControlHeight();
         }
+
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
             Graphics graph = e.Graphics;
 
-            if (borderRadius > 1)//Rounded TextBox
+            if (borderRadius > 1) // Rounded TextBox
             {
-                //-Fields
                 var rectBorderSmooth = this.ClientRectangle;
                 var rectBorder = Rectangle.Inflate(rectBorderSmooth, -borderSize, -borderSize);
                 int smoothSize = borderSize > 0 ? borderSize : 1;
@@ -233,42 +226,36 @@ namespace Presentacion.CustomControls
                 using (Pen penBorderSmooth = new Pen(this.Parent.BackColor, smoothSize))
                 using (Pen penBorder = new Pen(borderColor, borderSize))
                 {
-                    //-Drawing
-                    this.Region = new Region(pathBorderSmooth);//Set the rounded region of UserControl
-                    if (borderRadius > 15) SetTextBoxRoundedRegion();//Set the rounded region of TextBox component
+                    this.Region = new Region(pathBorderSmooth); // Set the rounded region of UserControl
+                    if (borderRadius > 15) SetTextBoxRoundedRegion(); // Set the rounded region of TextBox component
                     graph.SmoothingMode = SmoothingMode.AntiAlias;
                     penBorder.Alignment = System.Drawing.Drawing2D.PenAlignment.Center;
                     if (isFocused) penBorder.Color = borderFocusColor;
 
-                    if (underlinedStyle) //Line Style
+                    if (underlinedStyle) // Line Style
                     {
-                        //Draw border smoothing
                         graph.DrawPath(penBorderSmooth, pathBorderSmooth);
-                        //Draw border
                         graph.SmoothingMode = SmoothingMode.None;
                         graph.DrawLine(penBorder, 0, this.Height - 1, this.Width, this.Height - 1);
                     }
-                    else //Normal Style
+                    else // Normal Style
                     {
-                        //Draw border smoothing
                         graph.DrawPath(penBorderSmooth, pathBorderSmooth);
-                        //Draw border
                         graph.DrawPath(penBorder, pathBorder);
                     }
                 }
             }
-            else //Square/Normal TextBox
+            else // Square/Normal TextBox
             {
-                //Draw border
                 using (Pen penBorder = new Pen(borderColor, borderSize))
                 {
                     this.Region = new Region(this.ClientRectangle);
                     penBorder.Alignment = System.Drawing.Drawing2D.PenAlignment.Inset;
                     if (isFocused) penBorder.Color = borderFocusColor;
 
-                    if (underlinedStyle) //Line Style
+                    if (underlinedStyle) // Line Style
                         graph.DrawLine(penBorder, 0, this.Height - 1, this.Width, this.Height - 1);
-                    else //Normal Style
+                    else // Normal Style
                         graph.DrawRectangle(penBorder, 0, 0, this.Width - 0.5F, this.Height - 0.5F);
                 }
             }
@@ -287,6 +274,7 @@ namespace Presentacion.CustomControls
                     textBox1.UseSystemPasswordChar = false;
             }
         }
+
         private void RemovePlaceholder()
         {
             if (isPlaceholder && placeholderText != "")
@@ -298,6 +286,7 @@ namespace Presentacion.CustomControls
                     textBox1.UseSystemPasswordChar = true;
             }
         }
+
         private GraphicsPath GetFigurePath(Rectangle rect, int radius)
         {
             GraphicsPath path = new GraphicsPath();
@@ -311,6 +300,7 @@ namespace Presentacion.CustomControls
             path.CloseFigure();
             return path;
         }
+
         private void SetTextBoxRoundedRegion()
         {
             GraphicsPath pathTxt;
@@ -326,6 +316,7 @@ namespace Presentacion.CustomControls
             }
             pathTxt.Dispose();
         }
+
         private void UpdateControlHeight()
         {
             if (textBox1.Multiline == false)
@@ -341,23 +332,41 @@ namespace Presentacion.CustomControls
         #endregion
 
         #region -> TextBox events
+        public void SetTextWithoutHighlight(string text)
+        {
+            textBox1.Text = text;
+            textBox1.SelectionStart = textBox1.Text.Length;
+            textBox1.SelectionLength = 0;
+        }
+
+        public void SetFocus()
+        {
+            textBox1.Focus();
+            textBox1.SelectionStart = textBox1.Text.Length;
+            textBox1.SelectionLength = 0;
+        }
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             if (_TextChanged != null)
                 _TextChanged.Invoke(sender, e);
         }
+
         private void textBox1_Click(object sender, EventArgs e)
         {
             this.OnClick(e);
         }
+
         private void textBox1_MouseEnter(object sender, EventArgs e)
         {
             this.OnMouseEnter(e);
         }
+
         private void textBox1_MouseLeave(object sender, EventArgs e)
         {
             this.OnMouseLeave(e);
         }
+
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             this.OnKeyPress(e);
@@ -368,14 +377,18 @@ namespace Presentacion.CustomControls
             isFocused = true;
             this.Invalidate();
             RemovePlaceholder();
+
+            // Desactivar la selección de texto
+            textBox1.SelectionStart = textBox1.Text.Length;
+            textBox1.SelectionLength = 0;
         }
+
         private void textBox1_Leave(object sender, EventArgs e)
         {
             isFocused = false;
             this.Invalidate();
             SetPlaceholder();
         }
-        ///::::+
         #endregion
     }
 }

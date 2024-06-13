@@ -23,6 +23,12 @@ namespace Negocio.Servicios
             return dUsuarios.ListarUsuarios();
         }
 
+        public static DataTable BuscarUsuario(string palabra)
+        {
+            DUsuarios dUsuarios = new DUsuarios();
+            return dUsuarios.BuscarUsuarios(palabra);
+        }
+
         //Registar Usuario
         public static string RegistrarUsuario(int codTrabajador, string nombreUsuario, string contraseña, string estado, int codRol)
         {
@@ -49,20 +55,17 @@ namespace Negocio.Servicios
             
         }
 
-        public static string ActualizarUsuario(int codUsuario, int codTrabajador, int codRol, string nombreUsuario, string contraseña, string estado)
+        public static string ActualizarUsuario(int codUsuario, int codRol, string nombreUsuario, string contraseña, string estado)
         {
             DUsuarios dUsuarios = new DUsuarios();
-            Usuario usuario = new Usuario();
 
-            usuario.CodUsuario = codUsuario;
-            usuario.CodTrabajador = codTrabajador;
-            usuario.CodRol = codRol;
-            usuario.NombreUsuario = nombreUsuario;
-            usuario.Contraseña = contraseña;
-            usuario.Estado = estado;
-
-            return dUsuarios.ActualizarUsuario(usuario);
+            return dUsuarios.ActualizarUsuario(codUsuario, nombreUsuario, contraseña, codRol, estado);
            
+        }
+        public static string ActualizarCredenciales(int codUsuario, string nombreUsuario, string contraseña)
+        {
+            DUsuarios dUsuarios = new DUsuarios();
+            return dUsuarios.ActualizarCredenciales(codUsuario, nombreUsuario, contraseña);
         }
 
         public static string InhabilitarUsuario(int codUsuario, int codUsuarioSesion)

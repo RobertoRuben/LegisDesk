@@ -40,6 +40,11 @@ namespace Presentacion.Formularios.Roles
                         rpta = "Todos los campos son obligatorios";
                         MensajeError(rpta);
                     }
+                    else if (ContieneNumeros(tboxNombreRol.Texts.Trim()))
+                    {
+                        rpta = "El nombre del rol no debe contener números";
+                        MensajeError(rpta);
+                    }
                     else
                     {
                         rpta = NRol.RegistrarRoles(TransformarTexto.TransformarText(tboxNombreRol.Texts.Trim()));
@@ -72,6 +77,11 @@ namespace Presentacion.Formularios.Roles
                         rpta = "Para actualizar el registro no debes dejar la casilla en blanco";
                         MensajeError(rpta);
                     }
+                    else if (ContieneNumeros(tboxNombreRol.Texts.Trim()))
+                    {
+                        rpta = "El nombre del rol no debe contener números";
+                        MensajeError(rpta);
+                    }
                     else
                     {
                         rpta = NRol.ActulizarRoles(codUsuario, codRol, (TransformarTexto.TransformarText(tboxNombreRol.Texts.Trim())));
@@ -100,7 +110,6 @@ namespace Presentacion.Formularios.Roles
                 }
             }
         }
-
         private void MensajeError(string mensaje)
         {
             MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -108,6 +117,12 @@ namespace Presentacion.Formularios.Roles
         private void MensajeOk(string mensaje)
         {
             MessageBox.Show(mensaje, "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        // Función para validar si el texto contiene números
+        private bool ContieneNumeros(string texto)
+        {
+            return texto.Any(char.IsDigit);
         }
     }
 }

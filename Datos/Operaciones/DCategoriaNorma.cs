@@ -38,6 +38,34 @@ namespace Datos.Operaciones
             return tabla;
         }
 
+        public DataTable BuscarCategoria(string palabra)
+        {
+            SqlDataReader resultado;
+            DataTable tabla = new DataTable();
+            SqlConnection sqlCon = new SqlConnection();
+
+            try
+            {
+                sqlCon = Conexion.getInstancia().CrearConexion();
+                SqlCommand cmd = new SqlCommand("Sp_CategoriaNorma_Buscar", sqlCon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@Palabra", SqlDbType.NVarChar).Value = palabra;
+                sqlCon.Open();
+                resultado = cmd.ExecuteReader();
+                tabla.Load(resultado);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                if (sqlCon.State == ConnectionState.Open) sqlCon.Close();
+            }
+
+            return tabla;
+        }
+
         public DataTable ListarUltimoRegisro()
         {
             SqlDataReader resultado;

@@ -53,8 +53,8 @@ namespace Presentacion
             this.btnMaximizar = new FontAwesome.Sharp.IconButton();
             this.btnCerrar = new FontAwesome.Sharp.IconButton();
             this.pContenedor = new System.Windows.Forms.Panel();
-            this.lblHora = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
+            this.lblHora = new System.Windows.Forms.Label();
             this.timerHoraFecha = new System.Windows.Forms.Timer(this.components);
             this.pMenuLateral.SuspendLayout();
             this.pSubMenuUsuarios.SuspendLayout();
@@ -347,6 +347,7 @@ namespace Presentacion
             this.btnPerfil.Size = new System.Drawing.Size(57, 48);
             this.btnPerfil.TabIndex = 11;
             this.btnPerfil.UseVisualStyleBackColor = true;
+            this.btnPerfil.Click += new System.EventHandler(this.btnPerfil_Click);
             // 
             // lblFormularioHijo
             // 
@@ -427,18 +428,6 @@ namespace Presentacion
             this.pContenedor.Size = new System.Drawing.Size(1044, 610);
             this.pContenedor.TabIndex = 2;
             // 
-            // lblHora
-            // 
-            this.lblHora.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblHora.AutoSize = true;
-            this.lblHora.Font = new System.Drawing.Font("Century Gothic", 42F, System.Drawing.FontStyle.Bold);
-            this.lblHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.lblHora.Location = new System.Drawing.Point(394, 179);
-            this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(284, 66);
-            this.lblHora.TabIndex = 0;
-            this.lblHora.Text = "hh:mm:ss";
-            // 
             // lblFecha
             // 
             this.lblFecha.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -450,6 +439,18 @@ namespace Presentacion
             this.lblFecha.Size = new System.Drawing.Size(644, 49);
             this.lblFecha.TabIndex = 1;
             this.lblFecha.Text = "Domingo, 20 de Abril del 2024";
+            // 
+            // lblHora
+            // 
+            this.lblHora.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblHora.AutoSize = true;
+            this.lblHora.Font = new System.Drawing.Font("Century Gothic", 42F, System.Drawing.FontStyle.Bold);
+            this.lblHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.lblHora.Location = new System.Drawing.Point(394, 179);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(284, 66);
+            this.lblHora.TabIndex = 0;
+            this.lblHora.Text = "hh:mm:ss";
             // 
             // timerHoraFecha
             // 

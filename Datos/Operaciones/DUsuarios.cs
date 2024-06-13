@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
+using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Entidad.Clases;
 using Datos.Conector;
 
@@ -23,6 +20,34 @@ namespace Datos.Operaciones
                 sqlCon = Conexion.getInstancia().CrearConexion();
                 SqlCommand cmd = new SqlCommand("Sp_Usuario_Listar", sqlCon);
                 cmd.CommandType = CommandType.StoredProcedure;
+                sqlCon.Open();
+                resultado = cmd.ExecuteReader();
+                tabla.Load(resultado);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                if (sqlCon.State == ConnectionState.Open) sqlCon.Close();
+            }
+
+            return tabla;
+        }
+
+        public DataTable BuscarUsuarios(string palabra)
+        {
+            SqlDataReader resultado;
+            DataTable tabla = new DataTable();
+            SqlConnection sqlCon = new SqlConnection();
+
+            try
+            {
+                sqlCon = Conexion.getInstancia().CrearConexion();
+                SqlCommand cmd = new SqlCommand("Sp_Usuario_Buscar", sqlCon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@Palabra", SqlDbType.NVarChar).Value = palabra;
                 sqlCon.Open();
                 resultado = cmd.ExecuteReader();
                 tabla.Load(resultado);
@@ -103,7 +128,7 @@ namespace Datos.Operaciones
             return rpta;
         }
 
-        public string ActualizarUsuario(Usuario objUsuario)
+        public string ActualizarUsuario(int codUsuario, string nombre, string contraseña, int codRol, string estado)
         {
             string rpta;
             SqlConnection sqlCon = new SqlConnection();
@@ -113,23 +138,58 @@ namespace Datos.Operaciones
                 sqlCon = Conexion.getInstancia().CrearConexion();
                 SqlCommand cmd = new SqlCommand("Sp_Usuario_Actualizar", sqlCon);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@CodUsuario", SqlDbType.Int).Value = objUsuario.CodUsuario;
-                cmd.Parameters.Add("@CodTrabajador", SqlDbType.Int).Value = objUsuario.CodTrabajador;
-                cmd.Parameters.Add("@NombreUsuario", SqlDbType.NVarChar).Value = objUsuario.NombreUsuario;
-                cmd.Parameters.Add("@Contraseña", SqlDbType.NVarChar).Value = objUsuario.Contraseña;
-                cmd.Parameters.Add("@CodRol", SqlDbType.Int).Value = objUsuario.CodRol;
-                cmd.Parameters.Add("@Estado", SqlDbType.NVarChar).Value = objUsuario.Estado;
+                cmd.Parameters.Add("@CodUsuario", SqlDbType.Int).Value = codUsuario;
+                cmd.Parameters.Add("@NombreUsuario", SqlDbType.NVarChar).Value = nombre;
+                cmd.Parameters.Add("@Contraseña", SqlDbType.NVarChar).Value = contraseña;
+                cmd.Parameters.Add("@CodRol", SqlDbType.Int).Value = codRol;
+                cmd.Parameters.Add("@Estado", SqlDbType.NVarChar).Value = estado;
 
                 SqlParameter parametro = new SqlParameter();
                 parametro.ParameterName = "@Rpta";
                 parametro.SqlDbType = SqlDbType.Int;
                 parametro.Direction = ParameterDirection.Output;
                 cmd.Parameters.Add(parametro);
-                sqlCon.Open();
-                rpta = cmd.ExecuteNonQuery() == 1 ? "Ok" : "No se pudo insertar el registro";
 
+                sqlCon.Open();
+                cmd.ExecuteNonQuery();
+                rpta = Convert.ToInt32(parametro.Value) == 1 ? "Ok" : "No se pudo actualizar el registro";
             }
-            catch(Exception e)
+            catch (Exception e)
+            {
+                rpta = e.Message;
+            }
+            finally
+            {
+                if (sqlCon.State == ConnectionState.Open) sqlCon.Close();
+            }
+
+            return rpta;
+        }
+        public string ActualizarCredenciales(int codUsuario, string nombre, string contraseña)
+        {
+            string rpta;
+            SqlConnection sqlCon = new SqlConnection();
+
+            try
+            {
+                sqlCon = Conexion.getInstancia().CrearConexion();
+                SqlCommand cmd = new SqlCommand("Sp_Usuario_ActualizarCredenciales", sqlCon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@CodUsuario", SqlDbType.Int).Value = codUsuario;
+                cmd.Parameters.Add("@NombreUsuario", SqlDbType.NVarChar).Value = nombre;
+                cmd.Parameters.Add("@Contraseña", SqlDbType.NVarChar).Value = contraseña;
+
+                SqlParameter parametro = new SqlParameter();
+                parametro.ParameterName = "@Rpta";
+                parametro.SqlDbType = SqlDbType.Int;
+                parametro.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(parametro);
+
+                sqlCon.Open();
+                cmd.ExecuteNonQuery();
+                rpta = Convert.ToInt32(parametro.Value) == 1 ? "Ok" : "No se pudo actualizar el registro";
+            }
+            catch (Exception e)
             {
                 rpta = e.Message;
             }

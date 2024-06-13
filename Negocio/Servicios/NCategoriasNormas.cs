@@ -11,10 +11,15 @@ namespace Negocio.Servicios
 {
     public class NCategoriasNormas
     {
-        public static DataTable ListarNormas()
+        public static DataTable ListarCategoriasNormas()
         {
             DCategoriaNorma objDCategoriaNorma = new DCategoriaNorma();
             return objDCategoriaNorma.ListarCategorias();
+        }
+        public static DataTable BuscarCategoriasNormas(string palabra)
+        {
+            DCategoriaNorma objDCategoriaNorma = new DCategoriaNorma();
+            return objDCategoriaNorma.BuscarCategoria(palabra);
         }
 
         public static DataTable ListarUlltimosRegistro()
@@ -26,6 +31,7 @@ namespace Negocio.Servicios
         {
             DCategoriaNorma dCategoriaNorma = new DCategoriaNorma();
             string existe = dCategoriaNorma.ExisteCategoria(nombreCategoria);
+            Console.WriteLine($"Resultado de ExisteArticuloEnNorma: {existe}");
 
             if (existe.Equals("1"))
             {

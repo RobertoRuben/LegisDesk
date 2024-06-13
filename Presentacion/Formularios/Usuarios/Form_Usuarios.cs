@@ -19,12 +19,49 @@ namespace Presentacion.Formularios.Usuarios
         public Form_Usuarios()
         {
             InitializeComponent();
+            this.ListarUsuarios();
+            this.FormatoDataGrid();
         }
-        public void Listar()
+        public void FormatoDataGrid()
+        {
+            dgvUsuarios.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dgvUsuarios.Columns[0].Width = 120;
+        }
+
+        private void SeleccionarUltimoElemento()
+        {
+            if (dgvUsuarios.Rows.Count > 0)
+            {
+                dgvUsuarios.ClearSelection();
+                dgvUsuarios.Rows[dgvUsuarios.Rows.Count - 1].Selected = true;
+                dgvUsuarios.FirstDisplayedScrollingRowIndex = dgvUsuarios.Rows.Count - 1;
+            }
+        }
+
+        public void ListarUsuarios()
         {
             try
             {
                 dgvUsuarios.DataSource = NUsuarios.ListarUsuario();
+                lblResultados.Text = "Total de Registros: " + Convert.ToString(dgvUsuarios.Rows.Count);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message + e.StackTrace);
+            }
+        }
+
+        private void BuscarUsuarios()
+        {
+            try
+            {
+                dgvUsuarios.DataSource = NUsuarios.BuscarUsuario(tbxBusqueda.Texts.Trim());
+                lblResultados.Text = "Total de Registros: " + Convert.ToString(dgvUsuarios.Rows.Count);
+
+                if (dgvUsuarios.Rows.Count < 1)
+                {
+                    MessageBox.Show("No se encontraron resultados", "Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             catch (Exception e)
             {
@@ -35,10 +72,13 @@ namespace Presentacion.Formularios.Usuarios
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             Form_RegistrarUsuario frmRegistro = new Form_RegistrarUsuario();
-            frmRegistro.CargarRoles();
             frmRegistro.CargarTrabajadores();
+            frmRegistro.CargarRoles();
             frmRegistro.operacion = "Registrar";
             frmRegistro.ShowDialog();
+            this.ListarUsuarios();
+            this.FormatoDataGrid();
+            this.SeleccionarUltimoElemento();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -48,7 +88,9 @@ namespace Presentacion.Formularios.Usuarios
             if(dgvUsuarios.SelectedRows.Count > 0)
             {
                 frmRegistro.operacion = "Actualizar";
-                frmRegistro.codTrabajador = Convert.ToInt32(dgvUsuarios.CurrentRow.Cells[0].Value);
+                frmRegistro.codUsuario = Convert.ToInt32(dgvUsuarios.CurrentRow.Cells[0].Value);
+
+                Console.WriteLine("Trabajador ID: " + frmRegistro.codUsuario);
 
                 frmRegistro.CargarRoles();
                 frmRegistro.CargarTrabajadores();
@@ -57,14 +99,31 @@ namespace Presentacion.Formularios.Usuarios
                 frmRegistro.tboxNombreUsuario.Texts = dgvUsuarios.CurrentRow.Cells[2].Value.ToString();
                 //frmRegistro.tboxContraseña.Texts = dgvUsuarios.CurrentRow.Cells[2].Value.ToString();
                 frmRegistro.cboxRol.Texts = dgvUsuarios.CurrentRow.Cells[3].Value.ToString();
+
+                // Añadir la lógica para los RadioButtons
+                string estado = dgvUsuarios.CurrentRow.Cells[4].Value.ToString();
+                if (estado.Equals("Activo", StringComparison.OrdinalIgnoreCase))
+                {
+                    frmRegistro.rbtnActivo.Checked = true;
+                    frmRegistro.rbtnInactivo.Checked = false;
+                }
+                else if (estado.Equals("Inactivo", StringComparison.OrdinalIgnoreCase))
+                {
+                    frmRegistro.rbtnActivo.Checked = false;
+                    frmRegistro.rbtnInactivo.Checked = true;
+                }
+
+                frmRegistro.ShowDialog();
+                this.ListarUsuarios();
+                this.FormatoDataGrid();
             }
-            frmRegistro.ShowDialog();
+            
 
         }
 
         private void Form_Usuarios_Load(object sender, EventArgs e)
         {
-            Listar();
+            ListarUsuarios();
         }
 
         private void btnInhabilitar_Click(object sender, EventArgs e)
@@ -86,6 +145,8 @@ namespace Presentacion.Formularios.Usuarios
                         if (rpta.Equals("Ok"))
                         {
                             this.MensajeOk("Se inhabilitó el trabajador");
+                            this.ListarUsuarios();
+                            this.FormatoDataGrid();
                         }
                         else
                         {
@@ -105,6 +166,11 @@ namespace Presentacion.Formularios.Usuarios
 
         }
 
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            this.BuscarUsuarios();
+        }
+
         private void MensajeError(string mensaje)
         {
             MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -113,6 +179,11 @@ namespace Presentacion.Formularios.Usuarios
         private void MensajeOk(string mensaje)
         {
             MessageBox.Show(mensaje, "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnLimpiarBusqueda_Click(object sender, EventArgs e)
+        {
+            tbxBusqueda.Texts = "";
         }
     }
 }

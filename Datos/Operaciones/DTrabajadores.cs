@@ -12,7 +12,7 @@ namespace Datos.Operaciones
 {
     public class DTrabajadores
     {
-        public DataTable Listar()
+        public DataTable ListarNormas()
         {
             SqlDataReader resultado;
             DataTable tabla = new DataTable();
@@ -41,7 +41,7 @@ namespace Datos.Operaciones
 
         }
 
-        public string Registrar(Trabajador objTrabajador)
+        public string RegistrarTrabajadores(Trabajador objTrabajador)
         {
             string rpta;
             SqlConnection sqlCon = new SqlConnection();
@@ -72,7 +72,7 @@ namespace Datos.Operaciones
             return rpta;
         }
 
-        public string Actualizar(Trabajador objTrabajador)
+        public string ActualizarTrabajadores(int codTrabajador, int dni, string nombre, string apellidoPaterno, string apellidoMaterno, string sexo)
         {
             string rpta;
             SqlConnection sqlCon = new SqlConnection();
@@ -82,12 +82,12 @@ namespace Datos.Operaciones
                 sqlCon = Conexion.getInstancia().CrearConexion();
                 SqlCommand cmd = new SqlCommand("SP_TrabajoresActualizar", sqlCon);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@CodTrabajador", SqlDbType.Int).Value = objTrabajador.CodTrabajador;
-                cmd.Parameters.Add("@Dni", SqlDbType.Int).Value = objTrabajador.Dni;
-                cmd.Parameters.Add("@Nombres", SqlDbType.NVarChar).Value = objTrabajador.Nombre;
-                cmd.Parameters.Add("@ApellidoPaterno", SqlDbType.NVarChar).Value = objTrabajador.ApellidoPaterno;
-                cmd.Parameters.Add("@ApellidoMaterno", SqlDbType.NVarChar).Value = objTrabajador.ApellidoMaterno;
-                cmd.Parameters.Add("@Sexo", SqlDbType.NVarChar).Value = objTrabajador.Sexo;
+                cmd.Parameters.Add("@CodTrabajador", SqlDbType.Int).Value = codTrabajador;
+                cmd.Parameters.Add("@Dni", SqlDbType.Int).Value = dni;
+                cmd.Parameters.Add("@Nombres", SqlDbType.NVarChar).Value = nombre;
+                cmd.Parameters.Add("@ApellidoPaterno", SqlDbType.NVarChar).Value = apellidoPaterno;
+                cmd.Parameters.Add("@ApellidoMaterno", SqlDbType.NVarChar).Value = apellidoMaterno;
+                cmd.Parameters.Add("@Sexo", SqlDbType.NVarChar).Value = sexo;
                 sqlCon.Open();
                 rpta = cmd.ExecuteNonQuery() == 1 ? "Ok" : "No se pudo Actualizar el Registro";
             }

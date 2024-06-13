@@ -38,7 +38,11 @@ namespace Presentacion.Formularios.CategoriaNormas
         {
             MessageBox.Show(mensaje, "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
+        // Función para validar si el texto contiene números
+        private bool ContieneNumeros(string texto)
+        {
+            return texto.Any(char.IsDigit);
+        }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Form_Principal form_Principal = new Form_Principal();
@@ -54,6 +58,11 @@ namespace Presentacion.Formularios.CategoriaNormas
                         rpta = "Todos los campos no obligatorios";
                         MensajeError(rpta);
 
+                    }
+                    else if (ContieneNumeros(tboxNombreCategoria.Texts.Trim()))
+                    {
+                        rpta = "El nombre de la cateogoria de una norma no debe contener números";
+                        MensajeError(rpta);
                     }
                     else
                     {
@@ -98,7 +107,7 @@ namespace Presentacion.Formularios.CategoriaNormas
                         {
                             this.MensajeOk("Registro Existoso");
                             Form_CategoriaNormas frmCategoriaNormas = new Form_CategoriaNormas();
-                            frmCategoriaNormas.Listar();
+                            frmCategoriaNormas.ListarCategorias();
                             this.Close();
                         }
                         else

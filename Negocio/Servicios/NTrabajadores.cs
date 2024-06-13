@@ -13,7 +13,8 @@ namespace Negocio.Servicios
         public static DataTable ListarTrabajadores()
         {
             DTrabajadores Dtrabajadores = new DTrabajadores();
-            return Dtrabajadores.Listar();
+            return Dtrabajadores.ListarNormas();
         }
+
     }
 }

@@ -10,9 +10,9 @@ using Entidad.Clases;
 
 namespace Datos.Operaciones
 {
-    public class DNormas
+    public class DArticulos
     {
-        public DataTable ListarNormas()
+        public DataTable ListarArticulos(int codNorma)
         {
             SqlDataReader resultado;
             DataTable tabla = new DataTable();
@@ -21,16 +21,17 @@ namespace Datos.Operaciones
             try
             {
                 sqlCon = Conexion.getInstancia().CrearConexion();
-                SqlCommand cmd = new SqlCommand("Sp_Normas_Listar", sqlCon);
+                SqlCommand cmd = new SqlCommand("Sp_Articulos_Listar", sqlCon);
+                cmd.Parameters.Add("@CodNorma", SqlDbType.Int).Value = codNorma;
+
                 cmd.CommandType = CommandType.StoredProcedure;
                 sqlCon.Open();
                 resultado = cmd.ExecuteReader();
                 tabla.Load(resultado);
-
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                throw ex;
+                throw e;
             }
             finally
             {
@@ -38,9 +39,8 @@ namespace Datos.Operaciones
             }
 
             return tabla;
-
         }
-        public DataTable BuscarNorma(string palabra)
+        public DataTable ListarUltimoRegisro()
         {
             SqlDataReader resultado;
             DataTable tabla = new DataTable();
@@ -49,9 +49,8 @@ namespace Datos.Operaciones
             try
             {
                 sqlCon = Conexion.getInstancia().CrearConexion();
-                SqlCommand cmd = new SqlCommand("Sp_Normas_Buscar", sqlCon);
+                SqlCommand cmd = new SqlCommand("Sp_Articulos_Listar_UltimoRegistro", sqlCon);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@Palabra", SqlDbType.NVarChar).Value = palabra;
                 sqlCon.Open();
                 resultado = cmd.ExecuteReader();
                 tabla.Load(resultado);
@@ -68,7 +67,39 @@ namespace Datos.Operaciones
             return tabla;
         }
 
-        public string RegistrarNormas(Normas objNormas)
+        public DataTable BuscarArticulos(int codNormatividad, string palabra)
+        {
+            SqlDataReader resultado;
+            DataTable tabla = new DataTable();
+            SqlConnection sqlCon = new SqlConnection();
+
+            try
+            {
+                sqlCon = Conexion.getInstancia().CrearConexion();
+                SqlCommand cmd = new SqlCommand("Sp_Articulos_Buscar", sqlCon);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                // Agregar parámetros
+                cmd.Parameters.Add("@CodNormatividad", SqlDbType.Int).Value = codNormatividad;
+                cmd.Parameters.Add("@Palabra", SqlDbType.NVarChar).Value = palabra;
+
+                sqlCon.Open();
+                resultado = cmd.ExecuteReader();
+                tabla.Load(resultado);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                if (sqlCon.State == ConnectionState.Open) sqlCon.Close();
+            }
+
+            return tabla;
+        }
+
+        public string RegistrarArticulo(Articulo objArticulo)
         {
             string rpta;
             SqlConnection sqlCon = new SqlConnection();
@@ -76,18 +107,14 @@ namespace Datos.Operaciones
             try
             {
                 sqlCon = Conexion.getInstancia().CrearConexion();
-                SqlCommand cmd = new SqlCommand("Sp_Normas_Registrar", sqlCon);
+                SqlCommand cmd = new SqlCommand("Sp_Articulos_Registrar", sqlCon);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@CodUsuario", SqlDbType.Int).Value = objNormas.CodUsuario;
-                cmd.Parameters.Add("@CodTipoNorma", SqlDbType.Int).Value = objNormas.CodTipoNorma;
-                cmd.Parameters.Add("@NumeroNorma", SqlDbType.NVarChar).Value = objNormas.NumeroNorma;
-                cmd.Parameters.Add("@NombreNorma", SqlDbType.NVarChar).Value = objNormas.NombreNorma;
-                cmd.Parameters.Add("@Resumen", SqlDbType.NVarChar).Value = objNormas.Resumen;
-                cmd.Parameters.Add("@FechaPublicacion", SqlDbType.NVarChar).Value = objNormas.FechaPublicacion;
-                cmd.Parameters.Add("@CantidadDePaginas", SqlDbType.Int).Value = objNormas.CantidadDePaginas;
-                cmd.Parameters.Add("@MedioPublicacion", SqlDbType.NVarChar).Value = objNormas.MedioPublicacion;
-                cmd.Parameters.Add("@LinkDocumentos", SqlDbType.NVarChar).Value = objNormas.LinkDocumento;
-                cmd.Parameters.Add("@Estado", SqlDbType.NVarChar).Value = objNormas.Estado;
+                cmd.Parameters.Add("@CodNormatividad", SqlDbType.Int).Value = objArticulo.CodNormatividad;
+                cmd.Parameters.Add("@NumArticulo", SqlDbType.Int).Value = objArticulo.NumArticulo;
+                cmd.Parameters.Add("@Denominacion", SqlDbType.NVarChar).Value = objArticulo.Denominacion;
+                cmd.Parameters.Add("@Descripcion", SqlDbType.NVarChar).Value = objArticulo.Descripcion;
+                cmd.Parameters.Add("@Pagina", SqlDbType.Int).Value = objArticulo.Pagina;
+                cmd.Parameters.Add("@Estado", SqlDbType.NVarChar).Value = objArticulo.Estado;
 
                 SqlParameter parametro = new SqlParameter();
                 parametro.ParameterName = "@Rpta";
@@ -97,14 +124,23 @@ namespace Datos.Operaciones
 
                 sqlCon.Open();
                 cmd.ExecuteNonQuery();
-
-                // Leer el parámetro de salida después de ejecutar el procedimiento
-                rpta = Convert.ToInt32(parametro.Value) > 0 ? "Ok" : "No se pudo insertar el registro";
-
+                rpta = Convert.ToInt32(parametro.Value) == 1 ? "Ok" : "No se pudo insertar el registro";
             }
             catch (Exception e)
             {
-                rpta = e.Message;
+                // Capturar detalles adicionales de la excepción
+                StringBuilder sb = new StringBuilder();
+                sb.AppendLine(e.Message);
+                sb.AppendLine(e.StackTrace);
+
+                if (e.InnerException != null)
+                {
+                    sb.AppendLine("Inner Exception:");
+                    sb.AppendLine(e.InnerException.Message);
+                    sb.AppendLine(e.InnerException.StackTrace);
+                }
+
+                rpta = sb.ToString();
             }
             finally
             {
@@ -114,8 +150,8 @@ namespace Datos.Operaciones
             return rpta;
         }
 
-        public string ActualizarNormas(int codNormatividad, int codTipoNorma, string numeroNorma, string nombreNorma, string resumen, string fechaPublicacion,
-            int cantidadPaginas, string medioPublicacion, string linkDocumento, string estado)
+
+        public string ActualizarArticulo(int codArticulo, int codNormatividad, int numArticulo, string denominacion, string descripcion, int pagina, string estado)
         {
             string rpta;
             SqlConnection sqlCon = new SqlConnection();
@@ -123,17 +159,14 @@ namespace Datos.Operaciones
             try
             {
                 sqlCon = Conexion.getInstancia().CrearConexion();
-                SqlCommand cmd = new SqlCommand("Sp_Normas_Actualizar", sqlCon);
+                SqlCommand cmd = new SqlCommand("Sp_Articulos_Actualizar", sqlCon);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@CodArticulo", SqlDbType.Int).Value = codArticulo;
                 cmd.Parameters.Add("@CodNormatividad", SqlDbType.Int).Value = codNormatividad;
-                cmd.Parameters.Add("@CodTipoNorma", SqlDbType.Int).Value = codTipoNorma;
-                cmd.Parameters.Add("@NumeroNorma", SqlDbType.NVarChar).Value  = numeroNorma;
-                cmd.Parameters.Add("@NombreNorma", SqlDbType.NVarChar).Value = nombreNorma;
-                cmd.Parameters.Add("@Resumen", SqlDbType.NVarChar).Value = resumen;
-                cmd.Parameters.Add("@FechaPublicacion", SqlDbType.NVarChar).Value = fechaPublicacion;
-                cmd.Parameters.Add("@CantidadPaginas", SqlDbType.Int).Value = cantidadPaginas;
-                cmd.Parameters.Add("@MedioPublicacion", SqlDbType.NVarChar).Value = medioPublicacion;
-                cmd.Parameters.Add("@LinkDocumento", SqlDbType.NVarChar).Value = linkDocumento;
+                cmd.Parameters.Add("@NumArticulo", SqlDbType.Int).Value = numArticulo;
+                cmd.Parameters.Add("@Denominacion", SqlDbType.NVarChar).Value = denominacion;
+                cmd.Parameters.Add("@Descripcion", SqlDbType.NVarChar).Value = descripcion;
+                cmd.Parameters.Add("@Pagina", SqlDbType.Int).Value = pagina;
                 cmd.Parameters.Add("@Estado", SqlDbType.NVarChar).Value = estado;
 
                 SqlParameter parametro = new SqlParameter();
@@ -144,9 +177,7 @@ namespace Datos.Operaciones
 
                 sqlCon.Open();
                 cmd.ExecuteNonQuery();
-
-                rpta = Convert.ToInt32(parametro.Value) > 0 ? "Ok" : "No se pudo actualizar el registro";
-
+                rpta = Convert.ToInt32(parametro.Value) == 1 ? "Ok" : "No se pudo actualizar el registro";
             }
             catch (Exception e)
             {
@@ -159,7 +190,8 @@ namespace Datos.Operaciones
 
             return rpta;
         }
-        public string EliminarNormas(int codNormatividad)
+
+        public string EliminarArticulo(int codArticulo)
         {
             string rpta;
             SqlConnection sqlCon = new SqlConnection();
@@ -167,9 +199,44 @@ namespace Datos.Operaciones
             try
             {
                 sqlCon = Conexion.getInstancia().CrearConexion();
-                SqlCommand cmd = new SqlCommand("Sp_Normas_Eliminar", sqlCon);
+                SqlCommand cmd = new SqlCommand("Sp_Articulos_Eliminar", sqlCon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@CodArticulo", SqlDbType.Int).Value = codArticulo;
+
+                SqlParameter parametro = new SqlParameter();
+                parametro.ParameterName = "@Rpta";
+                parametro.SqlDbType = SqlDbType.Int;
+                parametro.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(parametro);
+
+                sqlCon.Open();
+                cmd.ExecuteNonQuery();
+                rpta = Convert.ToInt32(parametro.Value) == 1 ? "Ok" : "No se pudo eliminar el registro";
+            }
+            catch (Exception e)
+            {
+                rpta = e.Message;
+            }
+            finally
+            {
+                if (sqlCon.State == ConnectionState.Open) sqlCon.Close();
+            }
+
+            return rpta;
+        }
+
+        public string ExisteArticuloEnNorma(int codNormatividad, int numArticulo)
+        {
+            string rpta;
+            SqlConnection sqlCon = new SqlConnection();
+
+            try
+            {
+                sqlCon = Conexion.getInstancia().CrearConexion();
+                SqlCommand cmd = new SqlCommand("Sp_Articulo_ExisteEnNorma", sqlCon);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@CodNormatividad", SqlDbType.Int).Value = codNormatividad;
+                cmd.Parameters.Add("@NumArticulo", SqlDbType.Int).Value = numArticulo;
 
                 SqlParameter parametro = new SqlParameter();
                 parametro.ParameterName = "@Rpta";
@@ -178,42 +245,8 @@ namespace Datos.Operaciones
                 cmd.Parameters.Add(parametro);
 
                 sqlCon.Open();
-                cmd.ExecuteNonQuery();
-                rpta = Convert.ToInt32(parametro.Value) == 1 ? "Ok" : "No se pudo eliminar la norma";
-            }
-            catch (Exception e)
-            {
-                rpta = e.Message;
-            }
-            finally
-            {
-                if (sqlCon.State == ConnectionState.Open) sqlCon.Close();
-            }
-
-            return rpta;
-        }
-        public string ExisteNumeroNorma(string valor)
-        {
-            string rpta;
-            SqlConnection sqlCon = new SqlConnection();
-
-            try
-            {
-                sqlCon = Conexion.getInstancia().CrearConexion();
-                SqlCommand cmd = new SqlCommand("Sp_Normas_VerificarNumero", sqlCon);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@Valor", SqlDbType.NVarChar).Value = valor;
-
-                SqlParameter parametro = new SqlParameter();
-                parametro.ParameterName = "@Rpta";
-                parametro.SqlDbType = SqlDbType.Int;
-                parametro.Direction = ParameterDirection.Output;
-                cmd.Parameters.Add(parametro);
-                sqlCon.Open();
-
                 cmd.ExecuteNonQuery();
                 rpta = Convert.ToString(parametro.Value);
-
             }
             catch (Exception e)
             {
@@ -225,8 +258,9 @@ namespace Datos.Operaciones
             }
 
             return rpta;
-
         }
+
+
+
     }
 }
-

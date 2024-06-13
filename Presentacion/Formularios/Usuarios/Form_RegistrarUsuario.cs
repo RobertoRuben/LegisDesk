@@ -16,8 +16,7 @@ namespace Presentacion.Usuarios
     public partial class Form_RegistrarUsuario : Form
     {
         public string operacion = "";
-        public int codTrabajador;
-        public string estado = "Activo";
+        public int codUsuario;
 
         public Form_RegistrarUsuario()
         {
@@ -30,6 +29,21 @@ namespace Presentacion.Usuarios
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private string ObtenerEstado()
+        {
+            if (rbtnActivo.Checked)
+            {
+                return "Activo";
+            }
+            else if (rbtnInactivo.Checked)
+            {
+                return "Inactivo";
+            }
+            else
+            {
+                return "Estado no definido";
+            }
         }
 
         public void CargarTrabajadores()
@@ -54,7 +68,7 @@ namespace Presentacion.Usuarios
             try
             {
                 cboxRol.DataSource = NRol.ListarRoles();
-                cboxRol.DisplayMember = "NombreRol";
+                cboxRol.DisplayMember = "Nombre del Rol";
                 cboxRol.ValueMember = "CodRol";
                 cboxRol.Texts = "Seleccione un Rol";
             }
@@ -101,14 +115,14 @@ namespace Presentacion.Usuarios
                         rpta = "Verificar, todos los campos obligatorios";
                         MensajeError(rpta);
                     }
+                    else if (!tboxContraseña.Texts.Trim().Equals(tboxConfirmacion.Texts.Trim()))
+                    {
+                        rpta = "La contraseña y la confirmación no coinciden";
+                        MensajeError(rpta);
+                    }
                     else
                     {
-                           
-                        //int codTrabajador = Convert.ToInt32(cboxTrabajadores.SelectedValue);
-                        //string usuario = (tboxNombreUsuario.Texts).Trim();
-                        //string contraseña = PasswordEncryptor.Encryptor(tboxContraseña.Texts.Trim());
-                        //string confirmarContraseña = tboxConfirmacion.Texts.Trim();
-                        
+                        string estado = ObtenerEstado();
                         //int codRol = Convert.ToInt32(cboxRol.SelectedValue);
 
                         rpta = NUsuarios.RegistrarUsuario(
@@ -118,11 +132,6 @@ namespace Presentacion.Usuarios
                             estado,
                             Convert.ToInt32(cboxRol.SelectedValue)
                             );
-                        //Console.WriteLine("Cod Trabajador: " + codTrabajador);
-                        //Console.WriteLine("Usuario: " + usuario);
-                        //Console.WriteLine("Contraseña: " + contraseña);
-                        //Console.WriteLine("Estado: " + estado);
-                        //Console.WriteLine("Cod Rol: " + codRol);
                         if (rpta.Equals("Ok"))
                         {
                             this.MensajeOk("Registro exitoso");
@@ -141,10 +150,12 @@ namespace Presentacion.Usuarios
             }
             else if (operacion.Equals("Actualizar"))
             {
+                Console.WriteLine("Operacion: " + operacion);
+                Console.WriteLine("Id Trabajador: " + codUsuario);
                 try
                 {
                     string rpta = "";
-
+                    string estado = ObtenerEstado();
                     // Validación de contraseña no vacía
                     string contraseña = tboxContraseña.Texts.Trim();
                     string contraseñaEncriptada = string.Empty;
@@ -155,13 +166,15 @@ namespace Presentacion.Usuarios
                         contraseñaEncriptada = PasswordEncryptor.Encryptor(contraseña);
                     }
 
+                    int rolTrabajador = (int)cboxRol.SelectedValue;
+                    string nombreUsuario = tboxNombreUsuario.Texts.Trim();
+
                     // Resto del código de actualización
                     rpta = NUsuarios.ActualizarUsuario(
-                        codTrabajador,
-                        Convert.ToInt32(cboxRol.SelectedValue),
-                        Convert.ToInt32(cboxTrabajadores.SelectedValue),
-                        tboxNombreUsuario.Texts.Trim(),
-                        contraseñaEncriptada, // Aquí pasamos la contraseña encriptada (o cadena vacía si la contraseña estaba vacía)
+                        codUsuario,
+                        rolTrabajador,
+                        nombreUsuario,
+                        contraseñaEncriptada,
                         estado
                     );
                     if (rpta.Equals("Ok"))
@@ -172,6 +185,11 @@ namespace Presentacion.Usuarios
                     else
                     {
                         this.MensajeError(rpta);
+                        Console.WriteLine("CodUsuario: " + codUsuario);
+                        Console.WriteLine("Rol Trabajador: " + rolTrabajador);
+                        Console.WriteLine("Nombre Usuario: " + nombreUsuario);
+                        Console.WriteLine("Contraseña: " + contraseña);
+                        Console.WriteLine("Estado: " + estado);
                     }
                 }
                 catch(Exception ex)

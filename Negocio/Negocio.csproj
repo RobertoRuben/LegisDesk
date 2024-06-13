@@ -44,7 +44,9 @@
     <Compile Include="Manipulaciones\TransformarTexto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Seguridad\PasswordEncryptor.cs" />
+    <Compile Include="Servicios\NArticulos.cs" />
     <Compile Include="Servicios\NCategoriasNormas.cs" />
+    <Compile Include="Servicios\NNormas.cs" />
     <Compile Include="Servicios\NRol.cs" />
     <Compile Include="Servicios\NTrabajadores.cs" />
     <Compile Include="Servicios\NUsuarios.cs" />

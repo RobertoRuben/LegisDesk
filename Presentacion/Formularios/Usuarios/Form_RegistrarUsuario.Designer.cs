@@ -70,9 +70,9 @@ namespace Presentacion.Usuarios
             this.panel1.Controls.Add(this.tboxConfirmacion);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 23);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1020, 428);
+            this.panel1.Size = new System.Drawing.Size(1020, 439);
             this.panel1.TabIndex = 46;
             // 
             // cboxRol
@@ -88,7 +88,7 @@ namespace Presentacion.Usuarios
             this.cboxRol.IconColor = System.Drawing.Color.Silver;
             this.cboxRol.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.cboxRol.ListTextColor = System.Drawing.Color.DimGray;
-            this.cboxRol.Location = new System.Drawing.Point(15, 373);
+            this.cboxRol.Location = new System.Drawing.Point(15, 366);
             this.cboxRol.MinimumSize = new System.Drawing.Size(200, 30);
             this.cboxRol.Name = "cboxRol";
             this.cboxRol.Padding = new System.Windows.Forms.Padding(1);
@@ -110,12 +110,12 @@ namespace Presentacion.Usuarios
             this.cboxTrabajadores.IconColor = System.Drawing.Color.Silver;
             this.cboxTrabajadores.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.cboxTrabajadores.ListTextColor = System.Drawing.Color.DimGray;
-            this.cboxTrabajadores.Location = new System.Drawing.Point(13, 91);
+            this.cboxTrabajadores.Location = new System.Drawing.Point(13, 78);
             this.cboxTrabajadores.MinimumSize = new System.Drawing.Size(200, 30);
             this.cboxTrabajadores.Name = "cboxTrabajadores";
             this.cboxTrabajadores.Padding = new System.Windows.Forms.Padding(1);
             this.cboxTrabajadores.SelectedValue = null;
-            this.cboxTrabajadores.Size = new System.Drawing.Size(987, 34);
+            this.cboxTrabajadores.Size = new System.Drawing.Size(987, 39);
             this.cboxTrabajadores.TabIndex = 49;
             this.cboxTrabajadores.Texts = "";
             // 
@@ -126,7 +126,7 @@ namespace Presentacion.Usuarios
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.User;
             this.iconPictureBox1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(119)))), ((int)(((byte)(135)))));
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.Location = new System.Drawing.Point(13, 13);
+            this.iconPictureBox1.Location = new System.Drawing.Point(13, 6);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(32, 32);
             this.iconPictureBox1.TabIndex = 46;
@@ -137,7 +137,7 @@ namespace Presentacion.Usuarios
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12.25F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(73)))), ((int)(((byte)(85)))));
-            this.label6.Location = new System.Drawing.Point(9, 136);
+            this.label6.Location = new System.Drawing.Point(9, 129);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(167, 19);
             this.label6.TabIndex = 45;
@@ -152,11 +152,11 @@ namespace Presentacion.Usuarios
             this.tboxNombreUsuario.BorderSize = 1;
             this.tboxNombreUsuario.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.tboxNombreUsuario.ForeColor = System.Drawing.Color.DimGray;
-            this.tboxNombreUsuario.Location = new System.Drawing.Point(13, 159);
-            this.tboxNombreUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.tboxNombreUsuario.Location = new System.Drawing.Point(13, 152);
+            this.tboxNombreUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tboxNombreUsuario.Multiline = false;
             this.tboxNombreUsuario.Name = "tboxNombreUsuario";
-            this.tboxNombreUsuario.Padding = new System.Windows.Forms.Padding(7);
+            this.tboxNombreUsuario.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.tboxNombreUsuario.PasswordChar = false;
             this.tboxNombreUsuario.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.tboxNombreUsuario.PlaceholderText = "";
@@ -171,7 +171,7 @@ namespace Presentacion.Usuarios
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(56)))), ((int)(((byte)(66)))));
-            this.label9.Location = new System.Drawing.Point(43, 17);
+            this.label9.Location = new System.Drawing.Point(43, 10);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(165, 23);
             this.label9.TabIndex = 43;
@@ -184,7 +184,7 @@ namespace Presentacion.Usuarios
             this.rbtnInactivo.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.rbtnInactivo.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.rbtnInactivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
-            this.rbtnInactivo.Location = new System.Drawing.Point(604, 383);
+            this.rbtnInactivo.Location = new System.Drawing.Point(604, 376);
             this.rbtnInactivo.MinimumSize = new System.Drawing.Size(0, 21);
             this.rbtnInactivo.Name = "rbtnInactivo";
             this.rbtnInactivo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -202,7 +202,7 @@ namespace Presentacion.Usuarios
             this.rbtnActivo.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.rbtnActivo.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.rbtnActivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
-            this.rbtnActivo.Location = new System.Drawing.Point(512, 383);
+            this.rbtnActivo.Location = new System.Drawing.Point(512, 376);
             this.rbtnActivo.MinimumSize = new System.Drawing.Size(0, 21);
             this.rbtnActivo.Name = "rbtnActivo";
             this.rbtnActivo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -218,7 +218,7 @@ namespace Presentacion.Usuarios
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12.25F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(73)))), ((int)(((byte)(85)))));
-            this.label4.Location = new System.Drawing.Point(11, 205);
+            this.label4.Location = new System.Drawing.Point(11, 198);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(103, 19);
             this.label4.TabIndex = 15;
@@ -229,7 +229,7 @@ namespace Presentacion.Usuarios
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12.25F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(73)))), ((int)(((byte)(85)))));
-            this.label3.Location = new System.Drawing.Point(11, 278);
+            this.label3.Location = new System.Drawing.Point(11, 271);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(188, 19);
             this.label3.TabIndex = 14;
@@ -240,7 +240,7 @@ namespace Presentacion.Usuarios
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12.25F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(73)))), ((int)(((byte)(85)))));
-            this.label5.Location = new System.Drawing.Point(508, 351);
+            this.label5.Location = new System.Drawing.Point(508, 344);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 19);
             this.label5.TabIndex = 18;
@@ -255,11 +255,11 @@ namespace Presentacion.Usuarios
             this.tboxContraseña.BorderSize = 1;
             this.tboxContraseña.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.tboxContraseña.ForeColor = System.Drawing.Color.DimGray;
-            this.tboxContraseña.Location = new System.Drawing.Point(15, 230);
-            this.tboxContraseña.Margin = new System.Windows.Forms.Padding(4);
+            this.tboxContraseña.Location = new System.Drawing.Point(15, 223);
+            this.tboxContraseña.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tboxContraseña.Multiline = false;
             this.tboxContraseña.Name = "tboxContraseña";
-            this.tboxContraseña.Padding = new System.Windows.Forms.Padding(7);
+            this.tboxContraseña.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.tboxContraseña.PasswordChar = true;
             this.tboxContraseña.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.tboxContraseña.PlaceholderText = "";
@@ -278,11 +278,11 @@ namespace Presentacion.Usuarios
             this.tboxConfirmacion.BorderSize = 1;
             this.tboxConfirmacion.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.tboxConfirmacion.ForeColor = System.Drawing.Color.DimGray;
-            this.tboxConfirmacion.Location = new System.Drawing.Point(15, 303);
-            this.tboxConfirmacion.Margin = new System.Windows.Forms.Padding(4);
+            this.tboxConfirmacion.Location = new System.Drawing.Point(15, 296);
+            this.tboxConfirmacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tboxConfirmacion.Multiline = false;
             this.tboxConfirmacion.Name = "tboxConfirmacion";
-            this.tboxConfirmacion.Padding = new System.Windows.Forms.Padding(7);
+            this.tboxConfirmacion.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.tboxConfirmacion.PasswordChar = true;
             this.tboxConfirmacion.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.tboxConfirmacion.PlaceholderText = "";
@@ -297,7 +297,7 @@ namespace Presentacion.Usuarios
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12.25F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(73)))), ((int)(((byte)(85)))));
-            this.label2.Location = new System.Drawing.Point(11, 351);
+            this.label2.Location = new System.Drawing.Point(11, 344);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(34, 19);
             this.label2.TabIndex = 11;
@@ -308,7 +308,7 @@ namespace Presentacion.Usuarios
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12.25F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(73)))), ((int)(((byte)(85)))));
-            this.label1.Location = new System.Drawing.Point(9, 67);
+            this.label1.Location = new System.Drawing.Point(9, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 19);
             this.label1.TabIndex = 9;

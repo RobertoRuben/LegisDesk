@@ -14,7 +14,13 @@ namespace Negocio.Servicios
         public static DataTable ListarRoles()
         {
             DRol Drol = new DRol();
-            return Drol.Listar();
+            return Drol.ListarRol();
+        }
+
+        public static DataTable BuscarRol(string palabra)
+        {
+            DRol dRol = new DRol();
+            return dRol.BuscarRol(palabra);
         }
 
         public static string RegistrarRoles(string nombreRol)
@@ -35,6 +41,12 @@ namespace Negocio.Servicios
 
             }
             
+        }
+
+        public static string EliminarRol(int codRol)
+        {
+            DRol dRol = new DRol();
+            return dRol.EliminarRol(codRol);
         }
 
         public static string ActulizarRoles(int codUsuario, int codRol, string nombreRol)

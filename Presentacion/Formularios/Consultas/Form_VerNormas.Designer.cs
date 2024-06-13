@@ -1,7 +1,7 @@
 ﻿
-namespace Presentacion.Formularios.Normas
+namespace Presentacion.Formularios.Consultas
 {
-    partial class Form_RegistrarNormas
+    partial class Form_VerNormas
     {
         /// <summary>
         /// Required designer variable.
@@ -29,19 +29,19 @@ namespace Presentacion.Formularios.Normas
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cboxCategoriaNorma = new Presentacion.CustomControls.RJComboBox();
+            this.tboxFechaPublicacion = new Presentacion.CustomControls.RJTextBox();
+            this.tboxPaginas = new Presentacion.CustomControls.RJTextBox();
+            this.tboxEstado = new Presentacion.CustomControls.RJTextBox();
+            this.linkEnlace = new System.Windows.Forms.LinkLabel();
+            this.tboxMedioPublicacion = new Presentacion.CustomControls.RJTextBox();
+            this.tboxCategoriaNorma = new Presentacion.CustomControls.RJTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.NumUpDownPaginas = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
-            this.tboxLink = new Presentacion.CustomControls.RJTextBox();
-            this.dtpFechaRegistro = new Presentacion.CustomControls.RJDatePicker();
             this.label7 = new System.Windows.Forms.Label();
-            this.rbtnDerogado = new Presentacion.CustomControls.RJRadioButton();
-            this.rbtnVigente = new Presentacion.CustomControls.RJRadioButton();
             this.label5 = new System.Windows.Forms.Label();
-            this.cboxMedioPublicacion = new Presentacion.CustomControls.RJComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tboxResumen = new Presentacion.CustomControls.RJTextBox();
@@ -53,27 +53,45 @@ namespace Presentacion.Formularios.Normas
             this.tboxNumNorma = new Presentacion.CustomControls.RJTextBox();
             this.btnSair = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
-            this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NumUpDownPaginas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Xmark;
+            this.btnCancelar.IconColor = System.Drawing.Color.White;
+            this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCancelar.IconSize = 32;
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.Location = new System.Drawing.Point(166, 558);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(148, 40);
+            this.btnCancelar.TabIndex = 60;
+            this.btnCancelar.Text = "    Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
-            this.panel1.Controls.Add(this.cboxCategoriaNorma);
+            this.panel1.Controls.Add(this.tboxFechaPublicacion);
+            this.panel1.Controls.Add(this.tboxPaginas);
+            this.panel1.Controls.Add(this.tboxEstado);
+            this.panel1.Controls.Add(this.linkEnlace);
+            this.panel1.Controls.Add(this.tboxMedioPublicacion);
+            this.panel1.Controls.Add(this.tboxCategoriaNorma);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.NumUpDownPaginas);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.tboxLink);
-            this.panel1.Controls.Add(this.dtpFechaRegistro);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.rbtnDerogado);
-            this.panel1.Controls.Add(this.rbtnVigente);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.cboxMedioPublicacion);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.tboxResumen);
@@ -86,29 +104,134 @@ namespace Presentacion.Formularios.Normas
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1020, 526);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 59;
             // 
-            // cboxCategoriaNorma
+            // tboxFechaPublicacion
             // 
-            this.cboxCategoriaNorma.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cboxCategoriaNorma.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboxCategoriaNorma.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cboxCategoriaNorma.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.cboxCategoriaNorma.BorderSize = 1;
-            this.cboxCategoriaNorma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cboxCategoriaNorma.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.cboxCategoriaNorma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
-            this.cboxCategoriaNorma.IconColor = System.Drawing.Color.Silver;
-            this.cboxCategoriaNorma.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.cboxCategoriaNorma.ListTextColor = System.Drawing.Color.DimGray;
-            this.cboxCategoriaNorma.Location = new System.Drawing.Point(16, 385);
-            this.cboxCategoriaNorma.MinimumSize = new System.Drawing.Size(200, 30);
-            this.cboxCategoriaNorma.Name = "cboxCategoriaNorma";
-            this.cboxCategoriaNorma.Padding = new System.Windows.Forms.Padding(1);
-            this.cboxCategoriaNorma.SelectedValue = null;
-            this.cboxCategoriaNorma.Size = new System.Drawing.Size(380, 30);
-            this.cboxCategoriaNorma.TabIndex = 5;
-            this.cboxCategoriaNorma.Texts = "";
+            this.tboxFechaPublicacion.BackColor = System.Drawing.SystemColors.Window;
+            this.tboxFechaPublicacion.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
+            this.tboxFechaPublicacion.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.tboxFechaPublicacion.BorderRadius = 1;
+            this.tboxFechaPublicacion.BorderSize = 1;
+            this.tboxFechaPublicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxFechaPublicacion.ForeColor = System.Drawing.Color.DimGray;
+            this.tboxFechaPublicacion.Location = new System.Drawing.Point(701, 386);
+            this.tboxFechaPublicacion.Margin = new System.Windows.Forms.Padding(4);
+            this.tboxFechaPublicacion.Multiline = false;
+            this.tboxFechaPublicacion.Name = "tboxFechaPublicacion";
+            this.tboxFechaPublicacion.Padding = new System.Windows.Forms.Padding(7);
+            this.tboxFechaPublicacion.PasswordChar = false;
+            this.tboxFechaPublicacion.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.tboxFechaPublicacion.PlaceholderText = "";
+            this.tboxFechaPublicacion.ReadOnly = true;
+            this.tboxFechaPublicacion.Size = new System.Drawing.Size(230, 31);
+            this.tboxFechaPublicacion.TabIndex = 71;
+            this.tboxFechaPublicacion.Texts = "";
+            this.tboxFechaPublicacion.UnderlinedStyle = false;
+            // 
+            // tboxPaginas
+            // 
+            this.tboxPaginas.BackColor = System.Drawing.SystemColors.Window;
+            this.tboxPaginas.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
+            this.tboxPaginas.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.tboxPaginas.BorderRadius = 1;
+            this.tboxPaginas.BorderSize = 1;
+            this.tboxPaginas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxPaginas.ForeColor = System.Drawing.Color.DimGray;
+            this.tboxPaginas.Location = new System.Drawing.Point(185, 468);
+            this.tboxPaginas.Margin = new System.Windows.Forms.Padding(4);
+            this.tboxPaginas.Multiline = false;
+            this.tboxPaginas.Name = "tboxPaginas";
+            this.tboxPaginas.Padding = new System.Windows.Forms.Padding(7);
+            this.tboxPaginas.PasswordChar = false;
+            this.tboxPaginas.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.tboxPaginas.PlaceholderText = "";
+            this.tboxPaginas.ReadOnly = true;
+            this.tboxPaginas.Size = new System.Drawing.Size(154, 31);
+            this.tboxPaginas.TabIndex = 70;
+            this.tboxPaginas.Texts = "";
+            this.tboxPaginas.UnderlinedStyle = false;
+            // 
+            // tboxEstado
+            // 
+            this.tboxEstado.BackColor = System.Drawing.SystemColors.Window;
+            this.tboxEstado.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
+            this.tboxEstado.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.tboxEstado.BorderRadius = 1;
+            this.tboxEstado.BorderSize = 1;
+            this.tboxEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxEstado.ForeColor = System.Drawing.Color.DimGray;
+            this.tboxEstado.Location = new System.Drawing.Point(18, 468);
+            this.tboxEstado.Margin = new System.Windows.Forms.Padding(4);
+            this.tboxEstado.Multiline = false;
+            this.tboxEstado.Name = "tboxEstado";
+            this.tboxEstado.Padding = new System.Windows.Forms.Padding(7);
+            this.tboxEstado.PasswordChar = false;
+            this.tboxEstado.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.tboxEstado.PlaceholderText = "";
+            this.tboxEstado.ReadOnly = true;
+            this.tboxEstado.Size = new System.Drawing.Size(154, 31);
+            this.tboxEstado.TabIndex = 69;
+            this.tboxEstado.Texts = "";
+            this.tboxEstado.UnderlinedStyle = false;
+            // 
+            // linkEnlace
+            // 
+            this.linkEnlace.AutoSize = true;
+            this.linkEnlace.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.linkEnlace.Location = new System.Drawing.Point(15, 318);
+            this.linkEnlace.Name = "linkEnlace";
+            this.linkEnlace.Size = new System.Drawing.Size(69, 16);
+            this.linkEnlace.TabIndex = 68;
+            this.linkEnlace.TabStop = true;
+            this.linkEnlace.Text = "linkLabel1";
+            this.linkEnlace.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkEnlace_LinkClicked);
+            // 
+            // tboxMedioPublicacion
+            // 
+            this.tboxMedioPublicacion.BackColor = System.Drawing.SystemColors.Window;
+            this.tboxMedioPublicacion.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
+            this.tboxMedioPublicacion.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.tboxMedioPublicacion.BorderRadius = 1;
+            this.tboxMedioPublicacion.BorderSize = 1;
+            this.tboxMedioPublicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxMedioPublicacion.ForeColor = System.Drawing.Color.DimGray;
+            this.tboxMedioPublicacion.Location = new System.Drawing.Point(372, 385);
+            this.tboxMedioPublicacion.Margin = new System.Windows.Forms.Padding(4);
+            this.tboxMedioPublicacion.Multiline = false;
+            this.tboxMedioPublicacion.Name = "tboxMedioPublicacion";
+            this.tboxMedioPublicacion.Padding = new System.Windows.Forms.Padding(7);
+            this.tboxMedioPublicacion.PasswordChar = false;
+            this.tboxMedioPublicacion.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.tboxMedioPublicacion.PlaceholderText = "";
+            this.tboxMedioPublicacion.ReadOnly = true;
+            this.tboxMedioPublicacion.Size = new System.Drawing.Size(296, 31);
+            this.tboxMedioPublicacion.TabIndex = 67;
+            this.tboxMedioPublicacion.Texts = "";
+            this.tboxMedioPublicacion.UnderlinedStyle = false;
+            // 
+            // tboxCategoriaNorma
+            // 
+            this.tboxCategoriaNorma.BackColor = System.Drawing.SystemColors.Window;
+            this.tboxCategoriaNorma.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
+            this.tboxCategoriaNorma.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.tboxCategoriaNorma.BorderRadius = 1;
+            this.tboxCategoriaNorma.BorderSize = 1;
+            this.tboxCategoriaNorma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxCategoriaNorma.ForeColor = System.Drawing.Color.DimGray;
+            this.tboxCategoriaNorma.Location = new System.Drawing.Point(16, 385);
+            this.tboxCategoriaNorma.Margin = new System.Windows.Forms.Padding(4);
+            this.tboxCategoriaNorma.Multiline = false;
+            this.tboxCategoriaNorma.Name = "tboxCategoriaNorma";
+            this.tboxCategoriaNorma.Padding = new System.Windows.Forms.Padding(7);
+            this.tboxCategoriaNorma.PasswordChar = false;
+            this.tboxCategoriaNorma.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.tboxCategoriaNorma.PlaceholderText = "";
+            this.tboxCategoriaNorma.ReadOnly = true;
+            this.tboxCategoriaNorma.Size = new System.Drawing.Size(323, 31);
+            this.tboxCategoriaNorma.TabIndex = 66;
+            this.tboxCategoriaNorma.Texts = "";
+            this.tboxCategoriaNorma.UnderlinedStyle = false;
             // 
             // label10
             // 
@@ -126,19 +249,11 @@ namespace Presentacion.Formularios.Normas
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12.25F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(73)))), ((int)(((byte)(85)))));
-            this.label6.Location = new System.Drawing.Point(255, 441);
+            this.label6.Location = new System.Drawing.Point(181, 441);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(99, 19);
             this.label6.TabIndex = 63;
             this.label6.Text = "N° Paginas";
-            // 
-            // NumUpDownPaginas
-            // 
-            this.NumUpDownPaginas.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.NumUpDownPaginas.Location = new System.Drawing.Point(257, 468);
-            this.NumUpDownPaginas.Name = "NumUpDownPaginas";
-            this.NumUpDownPaginas.Size = new System.Drawing.Size(120, 25);
-            this.NumUpDownPaginas.TabIndex = 9;
             // 
             // label8
             // 
@@ -151,91 +266,16 @@ namespace Presentacion.Formularios.Normas
             this.label8.TabIndex = 62;
             this.label8.Text = "Link de Publicación";
             // 
-            // tboxLink
-            // 
-            this.tboxLink.BackColor = System.Drawing.SystemColors.Window;
-            this.tboxLink.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.tboxLink.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.tboxLink.BorderRadius = 1;
-            this.tboxLink.BorderSize = 1;
-            this.tboxLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxLink.ForeColor = System.Drawing.Color.DimGray;
-            this.tboxLink.Location = new System.Drawing.Point(16, 312);
-            this.tboxLink.Margin = new System.Windows.Forms.Padding(4);
-            this.tboxLink.Multiline = false;
-            this.tboxLink.Name = "tboxLink";
-            this.tboxLink.Padding = new System.Windows.Forms.Padding(7);
-            this.tboxLink.PasswordChar = false;
-            this.tboxLink.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tboxLink.PlaceholderText = "";
-            this.tboxLink.ReadOnly = false;
-            this.tboxLink.Size = new System.Drawing.Size(981, 31);
-            this.tboxLink.TabIndex = 4;
-            this.tboxLink.Texts = "";
-            this.tboxLink.UnderlinedStyle = false;
-            // 
-            // dtpFechaRegistro
-            // 
-            this.dtpFechaRegistro.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.dtpFechaRegistro.BorderSize = 1;
-            this.dtpFechaRegistro.CalendarFont = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold);
-            this.dtpFechaRegistro.CustomFormat = "yyyy - MM - dd";
-            this.dtpFechaRegistro.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.dtpFechaRegistro.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechaRegistro.Location = new System.Drawing.Point(777, 385);
-            this.dtpFechaRegistro.MinimumSize = new System.Drawing.Size(4, 35);
-            this.dtpFechaRegistro.Name = "dtpFechaRegistro";
-            this.dtpFechaRegistro.Size = new System.Drawing.Size(158, 35);
-            this.dtpFechaRegistro.SkinColor = System.Drawing.Color.White;
-            this.dtpFechaRegistro.TabIndex = 0;
-            this.dtpFechaRegistro.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(73)))), ((int)(((byte)(85)))));
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12.25F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(73)))), ((int)(((byte)(85)))));
-            this.label7.Location = new System.Drawing.Point(774, 363);
+            this.label7.Location = new System.Drawing.Point(697, 363);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(162, 19);
             this.label7.TabIndex = 54;
             this.label7.Text = "Fecha Publicacion";
-            // 
-            // rbtnDerogado
-            // 
-            this.rbtnDerogado.AutoSize = true;
-            this.rbtnDerogado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
-            this.rbtnDerogado.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.rbtnDerogado.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.rbtnDerogado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
-            this.rbtnDerogado.Location = new System.Drawing.Point(124, 469);
-            this.rbtnDerogado.MinimumSize = new System.Drawing.Size(0, 21);
-            this.rbtnDerogado.Name = "rbtnDerogado";
-            this.rbtnDerogado.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbtnDerogado.Size = new System.Drawing.Size(113, 24);
-            this.rbtnDerogado.TabIndex = 8;
-            this.rbtnDerogado.Text = "Derogada";
-            this.rbtnDerogado.UnCheckedColor = System.Drawing.Color.Gray;
-            this.rbtnDerogado.UseVisualStyleBackColor = false;
-            // 
-            // rbtnVigente
-            // 
-            this.rbtnVigente.AutoSize = true;
-            this.rbtnVigente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
-            this.rbtnVigente.Checked = true;
-            this.rbtnVigente.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.rbtnVigente.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.rbtnVigente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
-            this.rbtnVigente.Location = new System.Drawing.Point(23, 469);
-            this.rbtnVigente.MinimumSize = new System.Drawing.Size(0, 21);
-            this.rbtnVigente.Name = "rbtnVigente";
-            this.rbtnVigente.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbtnVigente.Size = new System.Drawing.Size(95, 24);
-            this.rbtnVigente.TabIndex = 7;
-            this.rbtnVigente.TabStop = true;
-            this.rbtnVigente.Text = "Vigente";
-            this.rbtnVigente.UnCheckedColor = System.Drawing.Color.Gray;
-            this.rbtnVigente.UseVisualStyleBackColor = false;
             // 
             // label5
             // 
@@ -248,39 +288,12 @@ namespace Presentacion.Formularios.Normas
             this.label5.TabIndex = 49;
             this.label5.Text = "Estado";
             // 
-            // cboxMedioPublicacion
-            // 
-            this.cboxMedioPublicacion.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cboxMedioPublicacion.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboxMedioPublicacion.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cboxMedioPublicacion.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.cboxMedioPublicacion.BorderSize = 1;
-            this.cboxMedioPublicacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cboxMedioPublicacion.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.cboxMedioPublicacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
-            this.cboxMedioPublicacion.IconColor = System.Drawing.Color.Silver;
-            this.cboxMedioPublicacion.Items.AddRange(new object[] {
-            "Diario El Peruano",
-            "Portal web del Congreso de la República ",
-            "Portal web del Poder Judicial",
-            "Otros"});
-            this.cboxMedioPublicacion.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.cboxMedioPublicacion.ListTextColor = System.Drawing.Color.DimGray;
-            this.cboxMedioPublicacion.Location = new System.Drawing.Point(405, 385);
-            this.cboxMedioPublicacion.MinimumSize = new System.Drawing.Size(200, 30);
-            this.cboxMedioPublicacion.Name = "cboxMedioPublicacion";
-            this.cboxMedioPublicacion.Padding = new System.Windows.Forms.Padding(1);
-            this.cboxMedioPublicacion.SelectedValue = null;
-            this.cboxMedioPublicacion.Size = new System.Drawing.Size(363, 30);
-            this.cboxMedioPublicacion.TabIndex = 6;
-            this.cboxMedioPublicacion.Texts = "";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12.25F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(73)))), ((int)(((byte)(85)))));
-            this.label4.Location = new System.Drawing.Point(403, 363);
+            this.label4.Location = new System.Drawing.Point(368, 363);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(190, 19);
             this.label4.TabIndex = 47;
@@ -314,9 +327,9 @@ namespace Presentacion.Formularios.Normas
             this.tboxResumen.PasswordChar = false;
             this.tboxResumen.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.tboxResumen.PlaceholderText = "";
-            this.tboxResumen.ReadOnly = false;
+            this.tboxResumen.ReadOnly = true;
             this.tboxResumen.Size = new System.Drawing.Size(981, 61);
-            this.tboxResumen.TabIndex = 3;
+            this.tboxResumen.TabIndex = 0;
             this.tboxResumen.Texts = "";
             this.tboxResumen.UnderlinedStyle = false;
             // 
@@ -341,7 +354,7 @@ namespace Presentacion.Formularios.Normas
             this.label9.Location = new System.Drawing.Point(47, 14);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(183, 23);
-            this.label9.TabIndex = 0;
+            this.label9.TabIndex = 43;
             this.label9.Text = "Datos de la Norma";
             // 
             // label2
@@ -372,9 +385,9 @@ namespace Presentacion.Formularios.Normas
             this.tboxNombreNorma.PasswordChar = false;
             this.tboxNombreNorma.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.tboxNombreNorma.PlaceholderText = "";
-            this.tboxNombreNorma.ReadOnly = false;
+            this.tboxNombreNorma.ReadOnly = true;
             this.tboxNombreNorma.Size = new System.Drawing.Size(981, 31);
-            this.tboxNombreNorma.TabIndex = 2;
+            this.tboxNombreNorma.TabIndex = 0;
             this.tboxNombreNorma.Texts = "";
             this.tboxNombreNorma.UnderlinedStyle = false;
             // 
@@ -406,9 +419,9 @@ namespace Presentacion.Formularios.Normas
             this.tboxNumNorma.PasswordChar = false;
             this.tboxNumNorma.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.tboxNumNorma.PlaceholderText = "";
-            this.tboxNumNorma.ReadOnly = false;
+            this.tboxNumNorma.ReadOnly = true;
             this.tboxNumNorma.Size = new System.Drawing.Size(981, 31);
-            this.tboxNumNorma.TabIndex = 1;
+            this.tboxNumNorma.TabIndex = 0;
             this.tboxNumNorma.Texts = "";
             this.tboxNumNorma.UnderlinedStyle = false;
             // 
@@ -428,10 +441,10 @@ namespace Presentacion.Formularios.Normas
             this.btnSair.Location = new System.Drawing.Point(861, 558);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(148, 40);
-            this.btnSair.TabIndex = 51;
+            this.btnSair.TabIndex = 58;
             this.btnSair.Text = "Salir";
             this.btnSair.UseVisualStyleBackColor = false;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click_1);
             // 
             // btnGuardar
             // 
@@ -449,33 +462,11 @@ namespace Presentacion.Formularios.Normas
             this.btnGuardar.Location = new System.Drawing.Point(12, 558);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(148, 40);
-            this.btnGuardar.TabIndex = 50;
+            this.btnGuardar.TabIndex = 57;
             this.btnGuardar.Text = "    Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Xmark;
-            this.btnCancelar.IconColor = System.Drawing.Color.White;
-            this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCancelar.IconSize = 32;
-            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(166, 558);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(148, 40);
-            this.btnCancelar.TabIndex = 56;
-            this.btnCancelar.Text = "    Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            // 
-            // Form_RegistrarNormas
+            // Form_VerNormas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -486,42 +477,41 @@ namespace Presentacion.Formularios.Normas
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnGuardar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form_RegistrarNormas";
+            this.Name = "Form_VerNormas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form_RegistrarNormas";
+            this.Text = "Frm_VerNormas";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NumUpDownPaginas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private FontAwesome.Sharp.IconButton btnSair;
-        private FontAwesome.Sharp.IconButton btnGuardar;
+
+        private FontAwesome.Sharp.IconButton btnCancelar;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        public CustomControls.RJTextBox tboxResumen;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        public CustomControls.RJComboBox cboxMedioPublicacion;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        public CustomControls.RJRadioButton rbtnDerogado;
-        public CustomControls.RJRadioButton rbtnVigente;
-        private System.Windows.Forms.Label label6;
-        private FontAwesome.Sharp.IconButton btnCancelar;
-        public CustomControls.RJComboBox cboxCategoriaNorma;
-        private System.Windows.Forms.Label label10;
         public CustomControls.RJTextBox tboxNombreNorma;
+        private System.Windows.Forms.Label label1;
         public CustomControls.RJTextBox tboxNumNorma;
-        public CustomControls.RJTextBox tboxResumen;
-        public CustomControls.RJTextBox tboxLink;
-        public CustomControls.RJDatePicker dtpFechaRegistro;
-        public System.Windows.Forms.NumericUpDown NumUpDownPaginas;
+        private FontAwesome.Sharp.IconButton btnSair;
+        private FontAwesome.Sharp.IconButton btnGuardar;
+        public CustomControls.RJTextBox tboxCategoriaNorma;
+        public CustomControls.RJTextBox tboxMedioPublicacion;
+        public System.Windows.Forms.LinkLabel linkEnlace;
+        public CustomControls.RJTextBox tboxPaginas;
+        public CustomControls.RJTextBox tboxEstado;
+        public CustomControls.RJTextBox tboxFechaPublicacion;
     }
 }

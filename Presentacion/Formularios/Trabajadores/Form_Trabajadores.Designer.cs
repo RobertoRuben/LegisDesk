@@ -33,6 +33,7 @@ namespace Presentacion.Formularios.Trabajadores
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvTrabajadores = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnLimpiarBusqueda = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.label13 = new System.Windows.Forms.Label();
             this.tbxBusqueda = new Presentacion.CustomControls.RJTextBox();
@@ -41,7 +42,6 @@ namespace Presentacion.Formularios.Trabajadores
             this.btnModificar = new FontAwesome.Sharp.IconButton();
             this.btnNuevo = new FontAwesome.Sharp.IconButton();
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
-            this.btnLimpiarBusqueda = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrabajadores)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -98,9 +98,28 @@ namespace Presentacion.Formularios.Trabajadores
             this.panel2.Size = new System.Drawing.Size(1020, 46);
             this.panel2.TabIndex = 69;
             // 
+            // btnLimpiarBusqueda
+            // 
+            this.btnLimpiarBusqueda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
+            this.btnLimpiarBusqueda.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnLimpiarBusqueda.FlatAppearance.BorderSize = 0;
+            this.btnLimpiarBusqueda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiarBusqueda.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnLimpiarBusqueda.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiarBusqueda.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            this.btnLimpiarBusqueda.IconColor = System.Drawing.Color.White;
+            this.btnLimpiarBusqueda.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLimpiarBusqueda.IconSize = 25;
+            this.btnLimpiarBusqueda.Location = new System.Drawing.Point(481, 6);
+            this.btnLimpiarBusqueda.Name = "btnLimpiarBusqueda";
+            this.btnLimpiarBusqueda.Size = new System.Drawing.Size(42, 35);
+            this.btnLimpiarBusqueda.TabIndex = 54;
+            this.btnLimpiarBusqueda.UseVisualStyleBackColor = false;
+            this.btnLimpiarBusqueda.Click += new System.EventHandler(this.btnLimpiarBusqueda_Click);
+            // 
             // iconButton2
             // 
-            this.iconButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.iconButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.iconButton2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.iconButton2.FlatAppearance.BorderSize = 0;
             this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -130,7 +149,7 @@ namespace Presentacion.Formularios.Trabajadores
             // 
             this.tbxBusqueda.BackColor = System.Drawing.SystemColors.Window;
             this.tbxBusqueda.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.tbxBusqueda.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.tbxBusqueda.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.tbxBusqueda.BorderRadius = 1;
             this.tbxBusqueda.BorderSize = 1;
             this.tbxBusqueda.Font = new System.Drawing.Font("Century Gothic", 11F);
@@ -152,7 +171,7 @@ namespace Presentacion.Formularios.Trabajadores
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.label10.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(12, 73);
@@ -174,7 +193,7 @@ namespace Presentacion.Formularios.Trabajadores
             // btnModificar
             // 
             this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.btnModificar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.btnModificar.FlatAppearance.BorderSize = 0;
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -196,7 +215,7 @@ namespace Presentacion.Formularios.Trabajadores
             // btnNuevo
             // 
             this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.btnNuevo.FlatAppearance.BorderSize = 0;
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -218,7 +237,7 @@ namespace Presentacion.Formularios.Trabajadores
             // btnEliminar
             // 
             this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.btnEliminar.FlatAppearance.BorderSize = 0;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -235,25 +254,6 @@ namespace Presentacion.Formularios.Trabajadores
             this.btnEliminar.TabIndex = 71;
             this.btnEliminar.Text = "  Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
-            // 
-            // btnLimpiarBusqueda
-            // 
-            this.btnLimpiarBusqueda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnLimpiarBusqueda.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnLimpiarBusqueda.FlatAppearance.BorderSize = 0;
-            this.btnLimpiarBusqueda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiarBusqueda.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnLimpiarBusqueda.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiarBusqueda.IconChar = FontAwesome.Sharp.IconChar.Eraser;
-            this.btnLimpiarBusqueda.IconColor = System.Drawing.Color.White;
-            this.btnLimpiarBusqueda.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLimpiarBusqueda.IconSize = 25;
-            this.btnLimpiarBusqueda.Location = new System.Drawing.Point(481, 6);
-            this.btnLimpiarBusqueda.Name = "btnLimpiarBusqueda";
-            this.btnLimpiarBusqueda.Size = new System.Drawing.Size(42, 35);
-            this.btnLimpiarBusqueda.TabIndex = 54;
-            this.btnLimpiarBusqueda.UseVisualStyleBackColor = false;
-            this.btnLimpiarBusqueda.Click += new System.EventHandler(this.btnLimpiarBusqueda_Click);
             // 
             // Form_Trabajadores
             // 

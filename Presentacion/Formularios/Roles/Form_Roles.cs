@@ -51,7 +51,7 @@ namespace Presentacion.Formularios.Roles
         {
             try
             {
-                dgvRoles.DataSource = NRol.ListarRoles();
+                dgvRoles.DataSource = NRoles.ListarRoles();
                 lblResultados.Text = "Total de Registros: " + Convert.ToString(dgvRoles.Rows.Count);
             }
             catch(Exception ex)
@@ -63,7 +63,7 @@ namespace Presentacion.Formularios.Roles
         {
             try
             {
-                dgvRoles.DataSource = NRol.BuscarRol(tbxBusqueda.Texts.Trim());
+                dgvRoles.DataSource = NRoles.BuscarRol(tbxBusqueda.Texts.Trim());
                 lblResultados.Text = "Total de Registros: " + Convert.ToString(dgvRoles.Rows.Count);
 
                 if (dgvRoles.Rows.Count < 1)
@@ -119,7 +119,7 @@ namespace Presentacion.Formularios.Roles
 
                     if (result == DialogResult.Yes)
                     {
-                        string rpta = NRol.EliminarRol(rolId);
+                        string rpta = NRoles.EliminarRol(rolId, codUsuario);
 
                         if (rpta.Equals("Ok"))
                         {

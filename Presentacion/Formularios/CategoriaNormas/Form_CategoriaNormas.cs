@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio.Servicios;
 
@@ -128,19 +121,18 @@ namespace Presentacion.Formularios.CategoriaNormas
             {
                 if (dgvCategoriaNormas.SelectedRows.Count > 0)
                 {
-                    int rolId = Convert.ToInt32(dgvCategoriaNormas.CurrentRow.Cells[0].Value);
-                    Console.WriteLine("IdSeleccionado" + rolId);
+                    int codCategoria = Convert.ToInt32(dgvCategoriaNormas.CurrentRow.Cells[0].Value);
 
                     // Mostrar MessageBox de confirmación
                     DialogResult result = MessageBox.Show("¿Deseas eliminar este rol?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (result == DialogResult.Yes)
                     {
-                        string rpta = NRol.EliminarRol(rolId);
+                        string rpta = NCategoriasNormas.EliminarCategoriaNormas(codCategoria, codUsuario);
 
                         if (rpta.Equals("Ok"))
                         {
-                            this.MensajeOk("Se elimino el rol");
+                            this.MensajeOk("Se elimino la categoria");
                             this.ListarCategorias();
                             this.FormatoDataGrid();
                         }

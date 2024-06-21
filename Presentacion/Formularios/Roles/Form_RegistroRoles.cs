@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio.Servicios;
 using Negocio.Manipulaciones;
@@ -30,7 +24,6 @@ namespace Presentacion.Formularios.Roles
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             string rpta = "";
-            Console.WriteLine("Codigo Usuario: " + codUsuario);
             if (operacion.Equals("Registrar"))
             {
                 try
@@ -47,7 +40,7 @@ namespace Presentacion.Formularios.Roles
                     }
                     else
                     {
-                        rpta = NRol.RegistrarRoles(TransformarTexto.TransformarText(tboxNombreRol.Texts.Trim()));
+                        rpta = NRoles.RegistrarRoles(TransformarTexto.TransformarText(tboxNombreRol.Texts.Trim()), codUsuario);
 
                         if (rpta.Equals("Ok"))
                         {
@@ -67,9 +60,7 @@ namespace Presentacion.Formularios.Roles
             }
             else if (operacion.Equals("Actualizar"))
             {
-                Console.WriteLine("Codigo Usuario: " + codUsuario);
-                Console.WriteLine("codRol: " + codRol);
-                Console.WriteLine("Operacion: " + operacion);
+
                 try
                 {
                     if (string.IsNullOrWhiteSpace(tboxNombreRol.Texts.Trim()))
@@ -84,7 +75,7 @@ namespace Presentacion.Formularios.Roles
                     }
                     else
                     {
-                        rpta = NRol.ActulizarRoles(codUsuario, codRol, (TransformarTexto.TransformarText(tboxNombreRol.Texts.Trim())));
+                        rpta = NRoles.ActulizarRoles(codUsuario, codRol, (TransformarTexto.TransformarText(tboxNombreRol.Texts.Trim())));
 
                         if (rpta.Equals("Ok"))
                         {
@@ -119,7 +110,6 @@ namespace Presentacion.Formularios.Roles
             MessageBox.Show(mensaje, "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        // Función para validar si el texto contiene números
         private bool ContieneNumeros(string texto)
         {
             return texto.Any(char.IsDigit);

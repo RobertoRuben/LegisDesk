@@ -20,7 +20,7 @@ namespace Negocio.Servicios
         public static DataTable BuscarNormas(string palabra)
         {
             DNormas dNormas = new DNormas();
-            return dNormas.BuscarNorma(palabra);
+            return dNormas.BuscarNormas(palabra);
         }
 
         public static string RegistrarNormas(int codUsuario, int codTipoNorma, string numeroNorma, string nombreNorma, string resumen,string fechaPublicacion, int cantidadPaginas,
@@ -35,7 +35,7 @@ namespace Negocio.Servicios
             }
             else
             {
-                Normas normas = new Normas();
+                ENormas normas = new ENormas();
 
                 normas.CodUsuario = codUsuario;
                 normas.CodTipoNorma = codTipoNorma;
@@ -54,12 +54,12 @@ namespace Negocio.Servicios
         }
 
         public static string ActualizarNormas(int codNormatividad, int codTipoNorma, string numeroNorma, string nombreNorma, string resumen, string fechaPublicacion, int cantidadPaginas,
-            string medioPublicacion, string linkDocumentos, string estado)
+            string medioPublicacion, string linkDocumentos, string estado, int codUsuario)
         {
             DNormas dNormas = new DNormas();
             string existe = dNormas.ExisteNumeroNorma(numeroNorma);
 
-            return dNormas.ActualizarNormas(codNormatividad, codTipoNorma, numeroNorma, nombreNorma, resumen, fechaPublicacion, cantidadPaginas, medioPublicacion, linkDocumentos, estado);
+            return dNormas.ActualizarNormas(codNormatividad, codTipoNorma, numeroNorma, nombreNorma, resumen, fechaPublicacion, cantidadPaginas, medioPublicacion, linkDocumentos, estado, codUsuario);
             
         }
 

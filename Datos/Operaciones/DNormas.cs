@@ -40,7 +40,7 @@ namespace Datos.Operaciones
             return tabla;
 
         }
-        public DataTable BuscarNorma(string palabra)
+        public DataTable BuscarNormas(string palabra)
         {
             SqlDataReader resultado;
             DataTable tabla = new DataTable();
@@ -68,7 +68,7 @@ namespace Datos.Operaciones
             return tabla;
         }
 
-        public string RegistrarNormas(Normas objNormas)
+        public string RegistrarNormas(ENormas objNormas)
         {
             string rpta;
             SqlConnection sqlCon = new SqlConnection();
@@ -98,7 +98,6 @@ namespace Datos.Operaciones
                 sqlCon.Open();
                 cmd.ExecuteNonQuery();
 
-                // Leer el parámetro de salida después de ejecutar el procedimiento
                 rpta = Convert.ToInt32(parametro.Value) > 0 ? "Ok" : "No se pudo insertar el registro";
 
             }
@@ -115,7 +114,7 @@ namespace Datos.Operaciones
         }
 
         public string ActualizarNormas(int codNormatividad, int codTipoNorma, string numeroNorma, string nombreNorma, string resumen, string fechaPublicacion,
-            int cantidadPaginas, string medioPublicacion, string linkDocumento, string estado)
+            int cantidadPaginas, string medioPublicacion, string linkDocumento, string estado, int codUsuario)
         {
             string rpta;
             SqlConnection sqlCon = new SqlConnection();
@@ -135,6 +134,7 @@ namespace Datos.Operaciones
                 cmd.Parameters.Add("@MedioPublicacion", SqlDbType.NVarChar).Value = medioPublicacion;
                 cmd.Parameters.Add("@LinkDocumento", SqlDbType.NVarChar).Value = linkDocumento;
                 cmd.Parameters.Add("@Estado", SqlDbType.NVarChar).Value = estado;
+                cmd.Parameters.Add("@CodUsuario", SqlDbType.Int).Value = codUsuario;
 
                 SqlParameter parametro = new SqlParameter();
                 parametro.ParameterName = "@Rpta";

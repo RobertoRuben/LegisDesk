@@ -29,6 +29,7 @@ namespace Presentacion.Usuarios
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_RegistrarUsuario));
             this.panel1 = new System.Windows.Forms.Panel();
             this.cboxRol = new Presentacion.CustomControls.RJComboBox();
             this.cboxTrabajadores = new Presentacion.CustomControls.RJComboBox();
@@ -147,16 +148,16 @@ namespace Presentacion.Usuarios
             // 
             this.tboxNombreUsuario.BackColor = System.Drawing.SystemColors.Window;
             this.tboxNombreUsuario.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.tboxNombreUsuario.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.tboxNombreUsuario.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.tboxNombreUsuario.BorderRadius = 1;
             this.tboxNombreUsuario.BorderSize = 1;
             this.tboxNombreUsuario.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.tboxNombreUsuario.ForeColor = System.Drawing.Color.DimGray;
             this.tboxNombreUsuario.Location = new System.Drawing.Point(13, 152);
-            this.tboxNombreUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tboxNombreUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.tboxNombreUsuario.Multiline = false;
             this.tboxNombreUsuario.Name = "tboxNombreUsuario";
-            this.tboxNombreUsuario.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.tboxNombreUsuario.Padding = new System.Windows.Forms.Padding(7);
             this.tboxNombreUsuario.PasswordChar = false;
             this.tboxNombreUsuario.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.tboxNombreUsuario.PlaceholderText = "";
@@ -199,7 +200,7 @@ namespace Presentacion.Usuarios
             this.rbtnActivo.AutoSize = true;
             this.rbtnActivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
             this.rbtnActivo.Checked = true;
-            this.rbtnActivo.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.rbtnActivo.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.rbtnActivo.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.rbtnActivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
             this.rbtnActivo.Location = new System.Drawing.Point(512, 376);
@@ -250,16 +251,16 @@ namespace Presentacion.Usuarios
             // 
             this.tboxContraseña.BackColor = System.Drawing.SystemColors.Window;
             this.tboxContraseña.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.tboxContraseña.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.tboxContraseña.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.tboxContraseña.BorderRadius = 1;
             this.tboxContraseña.BorderSize = 1;
             this.tboxContraseña.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.tboxContraseña.ForeColor = System.Drawing.Color.DimGray;
             this.tboxContraseña.Location = new System.Drawing.Point(15, 223);
-            this.tboxContraseña.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tboxContraseña.Margin = new System.Windows.Forms.Padding(4);
             this.tboxContraseña.Multiline = false;
             this.tboxContraseña.Name = "tboxContraseña";
-            this.tboxContraseña.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.tboxContraseña.Padding = new System.Windows.Forms.Padding(7);
             this.tboxContraseña.PasswordChar = true;
             this.tboxContraseña.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.tboxContraseña.PlaceholderText = "";
@@ -273,16 +274,16 @@ namespace Presentacion.Usuarios
             // 
             this.tboxConfirmacion.BackColor = System.Drawing.SystemColors.Window;
             this.tboxConfirmacion.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.tboxConfirmacion.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.tboxConfirmacion.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.tboxConfirmacion.BorderRadius = 1;
             this.tboxConfirmacion.BorderSize = 1;
             this.tboxConfirmacion.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.tboxConfirmacion.ForeColor = System.Drawing.Color.DimGray;
             this.tboxConfirmacion.Location = new System.Drawing.Point(15, 296);
-            this.tboxConfirmacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tboxConfirmacion.Margin = new System.Windows.Forms.Padding(4);
             this.tboxConfirmacion.Multiline = false;
             this.tboxConfirmacion.Name = "tboxConfirmacion";
-            this.tboxConfirmacion.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.tboxConfirmacion.Padding = new System.Windows.Forms.Padding(7);
             this.tboxConfirmacion.PasswordChar = true;
             this.tboxConfirmacion.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.tboxConfirmacion.PlaceholderText = "";
@@ -317,7 +318,7 @@ namespace Presentacion.Usuarios
             // btnGuardar
             // 
             this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.btnGuardar.FlatAppearance.BorderSize = 0;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -339,7 +340,7 @@ namespace Presentacion.Usuarios
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -390,9 +391,10 @@ namespace Presentacion.Usuarios
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_RegistrarUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form_RegistrarUsuarios";
+            this.Text = "Registro de Usuarios";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();

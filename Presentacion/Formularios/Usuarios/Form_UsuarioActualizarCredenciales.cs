@@ -42,9 +42,14 @@ namespace Presentacion.Formularios.Usuarios
             try
             {
                 string rpta = "";
-                if  (string.IsNullOrWhiteSpace(tboxNombreUsuario.Texts))
+                if (string.IsNullOrWhiteSpace(tboxNombreUsuario.Texts))
                 {
                     rpta = "El campo nombre de usuario no puede quedar en blanco";
+                    MensajeError(rpta);
+                }
+                else if (!string.IsNullOrWhiteSpace(tboxContraseña.Texts) && tboxContraseña.Texts.Trim().Length < 8)
+                {
+                    rpta = "La contraseña debe tener al menos 8 caracteres";
                     MensajeError(rpta);
                 }
                 else if (!tboxContraseña.Texts.Trim().Equals(tboxConfirmacion.Texts.Trim()))
@@ -54,14 +59,26 @@ namespace Presentacion.Formularios.Usuarios
                 }
                 else
                 {
-                    rpta = NUsuarios.ActualizarCredenciales(codUsuario,
-                        tboxNombreUsuario.Texts,
-                        PasswordEncryptor.Encryptor(tboxContraseña.Texts)
+                    string contraseña = tboxContraseña.Texts.Trim();
+
+                    if (contraseña.Equals(""))
+                    {
+                        rpta = NUsuarios.ActualizarCredenciales(codUsuario,
+                        tboxNombreUsuario.Texts.Trim(), contraseña
                         );
+                    }
+                    else
+                    {
+                        string contraseñaEncriptada = PasswordEncryptor.Encryptor(contraseña);
+                        rpta = NUsuarios.ActualizarCredenciales(codUsuario,
+                        tboxNombreUsuario.Texts.Trim(), contraseñaEncriptada
+                        );
+
+                    }
 
                     if (rpta.Equals("Ok"))
                     {
-                        this.MensajeOk("Se actualizaron los credenciales");
+                        this.MensajeOk("Se actualizaron los credenciales" );
                         this.Close();
                     }
                     else

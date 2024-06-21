@@ -41,12 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clases\Articulo.cs" />
-    <Compile Include="Clases\Normas.cs" />
-    <Compile Include="Clases\Rol.cs" />
-    <Compile Include="Clases\CategoriaDeNorma.cs" />
-    <Compile Include="Clases\Trabajador.cs" />
-    <Compile Include="Clases\Usuario.cs" />
+    <Compile Include="Clases\EArticulo.cs" />
+    <Compile Include="Clases\ENormas.cs" />
+    <Compile Include="Clases\ERoles.cs" />
+    <Compile Include="Clases\ECategoriaDeNorma.cs" />
+    <Compile Include="Clases\ETrabajadores.cs" />
+    <Compile Include="Clases\EUsuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

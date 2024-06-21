@@ -12,7 +12,7 @@ namespace Datos.Operaciones
 {
     public class DTrabajadores
     {
-        public DataTable ListarNormas()
+        public DataTable ListarTrabajadores()
         {
             SqlDataReader resultado;
             DataTable tabla = new DataTable();
@@ -41,7 +41,7 @@ namespace Datos.Operaciones
 
         }
 
-        public string RegistrarTrabajadores(Trabajador objTrabajador)
+        public string RegistrarTrabajadores(ETrabajadores objTrabajador)
         {
             string rpta;
             SqlConnection sqlCon = new SqlConnection();

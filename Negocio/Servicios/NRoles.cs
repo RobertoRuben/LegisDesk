@@ -9,23 +9,23 @@ using Entidad.Clases;
 
 namespace Negocio.Servicios
 {
-    public class NRol
+    public class NRoles
     {
         public static DataTable ListarRoles()
         {
-            DRol Drol = new DRol();
-            return Drol.ListarRol();
+            DRoles Drol = new DRoles();
+            return Drol.ListarRoles();
         }
 
         public static DataTable BuscarRol(string palabra)
         {
-            DRol dRol = new DRol();
-            return dRol.BuscarRol(palabra);
+            DRoles dRol = new DRoles();
+            return dRol.BuscarRoles(palabra);
         }
 
-        public static string RegistrarRoles(string nombreRol)
+        public static string RegistrarRoles(string nombreRol, int codUsuario)
         {
-            DRol dRol = new DRol();
+            DRoles dRol = new DRoles();
             string existe = dRol.ExisteRol(nombreRol);
 
             if (existe.Equals("1"))
@@ -35,23 +35,23 @@ namespace Negocio.Servicios
 
             else
             {
-                Rol rol = new Rol();
+                ERoles rol = new ERoles();
                 rol.NombreDeRol = nombreRol;
-                return dRol.RegistrarRol(rol);
+                return dRol.RegistrarRoles(rol, codUsuario);
 
             }
             
         }
 
-        public static string EliminarRol(int codRol)
+        public static string EliminarRol(int codRol, int codUsuario)
         {
-            DRol dRol = new DRol();
-            return dRol.EliminarRol(codRol);
+            DRoles dRol = new DRoles();
+            return dRol.EliminarRoles(codRol, codUsuario);
         }
 
         public static string ActulizarRoles(int codUsuario, int codRol, string nombreRol)
         {
-            DRol dRol = new DRol();
+            DRoles dRol = new DRoles();
             string existe = dRol.ExisteRol(nombreRol);
 
             if (existe.Equals("1"))
@@ -60,7 +60,7 @@ namespace Negocio.Servicios
             }
             else
             {
-                return dRol.ActualzarRol(codUsuario, codRol, nombreRol);
+                return dRol.ActualzarRoles(codUsuario, codRol, nombreRol);
             }
 
         }

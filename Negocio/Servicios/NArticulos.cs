@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Datos.Operaciones;
 using Entidad.Clases;
 
@@ -23,7 +19,7 @@ namespace Negocio.Servicios
             return dArticulos.BuscarArticulos(codNormatividad, palabra);
         }
 
-        public static string RegistrarArticulos(int codNormatividad, string denominacion, string descripcion, string estado, int numArticulo, int pagina)
+        public static string RegistrarArticulos(int codNormatividad, string denominacion, string descripcion, string estado, int numArticulo, int codUsuario, int pagina)
         {
             DArticulos dArticulos = new DArticulos();
             string existe = dArticulos.ExisteArticuloEnNorma(codNormatividad, numArticulo);
@@ -36,28 +32,28 @@ namespace Negocio.Servicios
             }
             else
             {
-                Articulo articulo = new Articulo();
+                EArticulo articulo = new EArticulo();
                 articulo.CodNormatividad = codNormatividad;
                 articulo.Denominacion = denominacion;
                 articulo.Descripcion = descripcion;
                 articulo.Estado = estado;
                 articulo.NumArticulo = numArticulo;
                 articulo.Pagina = pagina;
-                return dArticulos.RegistrarArticulo(articulo);
+                return dArticulos.RegistrarArticulos(articulo, codUsuario);
 
             }
         }
 
-        public static string ActualizarArticulo(int codArticulo, int codNormatividad, string denominacion, string descripcion, string estado, int numArticulo, int pagina)
+        public static string ActualizarArticulos(int codArticulo, int codNormatividad, string denominacion, string descripcion, string estado, int numArticulo, int pagina, int codUsuario)
         {
             DArticulos dArticulos = new DArticulos();
-            return dArticulos.ActualizarArticulo(codArticulo, codNormatividad, numArticulo, denominacion, descripcion, pagina, estado);
+            return dArticulos.ActualizarArticulos(codArticulo, codNormatividad, numArticulo, denominacion, descripcion, pagina, estado, codUsuario);
         }
 
-        public static string EliminarArticulo(int codArticulo)
+        public static string EliminarArticulos(int codArticulo, int codUsuario)
         {
             DArticulos dArticulos = new DArticulos();
-            return dArticulos.EliminarArticulo(codArticulo);
+            return dArticulos.EliminarArticulos(codArticulo, codUsuario);
         }
 
     }

@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Entidad.Clases
+﻿namespace Entidad.Clases
 {
-    public class Normas
+    public class ENormas
     {
         public int CodNormatividad { set; get; }
         public int CodUsuario { set; get; }

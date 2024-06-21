@@ -34,14 +34,14 @@ namespace Presentacion.Formularios.Usuarios
             this.label10 = new System.Windows.Forms.Label();
             this.lblResultados = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnLimpiarBusqueda = new FontAwesome.Sharp.IconButton();
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.label13 = new System.Windows.Forms.Label();
             this.tbxBusqueda = new Presentacion.CustomControls.RJTextBox();
+            this.dgvUsuarios = new System.Windows.Forms.DataGridView();
+            this.btnInhabilitar = new FontAwesome.Sharp.IconButton();
             this.btnModificar = new FontAwesome.Sharp.IconButton();
             this.btnNuevo = new FontAwesome.Sharp.IconButton();
-            this.btnInhabilitar = new FontAwesome.Sharp.IconButton();
-            this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.btnLimpiarBusqueda = new FontAwesome.Sharp.IconButton();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +49,7 @@ namespace Presentacion.Formularios.Usuarios
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.label10.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(12, 73);
@@ -82,9 +82,28 @@ namespace Presentacion.Formularios.Usuarios
             this.panel2.Size = new System.Drawing.Size(1020, 46);
             this.panel2.TabIndex = 62;
             // 
+            // btnLimpiarBusqueda
+            // 
+            this.btnLimpiarBusqueda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
+            this.btnLimpiarBusqueda.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnLimpiarBusqueda.FlatAppearance.BorderSize = 0;
+            this.btnLimpiarBusqueda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiarBusqueda.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnLimpiarBusqueda.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiarBusqueda.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            this.btnLimpiarBusqueda.IconColor = System.Drawing.Color.White;
+            this.btnLimpiarBusqueda.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLimpiarBusqueda.IconSize = 25;
+            this.btnLimpiarBusqueda.Location = new System.Drawing.Point(482, 6);
+            this.btnLimpiarBusqueda.Name = "btnLimpiarBusqueda";
+            this.btnLimpiarBusqueda.Size = new System.Drawing.Size(42, 35);
+            this.btnLimpiarBusqueda.TabIndex = 53;
+            this.btnLimpiarBusqueda.UseVisualStyleBackColor = false;
+            this.btnLimpiarBusqueda.Click += new System.EventHandler(this.btnLimpiarBusqueda_Click);
+            // 
             // btnBuscar
             // 
-            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.btnBuscar.FlatAppearance.BorderSize = 0;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -115,7 +134,7 @@ namespace Presentacion.Formularios.Usuarios
             // 
             this.tbxBusqueda.BackColor = System.Drawing.SystemColors.Window;
             this.tbxBusqueda.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.tbxBusqueda.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.tbxBusqueda.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.tbxBusqueda.BorderRadius = 1;
             this.tbxBusqueda.BorderSize = 1;
             this.tbxBusqueda.Font = new System.Drawing.Font("Century Gothic", 11F);
@@ -133,72 +152,6 @@ namespace Presentacion.Formularios.Usuarios
             this.tbxBusqueda.TabIndex = 19;
             this.tbxBusqueda.Texts = "";
             this.tbxBusqueda.UnderlinedStyle = false;
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnModificar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnModificar.FlatAppearance.BorderSize = 0;
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
-            this.btnModificar.IconColor = System.Drawing.Color.White;
-            this.btnModificar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnModificar.IconSize = 32;
-            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificar.Location = new System.Drawing.Point(166, 557);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(148, 40);
-            this.btnModificar.TabIndex = 58;
-            this.btnModificar.Text = "  Modificar";
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnNuevo.FlatAppearance.BorderSize = 0;
-            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
-            this.btnNuevo.IconColor = System.Drawing.Color.White;
-            this.btnNuevo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnNuevo.IconSize = 32;
-            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(12, 557);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(148, 40);
-            this.btnNuevo.TabIndex = 57;
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = false;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // btnInhabilitar
-            // 
-            this.btnInhabilitar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnInhabilitar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnInhabilitar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnInhabilitar.FlatAppearance.BorderSize = 0;
-            this.btnInhabilitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInhabilitar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnInhabilitar.ForeColor = System.Drawing.Color.White;
-            this.btnInhabilitar.IconChar = FontAwesome.Sharp.IconChar.UserAltSlash;
-            this.btnInhabilitar.IconColor = System.Drawing.Color.White;
-            this.btnInhabilitar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnInhabilitar.IconSize = 32;
-            this.btnInhabilitar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInhabilitar.Location = new System.Drawing.Point(320, 557);
-            this.btnInhabilitar.Name = "btnInhabilitar";
-            this.btnInhabilitar.Size = new System.Drawing.Size(148, 40);
-            this.btnInhabilitar.TabIndex = 63;
-            this.btnInhabilitar.Text = "  Inhabilitar";
-            this.btnInhabilitar.UseVisualStyleBackColor = false;
-            this.btnInhabilitar.Click += new System.EventHandler(this.btnInhabilitar_Click);
             // 
             // dgvUsuarios
             // 
@@ -237,25 +190,73 @@ namespace Presentacion.Formularios.Usuarios
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuarios.Size = new System.Drawing.Size(1017, 308);
             this.dgvUsuarios.TabIndex = 64;
+            this.dgvUsuarios.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellDoubleClick);
             // 
-            // btnLimpiarBusqueda
+            // btnInhabilitar
             // 
-            this.btnLimpiarBusqueda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnLimpiarBusqueda.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnLimpiarBusqueda.FlatAppearance.BorderSize = 0;
-            this.btnLimpiarBusqueda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiarBusqueda.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnLimpiarBusqueda.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiarBusqueda.IconChar = FontAwesome.Sharp.IconChar.Eraser;
-            this.btnLimpiarBusqueda.IconColor = System.Drawing.Color.White;
-            this.btnLimpiarBusqueda.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLimpiarBusqueda.IconSize = 25;
-            this.btnLimpiarBusqueda.Location = new System.Drawing.Point(482, 6);
-            this.btnLimpiarBusqueda.Name = "btnLimpiarBusqueda";
-            this.btnLimpiarBusqueda.Size = new System.Drawing.Size(42, 35);
-            this.btnLimpiarBusqueda.TabIndex = 53;
-            this.btnLimpiarBusqueda.UseVisualStyleBackColor = false;
-            this.btnLimpiarBusqueda.Click += new System.EventHandler(this.btnLimpiarBusqueda_Click);
+            this.btnInhabilitar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnInhabilitar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
+            this.btnInhabilitar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnInhabilitar.FlatAppearance.BorderSize = 0;
+            this.btnInhabilitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInhabilitar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnInhabilitar.ForeColor = System.Drawing.Color.White;
+            this.btnInhabilitar.IconChar = FontAwesome.Sharp.IconChar.UserAltSlash;
+            this.btnInhabilitar.IconColor = System.Drawing.Color.White;
+            this.btnInhabilitar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnInhabilitar.IconSize = 32;
+            this.btnInhabilitar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInhabilitar.Location = new System.Drawing.Point(320, 557);
+            this.btnInhabilitar.Name = "btnInhabilitar";
+            this.btnInhabilitar.Size = new System.Drawing.Size(148, 40);
+            this.btnInhabilitar.TabIndex = 63;
+            this.btnInhabilitar.Text = "  Inhabilitar";
+            this.btnInhabilitar.UseVisualStyleBackColor = false;
+            this.btnInhabilitar.Click += new System.EventHandler(this.btnInhabilitar_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
+            this.btnModificar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnModificar.FlatAppearance.BorderSize = 0;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnModificar.ForeColor = System.Drawing.Color.White;
+            this.btnModificar.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
+            this.btnModificar.IconColor = System.Drawing.Color.White;
+            this.btnModificar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnModificar.IconSize = 32;
+            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificar.Location = new System.Drawing.Point(166, 557);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(148, 40);
+            this.btnModificar.TabIndex = 58;
+            this.btnModificar.Text = "  Modificar";
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
+            this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnNuevo.FlatAppearance.BorderSize = 0;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnNuevo.ForeColor = System.Drawing.Color.White;
+            this.btnNuevo.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+            this.btnNuevo.IconColor = System.Drawing.Color.White;
+            this.btnNuevo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnNuevo.IconSize = 32;
+            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevo.Location = new System.Drawing.Point(12, 557);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(148, 40);
+            this.btnNuevo.TabIndex = 57;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // Form_Usuarios
             // 
@@ -271,6 +272,7 @@ namespace Presentacion.Formularios.Usuarios
             this.Controls.Add(this.btnNuevo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_Usuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_Usuarios";
             this.Load += new System.EventHandler(this.Form_Usuarios_Load);
             this.panel2.ResumeLayout(false);

@@ -30,6 +30,7 @@ namespace Presentacion
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Principal));
             this.pMenuLateral = new System.Windows.Forms.Panel();
             this.pSubMenuUsuarios = new System.Windows.Forms.Panel();
             this.btnRoles = new FontAwesome.Sharp.IconButton();
@@ -339,7 +340,7 @@ namespace Presentacion
             this.btnPerfil.FlatAppearance.BorderSize = 0;
             this.btnPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPerfil.IconChar = FontAwesome.Sharp.IconChar.CircleUser;
-            this.btnPerfil.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnPerfil.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.btnPerfil.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnPerfil.IconSize = 55;
             this.btnPerfil.Location = new System.Drawing.Point(665, 16);
@@ -445,7 +446,7 @@ namespace Presentacion
             this.lblHora.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblHora.AutoSize = true;
             this.lblHora.Font = new System.Drawing.Font("Century Gothic", 42F, System.Drawing.FontStyle.Bold);
-            this.lblHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.lblHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(26)))));
             this.lblHora.Location = new System.Drawing.Point(394, 179);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(284, 66);
@@ -466,6 +467,7 @@ namespace Presentacion
             this.Controls.Add(this.pBarraSuperior);
             this.Controls.Add(this.pMenuLateral);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form_Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

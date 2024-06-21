@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio.Manipulaciones;
 using Negocio.Servicios;
@@ -16,16 +9,12 @@ namespace Presentacion.Formularios.Normas
     {
         public string operacion = "";
         public int codNorma;
-        public int idArticulo;
-        public int idUsuario;
+        public int codArticulo;
+        public int codUsuario;
+
         public Form_RegistrarArticulos()
         {
             InitializeComponent();
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -33,10 +22,6 @@ namespace Presentacion.Formularios.Normas
             this.Close();
         }
 
-        private void Form_RegistrarArticulos_Load(object sender, EventArgs e)
-        {
-
-        }
         public string ObtenerEstadoNorma()
         {
             if (rbtnVigente.Checked)
@@ -57,7 +42,7 @@ namespace Presentacion.Formularios.Normas
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Codigo Norma: " + codNorma);
-            Console.WriteLine("Codigo usuario: " + idUsuario);
+            Console.WriteLine("Codigo usuario: " + codUsuario);
             Console.WriteLine("Operacion: " + operacion);
             //Form_Principal form_Principal = new Form_Principal();
 
@@ -71,8 +56,13 @@ namespace Presentacion.Formularios.Normas
                     {
                         rpta = "Todos los campos no obligatorios";
                         MensajeError(rpta);
-
                     }
+                    else if (!int.TryParse(tboxArticulo.Texts, out _))  // Validación para asegurar que tboxArticulo contiene solo números
+                    {
+                        rpta = "El campo 'Artículo' debe contener solo números.";
+                        MensajeError(rpta);
+                    }
+
                     else
                     {
                         int numArticulo = Convert.ToInt32(tboxArticulo.Texts);
@@ -89,7 +79,7 @@ namespace Presentacion.Formularios.Normas
                         Console.WriteLine("Estado: " + estado);
                         Console.WriteLine("Paginas: " + paginas);
 
-                        rpta = NArticulos.RegistrarArticulos(codNorma, denominacion, descripcion, estado, numArticulo, paginas);
+                        rpta = NArticulos.RegistrarArticulos(codNorma, denominacion, descripcion, estado, numArticulo, codUsuario,paginas);
 
                         if (rpta.Equals("Ok"))
                         {
@@ -131,7 +121,7 @@ namespace Presentacion.Formularios.Normas
                         string estado = ObtenerEstadoNorma();
                         int paginas = (int)numUpDownPagina.Value;
 
-                        rpta = NArticulos.ActualizarArticulo(idArticulo,codNorma, denominacion, descripcion, estado, numArticulo, paginas);
+                        rpta = NArticulos.ActualizarArticulos(codArticulo,codNorma, denominacion, descripcion, estado, numArticulo, paginas, codUsuario);
 
                         if (rpta.Equals("Ok"))
                         {
@@ -162,5 +152,9 @@ namespace Presentacion.Formularios.Normas
             MessageBox.Show(mensaje, "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("CodUsuario: " + codUsuario);
+        }
     }
 }

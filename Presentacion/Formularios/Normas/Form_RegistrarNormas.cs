@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio.Servicios;
 using Negocio.Manipulaciones;
@@ -49,29 +43,25 @@ namespace Presentacion.Formularios.Normas
         {
             try
             {
-                // Asignar el origen de datos al ComboBox
                 DataTable tabla = new DataTable();
                 tabla = NCategoriasNormas.ListarCategoriasNormas();
                 cboxCategoriaNorma.DataSource = tabla;
 
-                // Configurar qué propiedad mostrar en el ComboBox
                 cboxCategoriaNorma.DisplayMember = "Categoria de Norma";
 
-                // Configurar qué propiedad utilizar como valor del elemento seleccionado
                 cboxCategoriaNorma.ValueMember = "Codigo";
                 cboxCategoriaNorma.Texts = "Selecciona la Categoria";
             }
             catch (Exception ex)
             {
-                // Manejar cualquier excepción que ocurra durante la carga de datos
                 MessageBox.Show(ex.Message + ex.StackTrace);
                 Console.WriteLine(ex.Message + Environment.NewLine + ex.StackTrace);
             }
         }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("CodUsuario: " + codUsuario);
-            Console.WriteLine("Operacion: " + operacion);
+
             if (operacion.Equals("Registrar"))
             {
                 Console.WriteLine("La operacion fue registrar");
@@ -171,7 +161,8 @@ namespace Presentacion.Formularios.Normas
                             paginas,
                             medioPublicacion,
                             tboxLink.Texts.Trim(),
-                            estado
+                            estado,
+                            codUsuario
                             );
 
                         if (rpta.Equals("Ok"))
@@ -203,5 +194,9 @@ namespace Presentacion.Formularios.Normas
             MessageBox.Show(mensaje, "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("CodUsuario: " + codUsuario);
+        }
     }
 }

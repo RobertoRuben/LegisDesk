@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using Presentacion.Formularios.CategoriaNormas;
@@ -25,7 +19,7 @@ namespace Presentacion
         private Panel leftBorderBtn;
         private Form formularioHijoActual;
 
-        public int IdUsuario;
+        public int codUsuario;
         public string usuario;
         public string nombre;
         public string rol;
@@ -86,7 +80,7 @@ namespace Presentacion
         }
         private struct RGBColors
         {
-            public static Color color = Color.FromArgb(0, 80, 200);
+            public static Color color = Color.FromArgb(2, 168, 86);
             public static Color color2 = Color.FromArgb(200, 241, 51, 51);
         }
         //Methods
@@ -97,7 +91,7 @@ namespace Presentacion
             {
                 //Button
                 currentBtn = (IconButton)senderBtn;
-                currentBtn.BackColor = Color.FromArgb(37, 36, 81);
+                currentBtn.BackColor = Color.FromArgb(26, 32, 36);
                 currentBtn.ForeColor = color;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
                 currentBtn.IconColor = color;
@@ -137,7 +131,7 @@ namespace Presentacion
         private void btnNormas_Click(object sender, EventArgs e)
         {
             Form_Normas form_Normas = new Form_Normas();
-            form_Normas.codUsuario = IdUsuario;
+            form_Normas.codUsuario = codUsuario;
             ActivateButton(sender, RGBColors.color);
             lblFormularioHijo.Text = "Gestión de Normas";
             MostrarSubMenu(pSubMenuNormas);
@@ -150,7 +144,7 @@ namespace Presentacion
             //Proximo Codigo
             lblFormularioHijo.Text = "Categorías de Normas";
             Form_CategoriaNormas form_CategoriaNormas = new Form_CategoriaNormas();
-            form_CategoriaNormas.codUsuario = IdUsuario;
+            form_CategoriaNormas.codUsuario = codUsuario;
             AbrirFormularioHijo(form_CategoriaNormas);
             Console.WriteLine("COD USUARIO: " + form_CategoriaNormas.codUsuario);
         }
@@ -162,7 +156,7 @@ namespace Presentacion
             MostrarSubMenu(pSubMenuUsuarios);
             ActivateButton(sender, RGBColors.color);
             Form_Usuarios form_Usuarios = new Form_Usuarios();
-            form_Usuarios.idUsuarioSesion = IdUsuario;
+            form_Usuarios.idUsuarioSesion = codUsuario;
             AbrirFormularioHijo(form_Usuarios);
             
         }
@@ -171,7 +165,7 @@ namespace Presentacion
         {
             lblFormularioHijo.Text = "Gestion de Roles";
             Form_Roles form_Roles = new Form_Roles();
-            form_Roles.codUsuario = IdUsuario;
+            form_Roles.codUsuario = codUsuario;
             AbrirFormularioHijo(form_Roles);
 
         }
@@ -181,7 +175,7 @@ namespace Presentacion
         {
             lblFormularioHijo.Text = "Gestion de Trabajadores";
             Form_Trabajadores form_Trabajadores = new Form_Trabajadores();
-            form_Trabajadores.codUsuario = IdUsuario;
+            form_Trabajadores.codUsuario = codUsuario;
             AbrirFormularioHijo(form_Trabajadores);
         }
 
@@ -258,7 +252,7 @@ namespace Presentacion
         private void btnPerfil_Click(object sender, EventArgs e)
         {
             Form_UsuarioActualizarCredenciales form_UsuarioActualizarCredenciales = new Form_UsuarioActualizarCredenciales();
-            form_UsuarioActualizarCredenciales.codUsuario = IdUsuario;
+            form_UsuarioActualizarCredenciales.codUsuario = codUsuario;
             form_UsuarioActualizarCredenciales.tboxNombreUsuario.Texts = usuario;
             form_UsuarioActualizarCredenciales.ShowDialog();
         }

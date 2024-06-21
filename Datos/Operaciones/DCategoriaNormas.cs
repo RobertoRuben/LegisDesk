@@ -1,18 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Datos.Conector;
 using Entidad.Clases;
-
 namespace Datos.Operaciones
 {
-    public class DRol
+    public class DCategoriaNormas
     {
-        public DataTable ListarRol()
+        public DataTable ListarCategorias()
         {
             SqlDataReader resultado;
             DataTable tabla = new DataTable();
@@ -21,13 +16,11 @@ namespace Datos.Operaciones
             try
             {
                 sqlCon = Conexion.getInstancia().CrearConexion();
-                SqlCommand cmd = new SqlCommand("Sp_Rol_Listar", sqlCon);
+                SqlCommand cmd = new SqlCommand("Sp_CategoriaNorma_Listar", sqlCon);
                 cmd.CommandType = CommandType.StoredProcedure;
-
                 sqlCon.Open();
                 resultado = cmd.ExecuteReader();
                 tabla.Load(resultado);
-
             }
             catch(Exception e)
             {
@@ -41,7 +34,7 @@ namespace Datos.Operaciones
             return tabla;
         }
 
-        public DataTable BuscarRol(string palabra)
+        public DataTable BuscarCategorias(string palabra)
         {
             SqlDataReader resultado;
             DataTable tabla = new DataTable();
@@ -50,7 +43,7 @@ namespace Datos.Operaciones
             try
             {
                 sqlCon = Conexion.getInstancia().CrearConexion();
-                SqlCommand cmd = new SqlCommand("Sp_Rol_Buscar", sqlCon);
+                SqlCommand cmd = new SqlCommand("Sp_CategoriaNorma_Buscar", sqlCon);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@Palabra", SqlDbType.NVarChar).Value = palabra;
                 sqlCon.Open();
@@ -69,7 +62,34 @@ namespace Datos.Operaciones
             return tabla;
         }
 
-        public string RegistrarRol(Rol objRol)
+        public DataTable ListarUltimoRegistro()
+        {
+            SqlDataReader resultado;
+            DataTable tabla = new DataTable();
+            SqlConnection sqlCon = new SqlConnection();
+
+            try
+            {
+                sqlCon = Conexion.getInstancia().CrearConexion();
+                SqlCommand cmd = new SqlCommand("Sp_CategoriaNorma_Listar_UltimoRegistro", sqlCon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                sqlCon.Open();
+                resultado = cmd.ExecuteReader();
+                tabla.Load(resultado);
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                if (sqlCon.State == ConnectionState.Open) sqlCon.Close();
+            }
+
+            return tabla;
+        }
+
+        public string RegistrarCategorias(ECategoriaDeNorma objCategoriaNorma, int codUsuario)
         {
             string rpta;
             SqlConnection sqlCon = new SqlConnection();
@@ -77,21 +97,25 @@ namespace Datos.Operaciones
             try
             {
                 sqlCon = Conexion.getInstancia().CrearConexion();
-                SqlCommand cmd = new SqlCommand("Sp_Roles_Insertar", sqlCon);
+                SqlCommand cmd = new SqlCommand("Sp_CategoriaNorma_Registrar", sqlCon);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@NombreRol", SqlDbType.NVarChar).Value = objRol.NombreDeRol;
-
+                cmd.Parameters.Add("@TipoDeNorma", SqlDbType.NVarChar).Value = objCategoriaNorma.TipoDeNorma;
+                cmd.Parameters.Add("@CodUsuario", SqlDbType.NVarChar).Value = codUsuario;
+               
                 SqlParameter parametro = new SqlParameter();
                 parametro.ParameterName = "@Rpta";
                 parametro.SqlDbType = SqlDbType.Int;
                 parametro.Direction = ParameterDirection.Output;
                 cmd.Parameters.Add(parametro);
                 sqlCon.Open();
-                rpta = cmd.ExecuteNonQuery() > 0 ? "Ok" : "No se pudo realizar el registrar";
+
+                rpta = cmd.ExecuteNonQuery() >0 ? "Ok" : "No se pudo realizar el registrar";
+
+
             }
             catch(Exception e)
             {
-                rpta = e.Message;
+                throw e;
             }
             finally
             {
@@ -101,7 +125,7 @@ namespace Datos.Operaciones
             return rpta;
         }
 
-        public string ActualzarRol(int codUsuario, int codRol, string nombreRol)
+        public string EliminarCategorias(int codCategoria, int codUsuario)
         {
             string rpta;
             SqlConnection sqlCon = new SqlConnection();
@@ -109,11 +133,10 @@ namespace Datos.Operaciones
             try
             {
                 sqlCon = Conexion.getInstancia().CrearConexion();
-                SqlCommand cmd = new SqlCommand("Sp_Rol_Modificar", sqlCon);
+                SqlCommand cmd = new SqlCommand("Sp_CategoriaNorma_Eliminar", sqlCon);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@CodTipoNorma", SqlDbType.Int).Value = codCategoria;
                 cmd.Parameters.Add("@CodUsuario", SqlDbType.Int).Value = codUsuario;
-                cmd.Parameters.Add("@CodRol", SqlDbType.Int).Value = codRol;
-                cmd.Parameters.Add("@NombreRol", SqlDbType.NVarChar).Value = nombreRol;
 
                 SqlParameter parametro = new SqlParameter();
                 parametro.ParameterName = "@Rpta";
@@ -123,45 +146,7 @@ namespace Datos.Operaciones
 
                 sqlCon.Open();
                 cmd.ExecuteNonQuery();
-
-                // Leer el parámetro de salida después de ejecutar el procedimiento
-                rpta = Convert.ToInt32(parametro.Value) > 0 ? "Ok" : "No se pudo actualizar el registro";
-
-            }
-            catch(Exception e)
-            {
-                rpta = e.Message;
-            }
-            finally
-            {
-                if (sqlCon.State == ConnectionState.Open) sqlCon.Close();
-            }
-            return rpta;
-        }
-        public string EliminarRol(int codRol)
-        {
-            string rpta;
-            SqlConnection sqlCon = new SqlConnection();
-
-            try
-            {
-                sqlCon = Conexion.getInstancia().CrearConexion();
-                SqlCommand cmd = new SqlCommand("Sp_Roles_Eliminar", sqlCon);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@CodRol", SqlDbType.Int).Value = codRol;
-
-                SqlParameter parametro = new SqlParameter();
-                parametro.ParameterName = "@Rpta";
-                parametro.SqlDbType = SqlDbType.Int;
-                parametro.Direction = ParameterDirection.Output;
-                cmd.Parameters.Add(parametro);
-
-                sqlCon.Open();
-                cmd.ExecuteNonQuery();
-
-                // Leer el parámetro de salida después de ejecutar el procedimiento
-                rpta = Convert.ToInt32(parametro.Value) == 1 ? "Ok" : "No se pudo eliminar el registro";
-
+                rpta = Convert.ToInt32(parametro.Value) == 1 ? "Ok" : "No se pudo eliminar la norma";
             }
             catch (Exception e)
             {
@@ -171,9 +156,11 @@ namespace Datos.Operaciones
             {
                 if (sqlCon.State == ConnectionState.Open) sqlCon.Close();
             }
+
             return rpta;
         }
-        public string ExisteRol(string valor)
+
+        public string ActualizarCategorias(int codCategoria, string tipoNorma, int codUsuario)
         {
             string rpta;
             SqlConnection sqlCon = new SqlConnection();
@@ -181,7 +168,43 @@ namespace Datos.Operaciones
             try
             {
                 sqlCon = Conexion.getInstancia().CrearConexion();
-                SqlCommand cmd = new SqlCommand("Sp_Rol_Existe", sqlCon);
+                SqlCommand cmd = new SqlCommand("Sp_CategoriaNorma_Actualizar", sqlCon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@CodCategoriaNorma", SqlDbType.Int).Value = codCategoria;
+                cmd.Parameters.Add("TipoDeNorma", SqlDbType.NVarChar).Value = tipoNorma;
+                cmd.Parameters.Add("@CodUsuario", SqlDbType.Int).Value = codUsuario;
+
+                SqlParameter parametro = new SqlParameter();
+                parametro.ParameterName = "@Rpta";
+                parametro.SqlDbType = SqlDbType.Int;
+                parametro.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(parametro);
+
+                sqlCon.Open();
+                cmd.ExecuteNonQuery();
+
+                rpta = Convert.ToInt32(parametro.Value) > 0 ? "Ok" : "No se pudo actualizar el registro";
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                if (sqlCon.State == ConnectionState.Open) sqlCon.Close();
+            }
+            return rpta;
+        }
+
+        public string ExisteCategoria(string valor)
+        {
+            string rpta;
+            SqlConnection sqlCon = new SqlConnection();
+
+            try
+            {
+                sqlCon = Conexion.getInstancia().CrearConexion();
+                SqlCommand cmd = new SqlCommand("Sp_CategoriaNorma_Existe", sqlCon);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@Valor", SqlDbType.NVarChar).Value = valor;
 

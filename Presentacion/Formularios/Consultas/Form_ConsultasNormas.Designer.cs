@@ -34,7 +34,8 @@ namespace Presentacion.Formularios.Consultas
             this.label10 = new System.Windows.Forms.Label();
             this.lblResultados = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.btnLimpiarBusqueda = new FontAwesome.Sharp.IconButton();
+            this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.label13 = new System.Windows.Forms.Label();
             this.tbxBusqueda = new Presentacion.CustomControls.RJTextBox();
             this.dgvNormas = new System.Windows.Forms.DataGridView();
@@ -48,7 +49,7 @@ namespace Presentacion.Formularios.Consultas
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.label10.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(12, 73);
@@ -72,7 +73,8 @@ namespace Presentacion.Formularios.Consultas
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
-            this.panel2.Controls.Add(this.iconButton2);
+            this.panel2.Controls.Add(this.btnLimpiarBusqueda);
+            this.panel2.Controls.Add(this.btnBuscar);
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.tbxBusqueda);
             this.panel2.Location = new System.Drawing.Point(12, 13);
@@ -80,23 +82,43 @@ namespace Presentacion.Formularios.Consultas
             this.panel2.Size = new System.Drawing.Size(1020, 46);
             this.panel2.TabIndex = 61;
             // 
-            // iconButton2
+            // btnLimpiarBusqueda
             // 
-            this.iconButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.iconButton2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.iconButton2.ForeColor = System.Drawing.Color.White;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.iconButton2.IconColor = System.Drawing.Color.White;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 25;
-            this.iconButton2.Location = new System.Drawing.Point(436, 6);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(42, 35);
-            this.iconButton2.TabIndex = 52;
-            this.iconButton2.UseVisualStyleBackColor = false;
+            this.btnLimpiarBusqueda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
+            this.btnLimpiarBusqueda.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnLimpiarBusqueda.FlatAppearance.BorderSize = 0;
+            this.btnLimpiarBusqueda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiarBusqueda.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnLimpiarBusqueda.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiarBusqueda.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            this.btnLimpiarBusqueda.IconColor = System.Drawing.Color.White;
+            this.btnLimpiarBusqueda.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLimpiarBusqueda.IconSize = 25;
+            this.btnLimpiarBusqueda.Location = new System.Drawing.Point(486, 6);
+            this.btnLimpiarBusqueda.Name = "btnLimpiarBusqueda";
+            this.btnLimpiarBusqueda.Size = new System.Drawing.Size(42, 35);
+            this.btnLimpiarBusqueda.TabIndex = 57;
+            this.btnLimpiarBusqueda.UseVisualStyleBackColor = false;
+            this.btnLimpiarBusqueda.Click += new System.EventHandler(this.btnLimpiarBusqueda_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
+            this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.btnBuscar.IconColor = System.Drawing.Color.White;
+            this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBuscar.IconSize = 25;
+            this.btnBuscar.Location = new System.Drawing.Point(440, 6);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(42, 35);
+            this.btnBuscar.TabIndex = 56;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // label13
             // 
@@ -112,7 +134,7 @@ namespace Presentacion.Formularios.Consultas
             // 
             this.tbxBusqueda.BackColor = System.Drawing.SystemColors.Window;
             this.tbxBusqueda.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.tbxBusqueda.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.tbxBusqueda.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.tbxBusqueda.BorderRadius = 1;
             this.tbxBusqueda.BorderSize = 1;
             this.tbxBusqueda.Font = new System.Drawing.Font("Century Gothic", 11F);
@@ -172,7 +194,7 @@ namespace Presentacion.Formularios.Consultas
             // btnImprimir
             // 
             this.btnImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.btnImprimir.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.btnImprimir.FlatAppearance.BorderSize = 0;
             this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -189,11 +211,12 @@ namespace Presentacion.Formularios.Consultas
             this.btnImprimir.TabIndex = 66;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // btnVer
             // 
             this.btnVer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnVer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnVer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.btnVer.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.btnVer.FlatAppearance.BorderSize = 0;
             this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -215,7 +238,7 @@ namespace Presentacion.Formularios.Consultas
             // btnArticulos
             // 
             this.btnArticulos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnArticulos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnArticulos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.btnArticulos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.btnArticulos.FlatAppearance.BorderSize = 0;
             this.btnArticulos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -232,6 +255,7 @@ namespace Presentacion.Formularios.Consultas
             this.btnArticulos.TabIndex = 64;
             this.btnArticulos.Text = "  Artículos";
             this.btnArticulos.UseVisualStyleBackColor = false;
+            this.btnArticulos.Click += new System.EventHandler(this.btnArticulos_Click);
             // 
             // Form_ConsultasNormas
             // 
@@ -264,9 +288,10 @@ namespace Presentacion.Formularios.Consultas
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblResultados;
         private System.Windows.Forms.Panel panel2;
-        private FontAwesome.Sharp.IconButton iconButton2;
         private System.Windows.Forms.Label label13;
         private CustomControls.RJTextBox tbxBusqueda;
         public System.Windows.Forms.DataGridView dgvNormas;
+        private FontAwesome.Sharp.IconButton btnLimpiarBusqueda;
+        private FontAwesome.Sharp.IconButton btnBuscar;
     }
 }

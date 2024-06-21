@@ -74,14 +74,13 @@ namespace Presentacion.Formularios.Normas
                 frmRegistro.cboxCategoriaNorma.SelectedValue = Convert.ToString(dgvNormas.CurrentRow.Cells[1].Value);
                 frmRegistro.cboxCategoriaNorma.Texts = dgvNormas.CurrentRow.Cells["Tipo"].Value.ToString().Trim();
 
-                // Añadir la lógica para los RadioButtons
-                string estado = dgvNormas.CurrentRow.Cells[4].Value.ToString();
-                if (estado.Equals("Activo", StringComparison.OrdinalIgnoreCase))
+                string estado = dgvNormas.CurrentRow.Cells[11].Value.ToString();
+                if (estado.Equals("Vigente", StringComparison.OrdinalIgnoreCase))
                 {
                     frmRegistro.rbtnVigente.Checked = true;
                     frmRegistro.rbtnDerogado.Checked = false;
                 }
-                else if (estado.Equals("Inactivo", StringComparison.OrdinalIgnoreCase))
+                else if (estado.Equals("Derogada", StringComparison.OrdinalIgnoreCase))
                 {
                     frmRegistro.rbtnVigente.Checked = false;
                     frmRegistro.rbtnDerogado.Checked = true;
@@ -100,8 +99,8 @@ namespace Presentacion.Formularios.Normas
                 }
 
                 frmRegistro.ShowDialog();
-                this.ListarNormas();
                 this.FormatoDataGrid();
+                this.ListarNormas();
             }
         }
 
@@ -110,8 +109,8 @@ namespace Presentacion.Formularios.Normas
             if(dgvNormas.SelectedRows.Count > 0)
             {
                 Form_Articulos frmArticulos = new Form_Articulos();
-                frmArticulos.idUsuario = codUsuario;
-                frmArticulos.idNorma = Convert.ToInt32(dgvNormas.CurrentRow.Cells[0].Value);
+                frmArticulos.codUsuario = codUsuario;
+                frmArticulos.codNorma = Convert.ToInt32(dgvNormas.CurrentRow.Cells[0].Value);
                 frmArticulos.ListarArticulos();
                 frmArticulos.nombreNorma = dgvNormas.CurrentRow.Cells[4].Value.ToString();
                 frmArticulos.numNorma = dgvNormas.CurrentRow.Cells[3].Value.ToString().Trim();
@@ -134,10 +133,11 @@ namespace Presentacion.Formularios.Normas
 
         public void FormatoDataGrid()
         {
-            dgvNormas.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dgvNormas.Columns[0].Width = 120;
+            dgvNormas.Columns[0].Visible = false;
             dgvNormas.Columns[1].Visible = false;
             dgvNormas.Columns[2].Visible = false;
+            dgvNormas.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dgvNormas.Columns[3].Width = 150;
             dgvNormas.Columns[6].Visible = false;
             dgvNormas.Columns[7].Visible = false;
             dgvNormas.Columns[8].Visible = false;
@@ -199,6 +199,39 @@ namespace Presentacion.Formularios.Normas
         private void iconButton1_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Codigo Usuario: " + codUsuario);
+        }
+
+        private void dgvNormas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Form_VistaNormas form_VistaNormas = new Form_VistaNormas();
+
+            Console.WriteLine("Dando doble clic");
+
+            if (dgvNormas.SelectedRows.Count > 0)
+            {
+                form_VistaNormas.tboxNumNorma.Texts = dgvNormas.CurrentRow.Cells[3].Value.ToString().Trim();
+                form_VistaNormas.tboxNombreNorma.Texts = dgvNormas.CurrentRow.Cells[4].Value.ToString();
+                form_VistaNormas.tboxResumen.Texts = dgvNormas.CurrentRow.Cells[6].Value.ToString().Trim();
+                form_VistaNormas.linkEnlace.Text = dgvNormas.CurrentRow.Cells[10].Value.ToString().Trim();
+                form_VistaNormas.tboxPaginas.Texts = dgvNormas.CurrentRow.Cells[8].Value.ToString().Trim();
+                form_VistaNormas.tboxCategoriaNorma.Texts = dgvNormas.CurrentRow.Cells[5].Value.ToString().Trim();
+                form_VistaNormas.tboxMedioPublicacion.Texts = dgvNormas.CurrentRow.Cells[9].Value.ToString().Trim();
+                form_VistaNormas.tboxEstado.Texts = dgvNormas.CurrentRow.Cells[11].Value.ToString().Trim();
+
+                string inputFecha = dgvNormas.CurrentRow.Cells[7].Value.ToString().Trim();
+                DateTime fecha;
+                if (DateTime.TryParse(inputFecha, out fecha))
+                {
+                    form_VistaNormas.tboxFechaPublicacion.Texts = fecha.ToString("dd/MM/yyyy"); // Convertir a cadena en formato de fecha
+                }
+                else
+                {
+                    MessageBox.Show($"La fecha del registro '{inputFecha}' no es válida o está en un formato incorrecto.", "Fecha inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    form_VistaNormas.tboxFechaPublicacion.Texts = "Fecha no válida";  // Mostrar mensaje en el TextBox si la fecha no es válida
+                }
+
+                form_VistaNormas.ShowDialog();
+            }
         }
     }
 }

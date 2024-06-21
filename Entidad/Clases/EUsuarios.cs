@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Entidad.Clases
+﻿namespace Entidad.Clases
 {
-    public class Usuario
+    public class EUsuarios
     { 
         public int CodUsuario { get; set; }
         public int CodTrabajador { get; set; }

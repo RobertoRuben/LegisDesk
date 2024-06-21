@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Presentacion.Formularios.Articulos;
 using Presentacion.Formularios.Normas;
 using Negocio.Servicios;
 
@@ -17,8 +9,8 @@ namespace Presentacion.Formularios.Articulos
     {
         public string numNorma;
         public string nombreNorma;
-        public int idNorma;
-        public int idUsuario;
+        public int codNorma;
+        public int codUsuario;
         public string operacion = "";
 
         public Form_Articulos()
@@ -43,7 +35,7 @@ namespace Presentacion.Formularios.Articulos
         {
             try
             {
-                dgvArticulos.DataSource = NArticulos.BuscarArticulos(idNorma,tbxBusqueda.Texts.Trim());
+                dgvArticulos.DataSource = NArticulos.BuscarArticulos(codNorma,tbxBusqueda.Texts.Trim());
                 lblResultados.Text = "Total de Registros: " + Convert.ToString(dgvArticulos.Rows.Count);
 
                 if (dgvArticulos.Rows.Count < 1)
@@ -60,20 +52,19 @@ namespace Presentacion.Formularios.Articulos
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             Form_RegistrarArticulos form_RegistrarArticulos = new Form_RegistrarArticulos();
-            form_RegistrarArticulos.idUsuario = idUsuario;
-            form_RegistrarArticulos.codNorma = idNorma;
+            form_RegistrarArticulos.codUsuario = codUsuario;
+            form_RegistrarArticulos.codNorma = codNorma;
             form_RegistrarArticulos.operacion = "Registrar";
             form_RegistrarArticulos.ShowDialog();
             this.ListarArticulos();
             this.FormatoDataGrid();
-            //this.SeleccionarUltimoElemento();
         }
 
         public void ListarArticulos()
         {
             try
             {
-                dgvArticulos.DataSource = NArticulos.ListarArticulos(Convert.ToInt32(idNorma));
+                dgvArticulos.DataSource = NArticulos.ListarArticulos(Convert.ToInt32(codNorma));
                 lblResultados.Text = "Total de Registros: " + Convert.ToString(dgvArticulos.Rows.Count);
             }
             catch (Exception e)
@@ -91,20 +82,20 @@ namespace Presentacion.Formularios.Articulos
         {
             Form_RegistrarArticulos form_RegistrarArticulos = new Form_RegistrarArticulos();
 
-            form_RegistrarArticulos.idUsuario = idUsuario;
-            form_RegistrarArticulos.codNorma = idNorma;
+            form_RegistrarArticulos.codUsuario = codUsuario;
+            form_RegistrarArticulos.codNorma = codNorma;
             form_RegistrarArticulos.operacion = "Actualizar";
 
             if (dgvArticulos.SelectedRows.Count > 0)
             {
-                form_RegistrarArticulos.idArticulo = Convert.ToInt32(dgvArticulos.CurrentRow.Cells[0].Value);
+                form_RegistrarArticulos.codArticulo = Convert.ToInt32(dgvArticulos.CurrentRow.Cells[0].Value);
                 form_RegistrarArticulos.tboxArticulo.Texts = dgvArticulos.CurrentRow.Cells[2].Value.ToString().Trim();
                 form_RegistrarArticulos.tboxDenominacion.Texts = dgvArticulos.CurrentRow.Cells[3].Value.ToString().Trim();
                 form_RegistrarArticulos.tboxDescripcion.Texts = dgvArticulos.CurrentRow.Cells[4].Value.ToString().Trim();
                 form_RegistrarArticulos.numUpDownPagina.Value = Convert.ToDecimal(dgvArticulos.CurrentRow.Cells[5].Value.ToString().Trim());
 
-                // Añadir la lógica para los RadioButtons
                 string estado = dgvArticulos.CurrentRow.Cells[6].Value.ToString();
+
                 if (estado.Equals("Vigente", StringComparison.OrdinalIgnoreCase))
                 {
                     form_RegistrarArticulos.rbtnVigente.Checked = true;
@@ -118,8 +109,7 @@ namespace Presentacion.Formularios.Articulos
 
                 form_RegistrarArticulos.ShowDialog();
 
-                Console.WriteLine("IdNorma: " + idNorma);
-                Console.WriteLine("IdUsuario: " + idUsuario);
+                this.ListarArticulos();
             }
             else
             {
@@ -127,16 +117,6 @@ namespace Presentacion.Formularios.Articulos
             }
 
         }
-
-        //private void SeleccionarUltimoElemento()
-        //{
-        //    if (dgvArticulos.Rows.Count > 0)
-        //    {
-        //        dgvArticulos.ClearSelection();
-        //        dgvArticulos.Rows[dgvArticulos.Rows.Count - 1].Selected = true;
-        //        dgvArticulos.FirstDisplayedScrollingRowIndex = dgvArticulos.Rows.Count - 1;
-        //    }
-        //}
 
         public void FormatoDataGrid()
         {
@@ -147,9 +127,6 @@ namespace Presentacion.Formularios.Articulos
             dgvArticulos.Columns[4].Visible = false;
             dgvArticulos.Columns[5].Visible = false;
             dgvArticulos.Columns[6].Visible = false;
-            //dgvArticulos.Columns[8].Visible = false;
-            //dgvArticulos.Columns[9].Visible = false;
-            //dgvArticulos.Columns[10].Visible = false;
 
         }
 
@@ -159,12 +136,11 @@ namespace Presentacion.Formularios.Articulos
             {
                 try
                 {
-                    // Mostrar mensaje de confirmación
-                    DialogResult dialogResult = MessageBox.Show("¿Quieres eliminar esta norma?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    DialogResult dialogResult = MessageBox.Show("¿Quieres eliminar esta artículo?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                     if (dialogResult == DialogResult.Yes)
                     {
-                        string rpta = NArticulos.EliminarArticulo(Convert.ToInt32(dgvArticulos.CurrentRow.Cells[0].Value));
+                        string rpta = NArticulos.EliminarArticulos(Convert.ToInt32(dgvArticulos.CurrentRow.Cells[0].Value), codUsuario);
                         if (rpta.Equals("Ok"))
                         {
                             this.MensajeOk("Se eliminó el registro");
@@ -182,6 +158,10 @@ namespace Presentacion.Formularios.Articulos
                     MessageBox.Show(ex.Message + ex.StackTrace);
                 }
             }
+            else
+            {
+                MessageBox.Show("Debes al menos seleccionar al menos un articulo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void MensajeError(string mensaje)
         {
@@ -198,5 +178,27 @@ namespace Presentacion.Formularios.Articulos
             this.Buscar();
             this.FormatoDataGrid();
         }
+
+        private void dgvArticulos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Form_VistaArticulos form_VistaArticulos = new Form_VistaArticulos();
+
+            if (dgvArticulos.SelectedRows.Count > 0)
+            {
+                form_VistaArticulos.tboxArticulo.Texts = dgvArticulos.CurrentRow.Cells[2].Value.ToString().Trim();
+                form_VistaArticulos.tboxDenominacion.Texts = dgvArticulos.CurrentRow.Cells[3].Value.ToString().Trim();
+                form_VistaArticulos.tboxDescripcion.Texts = dgvArticulos.CurrentRow.Cells[4].Value.ToString().Trim();
+                form_VistaArticulos.tboxPaginas.Texts = dgvArticulos.CurrentRow.Cells[5].Value.ToString().Trim();
+                form_VistaArticulos.tboxEstado.Texts = dgvArticulos.CurrentRow.Cells[6].Value.ToString().Trim();
+
+            }
+            else
+            {
+                MessageBox.Show("Debes seleccionar al menos una fila", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            form_VistaArticulos.ShowDialog();
+        }
+
     }
 }

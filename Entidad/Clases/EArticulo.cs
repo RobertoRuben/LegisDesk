@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Entidad.Clases
+﻿namespace Entidad.Clases
 {
-    public class Articulo
+    public class EArticulo
     {
         public int CodArticulo { get; set; }
         public int CodNormatividad { get; set; }

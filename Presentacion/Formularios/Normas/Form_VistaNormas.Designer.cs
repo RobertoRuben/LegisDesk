@@ -1,7 +1,7 @@
 ﻿
-namespace Presentacion.Formularios.Consultas
+namespace Presentacion.Formularios.Normas
 {
-    partial class Form_VerNormas
+    partial class Form_VistaNormas
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Presentacion.Formularios.Consultas
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCancelar = new FontAwesome.Sharp.IconButton();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_VistaNormas));
             this.panel1 = new System.Windows.Forms.Panel();
             this.tboxFechaPublicacion = new Presentacion.CustomControls.RJTextBox();
             this.tboxPaginas = new Presentacion.CustomControls.RJTextBox();
@@ -51,32 +51,10 @@ namespace Presentacion.Formularios.Consultas
             this.tboxNombreNorma = new Presentacion.CustomControls.RJTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tboxNumNorma = new Presentacion.CustomControls.RJTextBox();
-            this.btnSair = new FontAwesome.Sharp.IconButton();
-            this.btnGuardar = new FontAwesome.Sharp.IconButton();
+            this.btnSalir = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Xmark;
-            this.btnCancelar.IconColor = System.Drawing.Color.White;
-            this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCancelar.IconSize = 32;
-            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(166, 558);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(148, 40);
-            this.btnCancelar.TabIndex = 60;
-            this.btnCancelar.Text = "    Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
@@ -104,13 +82,13 @@ namespace Presentacion.Formularios.Consultas
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1020, 526);
-            this.panel1.TabIndex = 59;
+            this.panel1.TabIndex = 63;
             // 
             // tboxFechaPublicacion
             // 
             this.tboxFechaPublicacion.BackColor = System.Drawing.SystemColors.Window;
             this.tboxFechaPublicacion.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.tboxFechaPublicacion.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.tboxFechaPublicacion.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.tboxFechaPublicacion.BorderRadius = 1;
             this.tboxFechaPublicacion.BorderSize = 1;
             this.tboxFechaPublicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -133,7 +111,7 @@ namespace Presentacion.Formularios.Consultas
             // 
             this.tboxPaginas.BackColor = System.Drawing.SystemColors.Window;
             this.tboxPaginas.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.tboxPaginas.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.tboxPaginas.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.tboxPaginas.BorderRadius = 1;
             this.tboxPaginas.BorderSize = 1;
             this.tboxPaginas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -156,7 +134,7 @@ namespace Presentacion.Formularios.Consultas
             // 
             this.tboxEstado.BackColor = System.Drawing.SystemColors.Window;
             this.tboxEstado.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.tboxEstado.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.tboxEstado.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.tboxEstado.BorderRadius = 1;
             this.tboxEstado.BorderSize = 1;
             this.tboxEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -179,19 +157,19 @@ namespace Presentacion.Formularios.Consultas
             // 
             this.linkEnlace.AutoSize = true;
             this.linkEnlace.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.linkEnlace.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.linkEnlace.Location = new System.Drawing.Point(15, 318);
             this.linkEnlace.Name = "linkEnlace";
             this.linkEnlace.Size = new System.Drawing.Size(69, 16);
             this.linkEnlace.TabIndex = 68;
             this.linkEnlace.TabStop = true;
             this.linkEnlace.Text = "linkLabel1";
-            this.linkEnlace.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkEnlace_LinkClicked);
             // 
             // tboxMedioPublicacion
             // 
             this.tboxMedioPublicacion.BackColor = System.Drawing.SystemColors.Window;
             this.tboxMedioPublicacion.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.tboxMedioPublicacion.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.tboxMedioPublicacion.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.tboxMedioPublicacion.BorderRadius = 1;
             this.tboxMedioPublicacion.BorderSize = 1;
             this.tboxMedioPublicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -214,7 +192,7 @@ namespace Presentacion.Formularios.Consultas
             // 
             this.tboxCategoriaNorma.BackColor = System.Drawing.SystemColors.Window;
             this.tboxCategoriaNorma.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.tboxCategoriaNorma.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.tboxCategoriaNorma.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.tboxCategoriaNorma.BorderRadius = 1;
             this.tboxCategoriaNorma.BorderSize = 1;
             this.tboxCategoriaNorma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -314,7 +292,7 @@ namespace Presentacion.Formularios.Consultas
             // 
             this.tboxResumen.BackColor = System.Drawing.SystemColors.Window;
             this.tboxResumen.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.tboxResumen.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.tboxResumen.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.tboxResumen.BorderRadius = 1;
             this.tboxResumen.BorderSize = 1;
             this.tboxResumen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -372,7 +350,7 @@ namespace Presentacion.Formularios.Consultas
             // 
             this.tboxNombreNorma.BackColor = System.Drawing.SystemColors.Window;
             this.tboxNombreNorma.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.tboxNombreNorma.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.tboxNombreNorma.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.tboxNombreNorma.BorderRadius = 1;
             this.tboxNombreNorma.BorderSize = 1;
             this.tboxNombreNorma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -406,7 +384,7 @@ namespace Presentacion.Formularios.Consultas
             // 
             this.tboxNumNorma.BackColor = System.Drawing.SystemColors.Window;
             this.tboxNumNorma.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.tboxNumNorma.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.tboxNumNorma.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.tboxNumNorma.BorderRadius = 1;
             this.tboxNumNorma.BorderSize = 1;
             this.tboxNumNorma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -425,61 +403,40 @@ namespace Presentacion.Formularios.Consultas
             this.tboxNumNorma.Texts = "";
             this.tboxNumNorma.UnderlinedStyle = false;
             // 
-            // btnSair
+            // btnSalir
             // 
-            this.btnSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(21)))), ((int)(((byte)(30)))));
-            this.btnSair.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(21)))), ((int)(((byte)(30)))));
-            this.btnSair.FlatAppearance.BorderSize = 0;
-            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSair.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnSair.ForeColor = System.Drawing.Color.White;
-            this.btnSair.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnSair.IconColor = System.Drawing.Color.White;
-            this.btnSair.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSair.IconSize = 32;
-            this.btnSair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSair.Location = new System.Drawing.Point(861, 558);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(148, 40);
-            this.btnSair.TabIndex = 58;
-            this.btnSair.Text = "Salir";
-            this.btnSair.UseVisualStyleBackColor = false;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click_1);
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(21)))), ((int)(((byte)(30)))));
+            this.btnSalir.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(21)))), ((int)(((byte)(30)))));
+            this.btnSalir.FlatAppearance.BorderSize = 0;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnSalir.ForeColor = System.Drawing.Color.White;
+            this.btnSalir.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnSalir.IconColor = System.Drawing.Color.White;
+            this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSalir.IconSize = 32;
+            this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalir.Location = new System.Drawing.Point(861, 558);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(148, 40);
+            this.btnSalir.TabIndex = 62;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnGuardar.FlatAppearance.BorderSize = 0;
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
-            this.btnGuardar.IconColor = System.Drawing.Color.White;
-            this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Regular;
-            this.btnGuardar.IconSize = 32;
-            this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(12, 558);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(148, 40);
-            this.btnGuardar.TabIndex = 57;
-            this.btnGuardar.Text = "    Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            // 
-            // Form_VerNormas
+            // Form_VistaNormas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(225)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(1044, 610);
-            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnSair);
-            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.btnSalir);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form_VerNormas";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Form_VistaNormas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Frm_VerNormas";
+            this.Text = "Norma";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
@@ -489,8 +446,13 @@ namespace Presentacion.Formularios.Consultas
 
         #endregion
 
-        private FontAwesome.Sharp.IconButton btnCancelar;
         private System.Windows.Forms.Panel panel1;
+        public CustomControls.RJTextBox tboxFechaPublicacion;
+        public CustomControls.RJTextBox tboxPaginas;
+        public CustomControls.RJTextBox tboxEstado;
+        public System.Windows.Forms.LinkLabel linkEnlace;
+        public CustomControls.RJTextBox tboxMedioPublicacion;
+        public CustomControls.RJTextBox tboxCategoriaNorma;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
@@ -505,13 +467,6 @@ namespace Presentacion.Formularios.Consultas
         public CustomControls.RJTextBox tboxNombreNorma;
         private System.Windows.Forms.Label label1;
         public CustomControls.RJTextBox tboxNumNorma;
-        private FontAwesome.Sharp.IconButton btnSair;
-        private FontAwesome.Sharp.IconButton btnGuardar;
-        public CustomControls.RJTextBox tboxCategoriaNorma;
-        public CustomControls.RJTextBox tboxMedioPublicacion;
-        public System.Windows.Forms.LinkLabel linkEnlace;
-        public CustomControls.RJTextBox tboxPaginas;
-        public CustomControls.RJTextBox tboxEstado;
-        public CustomControls.RJTextBox tboxFechaPublicacion;
+        private FontAwesome.Sharp.IconButton btnSalir;
     }
 }

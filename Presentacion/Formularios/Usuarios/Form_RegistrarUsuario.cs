@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio.Servicios;
-using Negocio.Manipulaciones;
 using Negocio.Seguridad;
 
 namespace Presentacion.Usuarios
@@ -21,9 +13,6 @@ namespace Presentacion.Usuarios
         public Form_RegistrarUsuario()
         {
             InitializeComponent();
-        }
-        private void Form_RegistrarUsuario_Load(object sender, EventArgs e)
-        {
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -67,7 +56,7 @@ namespace Presentacion.Usuarios
         {
             try
             {
-                cboxRol.DataSource = NRol.ListarRoles();
+                cboxRol.DataSource = NRoles.ListarRoles();
                 cboxRol.DisplayMember = "Nombre del Rol";
                 cboxRol.ValueMember = "CodRol";
                 cboxRol.Texts = "Seleccione un Rol";
@@ -115,6 +104,11 @@ namespace Presentacion.Usuarios
                         rpta = "Verificar, todos los campos obligatorios";
                         MensajeError(rpta);
                     }
+                    else if (tboxContraseña.Texts.Trim().Length < 8)
+                    {
+                        rpta = "La contraseña debe tener al menos 8 caracteres";
+                        MensajeError(rpta);
+                    }
                     else if (!tboxContraseña.Texts.Trim().Equals(tboxConfirmacion.Texts.Trim()))
                     {
                         rpta = "La contraseña y la confirmación no coinciden";
@@ -130,6 +124,7 @@ namespace Presentacion.Usuarios
                             tboxNombreUsuario.Texts.Trim(),
                             PasswordEncryptor.Encryptor(tboxContraseña.Texts.Trim()),
                             estado,
+                            codUsuario,
                             Convert.ToInt32(cboxRol.SelectedValue)
                             );
                         if (rpta.Equals("Ok"))
@@ -162,10 +157,27 @@ namespace Presentacion.Usuarios
 
                     if (!string.IsNullOrWhiteSpace(contraseña))
                     {
-                        // Llamada al método de encriptación solo si la contraseña no está vacía
-                        contraseñaEncriptada = PasswordEncryptor.Encryptor(contraseña);
+                        if (contraseña.Length >= 8)
+                        {
+                            if (contraseña.Equals(tboxConfirmacion.Texts.Trim()))
+                            {
+                                // Llamada al método de encriptación solo si la contraseña no está vacía y es válida
+                                contraseñaEncriptada = PasswordEncryptor.Encryptor(contraseña);
+                            }
+                            else
+                            {
+                                rpta = "La contraseña y la confirmación no coinciden";
+                                MensajeError(rpta);
+                                return; // Termina la ejecución del método si la validación falla
+                            }
+                        }
+                        else
+                        {
+                            rpta = "La contraseña debe tener al menos 8 caracteres";
+                            MensajeError(rpta);
+                            return; // Termina la ejecución del método si la validación falla
+                        }
                     }
-
                     int rolTrabajador = (int)cboxRol.SelectedValue;
                     string nombreUsuario = tboxNombreUsuario.Texts.Trim();
 

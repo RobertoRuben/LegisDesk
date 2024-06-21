@@ -14,7 +14,7 @@ namespace Negocio.Servicios
         public static DataTable Login(string usuario, string contraseña)
         {
             DUsuarios dUsuario = new DUsuarios();
-            return dUsuario.Login(usuario, contraseña);
+            return dUsuario.IniciarSesion(usuario, contraseña);
         }
 
         public static DataTable ListarUsuario()
@@ -30,10 +30,10 @@ namespace Negocio.Servicios
         }
 
         //Registar Usuario
-        public static string RegistrarUsuario(int codTrabajador, string nombreUsuario, string contraseña, string estado, int codRol)
+        public static string RegistrarUsuario(int codTrabajador, string nombreUsuario, string contraseña, string estado, int codUsuario,int codRol)
         {
             DUsuarios dUsuarios = new DUsuarios();
-            string existe = dUsuarios.Existe(nombreUsuario);
+            string existe = dUsuarios.ExisteUsuario(nombreUsuario);
 
             if (existe.Equals("1"))
             {
@@ -41,7 +41,7 @@ namespace Negocio.Servicios
             }
             else
             {
-                Usuario usuario = new Usuario();
+                EUsuarios usuario = new EUsuarios();
 
                 usuario.CodTrabajador = codTrabajador;
                 usuario.NombreUsuario = nombreUsuario;
@@ -49,7 +49,7 @@ namespace Negocio.Servicios
                 usuario.Estado = estado;
                 usuario.CodRol = codRol;
 
-                return dUsuarios.RegistrarUsuarios(usuario);
+                return dUsuarios.RegistrarUsuarios(usuario, codUsuario);
 
             }
             
@@ -59,7 +59,7 @@ namespace Negocio.Servicios
         {
             DUsuarios dUsuarios = new DUsuarios();
 
-            return dUsuarios.ActualizarUsuario(codUsuario, nombreUsuario, contraseña, codRol, estado);
+            return dUsuarios.ActualizarUsuarios(codUsuario, nombreUsuario, contraseña, codRol, estado);
            
         }
         public static string ActualizarCredenciales(int codUsuario, string nombreUsuario, string contraseña)
@@ -71,10 +71,10 @@ namespace Negocio.Servicios
         public static string InhabilitarUsuario(int codUsuario, int codUsuarioSesion)
         {
             DUsuarios dUsuarios = new DUsuarios();
-            Usuario usuario = new Usuario();
+            EUsuarios usuario = new EUsuarios();
 
 
-            return dUsuarios.InhabilitarUsuario(codUsuario, codUsuarioSesion);
+            return dUsuarios.InhabilitarUsuarios(codUsuario, codUsuarioSesion);
         }
     }
 }

@@ -47,7 +47,7 @@
     <Compile Include="Servicios\NArticulos.cs" />
     <Compile Include="Servicios\NCategoriasNormas.cs" />
     <Compile Include="Servicios\NNormas.cs" />
-    <Compile Include="Servicios\NRol.cs" />
+    <Compile Include="Servicios\NRoles.cs" />
     <Compile Include="Servicios\NTrabajadores.cs" />
     <Compile Include="Servicios\NUsuarios.cs" />
   </ItemGroup>

@@ -48,14 +48,10 @@ namespace Presentacion.Formularios.Login
                     else
                     {
                         Form_Principal form_Principal = new Form_Principal();
-                        form_Principal.IdUsuario = Convert.ToInt32(tabla.Rows[0][0]);
+                        form_Principal.codUsuario = Convert.ToInt32(tabla.Rows[0][0]);
                         form_Principal.usuario = Convert.ToString(tabla.Rows[0][1]);
                         form_Principal.rol = Convert.ToString(tabla.Rows[0][3]);
                         form_Principal.nombre = Convert.ToString(tabla.Rows[0][4]);
-
-
-                        Console.WriteLine("id usuario"+ form_Principal.IdUsuario);
-                        // Muestra el formulario principal
                         form_Principal.Show();
                         this.Hide();
                     }

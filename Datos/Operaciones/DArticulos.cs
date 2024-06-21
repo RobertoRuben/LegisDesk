@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Datos.Conector;
 using Entidad.Clases;
 
@@ -99,7 +96,7 @@ namespace Datos.Operaciones
             return tabla;
         }
 
-        public string RegistrarArticulo(Articulo objArticulo)
+        public string RegistrarArticulos(EArticulo objArticulo, int codUsuario)
         {
             string rpta;
             SqlConnection sqlCon = new SqlConnection();
@@ -114,6 +111,7 @@ namespace Datos.Operaciones
                 cmd.Parameters.Add("@Denominacion", SqlDbType.NVarChar).Value = objArticulo.Denominacion;
                 cmd.Parameters.Add("@Descripcion", SqlDbType.NVarChar).Value = objArticulo.Descripcion;
                 cmd.Parameters.Add("@Pagina", SqlDbType.Int).Value = objArticulo.Pagina;
+                cmd.Parameters.Add("@CodUsuario", SqlDbType.Int).Value = codUsuario;
                 cmd.Parameters.Add("@Estado", SqlDbType.NVarChar).Value = objArticulo.Estado;
 
                 SqlParameter parametro = new SqlParameter();
@@ -151,7 +149,7 @@ namespace Datos.Operaciones
         }
 
 
-        public string ActualizarArticulo(int codArticulo, int codNormatividad, int numArticulo, string denominacion, string descripcion, int pagina, string estado)
+        public string ActualizarArticulos(int codArticulo, int codNormatividad, int numArticulo, string denominacion, string descripcion, int pagina, string estado, int codUsuario)
         {
             string rpta;
             SqlConnection sqlCon = new SqlConnection();
@@ -168,6 +166,7 @@ namespace Datos.Operaciones
                 cmd.Parameters.Add("@Descripcion", SqlDbType.NVarChar).Value = descripcion;
                 cmd.Parameters.Add("@Pagina", SqlDbType.Int).Value = pagina;
                 cmd.Parameters.Add("@Estado", SqlDbType.NVarChar).Value = estado;
+                cmd.Parameters.Add("@CodUsuario", SqlDbType.Int).Value = codUsuario;
 
                 SqlParameter parametro = new SqlParameter();
                 parametro.ParameterName = "@Rpta";
@@ -191,7 +190,7 @@ namespace Datos.Operaciones
             return rpta;
         }
 
-        public string EliminarArticulo(int codArticulo)
+        public string EliminarArticulos(int codArticulo, int codUsuario)
         {
             string rpta;
             SqlConnection sqlCon = new SqlConnection();
@@ -202,6 +201,7 @@ namespace Datos.Operaciones
                 SqlCommand cmd = new SqlCommand("Sp_Articulos_Eliminar", sqlCon);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@CodArticulo", SqlDbType.Int).Value = codArticulo;
+                cmd.Parameters.Add("@CodUsuario", SqlDbType.Int).Value = codUsuario;
 
                 SqlParameter parametro = new SqlParameter();
                 parametro.ParameterName = "@Rpta";
@@ -259,8 +259,6 @@ namespace Datos.Operaciones
 
             return rpta;
         }
-
-
 
     }
 }

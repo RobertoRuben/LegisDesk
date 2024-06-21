@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
 using Entidad.Clases;
@@ -64,7 +63,7 @@ namespace Datos.Operaciones
             return tabla;
         }
 
-        public DataTable Login(string usuario, string contraseña)
+        public DataTable IniciarSesion(string usuario, string contraseña)
         {
             SqlDataReader resultado;
             DataTable tabla = new DataTable();
@@ -92,7 +91,7 @@ namespace Datos.Operaciones
             return tabla;
         }
 
-        public string RegistrarUsuarios(Usuario objUsuario) 
+        public string RegistrarUsuarios(EUsuarios objUsuario, int codUsuario) 
         {
             string rpta;
             SqlConnection sqlCon = new SqlConnection();
@@ -106,6 +105,7 @@ namespace Datos.Operaciones
                 cmd.Parameters.Add("@NombreUsuario", SqlDbType.NVarChar).Value = objUsuario.NombreUsuario;
                 cmd.Parameters.Add("@Contraseña", SqlDbType.NVarChar).Value = objUsuario.Contraseña;
                 cmd.Parameters.Add("@Estado", SqlDbType.NVarChar).Value = objUsuario.Estado;
+                cmd.Parameters.Add("@CodUsuario", SqlDbType.Int).Value = codUsuario;
                 cmd.Parameters.Add("@CodRol", SqlDbType.Int).Value = objUsuario.CodRol;
 
                 SqlParameter parametro = new SqlParameter();
@@ -128,7 +128,7 @@ namespace Datos.Operaciones
             return rpta;
         }
 
-        public string ActualizarUsuario(int codUsuario, string nombre, string contraseña, int codRol, string estado)
+        public string ActualizarUsuarios(int codUsuario, string nombre, string contraseña, int codRol, string estado)
         {
             string rpta;
             SqlConnection sqlCon = new SqlConnection();
@@ -201,7 +201,7 @@ namespace Datos.Operaciones
             return rpta;
         }
 
-        public string InhabilitarUsuario(int codUsuario, int codUsuarioSesion)
+        public string InhabilitarUsuarios(int codUsuario, int codUsuarioSesion)
         {
             string rpta;
             SqlConnection sqlCon = new SqlConnection();
@@ -234,7 +234,7 @@ namespace Datos.Operaciones
             return rpta;
         }
 
-        public string Existe(string valor)
+        public string ExisteUsuario(string valor)
         {
             string rpta;
             SqlConnection sqlCon = new SqlConnection();

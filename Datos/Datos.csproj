@@ -43,9 +43,9 @@
   <ItemGroup>
     <Compile Include="Conector\Conexion.cs" />
     <Compile Include="Operaciones\DArticulos.cs" />
-    <Compile Include="Operaciones\DCategoriaNorma.cs" />
+    <Compile Include="Operaciones\DCategoriaNormas.cs" />
     <Compile Include="Operaciones\DNormas.cs" />
-    <Compile Include="Operaciones\DRol.cs" />
+    <Compile Include="Operaciones\DRoles.cs" />
     <Compile Include="Operaciones\DTrabajadores.cs" />
     <Compile Include="Operaciones\DUsuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Datos.Operaciones;
+﻿using Datos.Operaciones;
 using Entidad.Clases;
+using System.Data;
 
 namespace Negocio.Servicios
 {
@@ -13,25 +8,24 @@ namespace Negocio.Servicios
     {
         public static DataTable ListarCategoriasNormas()
         {
-            DCategoriaNorma objDCategoriaNorma = new DCategoriaNorma();
+            DCategoriaNormas objDCategoriaNorma = new DCategoriaNormas();
             return objDCategoriaNorma.ListarCategorias();
         }
         public static DataTable BuscarCategoriasNormas(string palabra)
         {
-            DCategoriaNorma objDCategoriaNorma = new DCategoriaNorma();
-            return objDCategoriaNorma.BuscarCategoria(palabra);
+            DCategoriaNormas objDCategoriaNorma = new DCategoriaNormas();
+            return objDCategoriaNorma.BuscarCategorias(palabra);
         }
 
         public static DataTable ListarUlltimosRegistro()
         {
-            DCategoriaNorma objDCategoriaNorma = new DCategoriaNorma();
-            return objDCategoriaNorma.ListarUltimoRegisro();
+            DCategoriaNormas objDCategoriaNorma = new DCategoriaNormas();
+            return objDCategoriaNorma.ListarUltimoRegistro();
         }
-        public static string RegistrarCategoriaNorma(string nombreCategoria, int codUsuario)
+        public static string RegistrarCategoriaNormas(string nombreCategoria, int codUsuario)
         {
-            DCategoriaNorma dCategoriaNorma = new DCategoriaNorma();
+            DCategoriaNormas dCategoriaNorma = new DCategoriaNormas();
             string existe = dCategoriaNorma.ExisteCategoria(nombreCategoria);
-            Console.WriteLine($"Resultado de ExisteArticuloEnNorma: {existe}");
 
             if (existe.Equals("1"))
             {
@@ -39,17 +33,17 @@ namespace Negocio.Servicios
             }
             else
             {
-                CategoriaDeNorma categoriaDeNorma = new CategoriaDeNorma();
+                ECategoriaDeNorma categoriaDeNorma = new ECategoriaDeNorma();
                 categoriaDeNorma.TipoDeNorma = nombreCategoria;
 
-                return dCategoriaNorma.RegistrarCategoria(categoriaDeNorma, codUsuario);
+                return dCategoriaNorma.RegistrarCategorias(categoriaDeNorma, codUsuario);
 
             }
         }
 
-        public static string ActualizarCategoriaNorma(int codCategoria, string nombreCategoria, int codUsuario)
+        public static string ActualizarCategoriaNormas(int codCategoria, string nombreCategoria, int codUsuario)
         {
-            DCategoriaNorma dCategoriaNorma = new DCategoriaNorma();
+            DCategoriaNormas dCategoriaNorma = new DCategoriaNormas();
             string existe = dCategoriaNorma.ExisteCategoria(nombreCategoria);
 
             if (existe.Equals("1"))
@@ -59,12 +53,15 @@ namespace Negocio.Servicios
             else
             {
   
-                return dCategoriaNorma.ActualizarCategoria(codCategoria, nombreCategoria, codUsuario);
+                return dCategoriaNorma.ActualizarCategorias(codCategoria, nombreCategoria, codUsuario);
             }
-
-
         }
 
+        public static string EliminarCategoriaNormas(int codCategoria, int codUsuario)
+        {
+            DCategoriaNormas dCategoriaNorma = new DCategoriaNormas();
+            return dCategoriaNorma.EliminarCategorias(codCategoria, codUsuario);
+        }
        
     }
 }

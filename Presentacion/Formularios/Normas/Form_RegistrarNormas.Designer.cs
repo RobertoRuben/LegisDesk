@@ -29,6 +29,7 @@ namespace Presentacion.Formularios.Normas
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_RegistrarNormas));
             this.panel1 = new System.Windows.Forms.Panel();
             this.cboxCategoriaNorma = new Presentacion.CustomControls.RJComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -53,7 +54,7 @@ namespace Presentacion.Formularios.Normas
             this.tboxNumNorma = new Presentacion.CustomControls.RJTextBox();
             this.btnSair = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
-            this.btnCancelar = new FontAwesome.Sharp.IconButton();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NumUpDownPaginas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
@@ -155,7 +156,7 @@ namespace Presentacion.Formularios.Normas
             // 
             this.tboxLink.BackColor = System.Drawing.SystemColors.Window;
             this.tboxLink.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.tboxLink.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.tboxLink.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.tboxLink.BorderRadius = 1;
             this.tboxLink.BorderSize = 1;
             this.tboxLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -223,7 +224,7 @@ namespace Presentacion.Formularios.Normas
             this.rbtnVigente.AutoSize = true;
             this.rbtnVigente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
             this.rbtnVigente.Checked = true;
-            this.rbtnVigente.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.rbtnVigente.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.rbtnVigente.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.rbtnVigente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
             this.rbtnVigente.Location = new System.Drawing.Point(23, 469);
@@ -301,7 +302,7 @@ namespace Presentacion.Formularios.Normas
             // 
             this.tboxResumen.BackColor = System.Drawing.SystemColors.Window;
             this.tboxResumen.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.tboxResumen.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.tboxResumen.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.tboxResumen.BorderRadius = 1;
             this.tboxResumen.BorderSize = 1;
             this.tboxResumen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -359,7 +360,7 @@ namespace Presentacion.Formularios.Normas
             // 
             this.tboxNombreNorma.BackColor = System.Drawing.SystemColors.Window;
             this.tboxNombreNorma.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.tboxNombreNorma.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.tboxNombreNorma.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.tboxNombreNorma.BorderRadius = 1;
             this.tboxNombreNorma.BorderSize = 1;
             this.tboxNombreNorma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -393,7 +394,7 @@ namespace Presentacion.Formularios.Normas
             // 
             this.tboxNumNorma.BackColor = System.Drawing.SystemColors.Window;
             this.tboxNumNorma.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.tboxNumNorma.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.tboxNumNorma.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.tboxNumNorma.BorderRadius = 1;
             this.tboxNumNorma.BorderSize = 1;
             this.tboxNumNorma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -435,7 +436,7 @@ namespace Presentacion.Formularios.Normas
             // 
             // btnGuardar
             // 
-            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.btnGuardar.FlatAppearance.BorderSize = 0;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -454,26 +455,26 @@ namespace Presentacion.Formularios.Normas
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // btnCancelar
+            // iconButton1
             // 
-            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Xmark;
-            this.btnCancelar.IconColor = System.Drawing.Color.White;
-            this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCancelar.IconSize = 32;
-            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(166, 558);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(148, 40);
-            this.btnCancelar.TabIndex = 56;
-            this.btnCancelar.Text = "    Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
+            this.iconButton1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.iconButton1.ForeColor = System.Drawing.Color.White;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Regular;
+            this.iconButton1.IconSize = 32;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(166, 558);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(148, 40);
+            this.iconButton1.TabIndex = 52;
+            this.iconButton1.Text = "    Guardar";
+            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // Form_RegistrarNormas
             // 
@@ -481,14 +482,15 @@ namespace Presentacion.Formularios.Normas
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(225)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(1044, 610);
-            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnGuardar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_RegistrarNormas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form_RegistrarNormas";
+            this.Text = "Registro de Normas";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NumUpDownPaginas)).EndInit();
@@ -514,7 +516,6 @@ namespace Presentacion.Formularios.Normas
         public CustomControls.RJRadioButton rbtnDerogado;
         public CustomControls.RJRadioButton rbtnVigente;
         private System.Windows.Forms.Label label6;
-        private FontAwesome.Sharp.IconButton btnCancelar;
         public CustomControls.RJComboBox cboxCategoriaNorma;
         private System.Windows.Forms.Label label10;
         public CustomControls.RJTextBox tboxNombreNorma;
@@ -523,5 +524,6 @@ namespace Presentacion.Formularios.Normas
         public CustomControls.RJTextBox tboxLink;
         public CustomControls.RJDatePicker dtpFechaRegistro;
         public System.Windows.Forms.NumericUpDown NumUpDownPaginas;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

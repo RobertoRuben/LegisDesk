@@ -29,6 +29,7 @@ namespace Presentacion.Formularios.Usuarios
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_UsuarioActualizarCredenciales));
             this.btnSalir = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -69,7 +70,7 @@ namespace Presentacion.Formularios.Usuarios
             // btnGuardar
             // 
             this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.btnGuardar.FlatAppearance.BorderSize = 0;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -132,7 +133,7 @@ namespace Presentacion.Formularios.Usuarios
             // 
             this.tboxNombreUsuario.BackColor = System.Drawing.SystemColors.Window;
             this.tboxNombreUsuario.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.tboxNombreUsuario.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.tboxNombreUsuario.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.tboxNombreUsuario.BorderRadius = 1;
             this.tboxNombreUsuario.BorderSize = 1;
             this.tboxNombreUsuario.Font = new System.Drawing.Font("Century Gothic", 11F);
@@ -188,7 +189,7 @@ namespace Presentacion.Formularios.Usuarios
             // 
             this.tboxContraseña.BackColor = System.Drawing.SystemColors.Window;
             this.tboxContraseña.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.tboxContraseña.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.tboxContraseña.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.tboxContraseña.BorderRadius = 1;
             this.tboxContraseña.BorderSize = 1;
             this.tboxContraseña.Font = new System.Drawing.Font("Century Gothic", 11F);
@@ -211,7 +212,7 @@ namespace Presentacion.Formularios.Usuarios
             // 
             this.tboxConfirmacion.BackColor = System.Drawing.SystemColors.Window;
             this.tboxConfirmacion.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.tboxConfirmacion.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.tboxConfirmacion.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.tboxConfirmacion.BorderRadius = 1;
             this.tboxConfirmacion.BorderSize = 1;
             this.tboxConfirmacion.Font = new System.Drawing.Font("Century Gothic", 11F);
@@ -240,9 +241,10 @@ namespace Presentacion.Formularios.Usuarios
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_UsuarioActualizarCredenciales";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form_UsuarioActualizarCredenciales";
+            this.Text = "Actualizar Credenciales";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();

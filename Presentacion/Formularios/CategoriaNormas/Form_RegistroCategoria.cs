@@ -38,16 +38,13 @@ namespace Presentacion.Formularios.CategoriaNormas
         {
             MessageBox.Show(mensaje, "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        // Función para validar si el texto contiene números
+        
         private bool ContieneNumeros(string texto)
         {
             return texto.Any(char.IsDigit);
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Form_Principal form_Principal = new Form_Principal();
-            Console.WriteLine("OPEREACION: " + operacion);
-            Console.WriteLine("USUARIO: " + codUsuario);
             if (operacion.Equals("Registrar"))
             {
                 try
@@ -68,7 +65,7 @@ namespace Presentacion.Formularios.CategoriaNormas
                     {
                         string nombreCategoria = TransformarTexto.TransformarText(tboxNombreCategoria.Texts.Trim());
                         Console.WriteLine(nombreCategoria);
-                        rpta = NCategoriasNormas.RegistrarCategoriaNorma(nombreCategoria, codUsuario);
+                        rpta = NCategoriasNormas.RegistrarCategoriaNormas(nombreCategoria, codUsuario);
 
                         if (rpta.Equals("Ok"))
                         {
@@ -101,7 +98,7 @@ namespace Presentacion.Formularios.CategoriaNormas
                     else
                     {
                         string nombreCategoria = TransformarTexto.TransformarText(tboxNombreCategoria.Texts.Trim());
-                        rpta = NCategoriasNormas.ActualizarCategoriaNorma(codCategoriaNorma, nombreCategoria, codUsuario);
+                        rpta = NCategoriasNormas.ActualizarCategoriaNormas(codCategoriaNorma, nombreCategoria, codUsuario);
 
                         if (rpta.Equals("Ok"))
                         {

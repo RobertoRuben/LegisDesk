@@ -1,12 +1,5 @@
 ﻿using Presentacion.Usuarios;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio.Servicios;
 
@@ -24,8 +17,11 @@ namespace Presentacion.Formularios.Usuarios
         }
         public void FormatoDataGrid()
         {
-            dgvUsuarios.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dgvUsuarios.Columns[0].Width = 120;
+            //dgvUsuarios.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            //dgvUsuarios.Columns[0].Width = 120;
+            dgvUsuarios.Columns[0].Visible = false;
+            dgvUsuarios.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dgvUsuarios.Columns[1].Width = 350;
         }
 
         private void SeleccionarUltimoElemento()
@@ -85,7 +81,7 @@ namespace Presentacion.Formularios.Usuarios
         {
             Form_RegistrarUsuario frmRegistro = new Form_RegistrarUsuario();
 
-            if(dgvUsuarios.SelectedRows.Count > 0)
+            if (dgvUsuarios.SelectedRows.Count > 0)
             {
                 frmRegistro.operacion = "Actualizar";
                 frmRegistro.codUsuario = Convert.ToInt32(dgvUsuarios.CurrentRow.Cells[0].Value);
@@ -117,7 +113,7 @@ namespace Presentacion.Formularios.Usuarios
                 this.ListarUsuarios();
                 this.FormatoDataGrid();
             }
-            
+
 
         }
 
@@ -184,6 +180,33 @@ namespace Presentacion.Formularios.Usuarios
         private void btnLimpiarBusqueda_Click(object sender, EventArgs e)
         {
             tbxBusqueda.Texts = "";
+        }
+
+        private void dgvUsuarios_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+
+        }
+
+        private void dgvUsuarios_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Form_VistaUsuarios form_VistaUsuarios = new Form_VistaUsuarios();
+
+            if (dgvUsuarios.SelectedRows.Count > 0)
+            {
+
+                form_VistaUsuarios.tboxNombreUsuario.Texts = dgvUsuarios.CurrentRow.Cells[1].Value.ToString();
+                form_VistaUsuarios.tboxTrabajador.Texts = dgvUsuarios.CurrentRow.Cells[2].Value.ToString();
+                form_VistaUsuarios.tboxRol.Texts = dgvUsuarios.CurrentRow.Cells[3].Value.ToString();
+                form_VistaUsuarios.tboxEstado.Texts = dgvUsuarios.CurrentRow.Cells[4].Value.ToString();
+
+                form_VistaUsuarios.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Debes seleccionar al menos una fila", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
     }
 }

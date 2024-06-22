@@ -15,6 +15,31 @@ namespace Presentacion.Formularios.Normas
             this.ListarNormas();
             this.FormatoDataGrid();
         }
+        public void FormatoDataGrid()
+        {
+            dgvNormas.Columns[0].Visible = false;
+            dgvNormas.Columns[1].Visible = false;
+            dgvNormas.Columns[2].Visible = false;
+            dgvNormas.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            dgvNormas.Columns[3].Width = 150;
+            dgvNormas.Columns[6].Visible = false;
+            dgvNormas.Columns[7].Visible = false;
+            dgvNormas.Columns[8].Visible = false;
+            dgvNormas.Columns[9].Visible = false;
+            dgvNormas.Columns[10].Visible = false;
+        }
+        public void ListarNormas()
+        {
+            try
+            {
+                dgvNormas.DataSource = NNormas.ListarNormas();
+                lblResultados.Text = "Total de Registros: " + Convert.ToString(dgvNormas.Rows.Count);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
 
         private void SeleccionarUltimoElemento()
         {
@@ -117,35 +142,6 @@ namespace Presentacion.Formularios.Normas
                 frmArticulos.ShowDialog();
             }
         }
-
-        public void ListarNormas()
-        {
-            try
-            {
-                dgvNormas.DataSource = NNormas.ListarNormas();
-                lblResultados.Text = "Total de Registros: " + Convert.ToString(dgvNormas.Rows.Count);
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message + ex.StackTrace);
-            }
-        }
-
-        public void FormatoDataGrid()
-        {
-            dgvNormas.Columns[0].Visible = false;
-            dgvNormas.Columns[1].Visible = false;
-            dgvNormas.Columns[2].Visible = false;
-            dgvNormas.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dgvNormas.Columns[3].Width = 150;
-            dgvNormas.Columns[6].Visible = false;
-            dgvNormas.Columns[7].Visible = false;
-            dgvNormas.Columns[8].Visible = false;
-            dgvNormas.Columns[9].Visible = false;
-            dgvNormas.Columns[10].Visible = false;
-
-        }
-
         private void btnLimpiarBusqueda_Click(object sender, EventArgs e)
         {
             tbxBusqueda.Texts = "";
@@ -204,8 +200,6 @@ namespace Presentacion.Formularios.Normas
         private void dgvNormas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             Form_VistaNormas form_VistaNormas = new Form_VistaNormas();
-
-            Console.WriteLine("Dando doble clic");
 
             if (dgvNormas.SelectedRows.Count > 0)
             {

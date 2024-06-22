@@ -127,6 +127,11 @@ namespace Presentacion.Usuarios
                             codUsuario,
                             Convert.ToInt32(cboxRol.SelectedValue)
                             );
+
+                        Console.WriteLine("Rpta" + rpta);
+
+                        Console.WriteLine("codUsuario: " + codUsuario);
+
                         if (rpta.Equals("Ok"))
                         {
                             this.MensajeOk("Registro exitoso");

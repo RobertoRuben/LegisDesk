@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
+﻿using System.Data;
 using Datos.Operaciones;
 using Entidad.Clases;
 
@@ -31,7 +26,7 @@ namespace Negocio.Servicios
 
             if (existe.Equals("1"))
             {
-                return "El numero de norma ya se encuentra registrada";
+                return "El numero de norma ya se encuentra registrada, para registrar la misma norma, eliminela";
             }
             else
             {
@@ -57,7 +52,6 @@ namespace Negocio.Servicios
             string medioPublicacion, string linkDocumentos, string estado, int codUsuario)
         {
             DNormas dNormas = new DNormas();
-            string existe = dNormas.ExisteNumeroNorma(numeroNorma);
 
             return dNormas.ActualizarNormas(codNormatividad, codTipoNorma, numeroNorma, nombreNorma, resumen, fechaPublicacion, cantidadPaginas, medioPublicacion, linkDocumentos, estado, codUsuario);
             

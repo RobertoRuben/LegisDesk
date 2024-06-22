@@ -17,9 +17,9 @@ namespace Datos.Conector
         {
             this.dataBase = "LegisDesk";
             this.servidor = "localhost";
-            this.usuario = "UserLegis";
-            this.contraseña = "Muni@Esperanza";
-            this.seguridad = true;
+            this.usuario = "sa";
+            this.contraseña = "oracle";
+            this.seguridad = false;
         }
 
         public SqlConnection CrearConexion()

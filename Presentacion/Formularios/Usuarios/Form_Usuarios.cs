@@ -71,6 +71,7 @@ namespace Presentacion.Formularios.Usuarios
             frmRegistro.CargarTrabajadores();
             frmRegistro.CargarRoles();
             frmRegistro.operacion = "Registrar";
+            frmRegistro.codUsuario = idUsuarioSesion;
             frmRegistro.ShowDialog();
             this.ListarUsuarios();
             this.FormatoDataGrid();

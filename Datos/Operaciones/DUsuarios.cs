@@ -113,8 +113,12 @@ namespace Datos.Operaciones
                 parametro.SqlDbType = SqlDbType.Int;
                 parametro.Direction = ParameterDirection.Output;
                 cmd.Parameters.Add(parametro);
+
                 sqlCon.Open();
-                rpta = cmd.ExecuteNonQuery() == 1 ? "Ok" : "No se pudo insertar el registro";
+                cmd.ExecuteNonQuery();
+                rpta = Convert.ToInt32(parametro.Value) == 1 ? "Ok" : "No se pudo insertar el registro";
+
+                Console.WriteLine("RptaProcdimiento: " + rpta);
             }
             catch(Exception e)
             {

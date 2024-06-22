@@ -30,19 +30,19 @@ namespace Presentacion.Formularios.Articulos
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.tboxPaginas = new Presentacion.CustomControls.RJTextBox();
+            this.tboxEstado = new Presentacion.CustomControls.RJTextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.tboxDescripcion = new Presentacion.CustomControls.RJTextBox();
             this.tboxDenominacion = new Presentacion.CustomControls.RJTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tboxArticulo = new Presentacion.CustomControls.RJTextBox();
+            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.tboxEstado = new Presentacion.CustomControls.RJTextBox();
-            this.tboxPaginas = new Presentacion.CustomControls.RJTextBox();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
-            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -68,6 +68,52 @@ namespace Presentacion.Formularios.Articulos
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1020, 378);
             this.panel2.TabIndex = 65;
+            // 
+            // tboxPaginas
+            // 
+            this.tboxPaginas.BackColor = System.Drawing.SystemColors.Window;
+            this.tboxPaginas.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
+            this.tboxPaginas.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
+            this.tboxPaginas.BorderRadius = 1;
+            this.tboxPaginas.BorderSize = 1;
+            this.tboxPaginas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxPaginas.ForeColor = System.Drawing.Color.DimGray;
+            this.tboxPaginas.Location = new System.Drawing.Point(257, 324);
+            this.tboxPaginas.Margin = new System.Windows.Forms.Padding(4);
+            this.tboxPaginas.Multiline = false;
+            this.tboxPaginas.Name = "tboxPaginas";
+            this.tboxPaginas.Padding = new System.Windows.Forms.Padding(7);
+            this.tboxPaginas.PasswordChar = false;
+            this.tboxPaginas.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.tboxPaginas.PlaceholderText = "";
+            this.tboxPaginas.ReadOnly = true;
+            this.tboxPaginas.Size = new System.Drawing.Size(103, 31);
+            this.tboxPaginas.TabIndex = 67;
+            this.tboxPaginas.Texts = "";
+            this.tboxPaginas.UnderlinedStyle = false;
+            // 
+            // tboxEstado
+            // 
+            this.tboxEstado.BackColor = System.Drawing.SystemColors.Window;
+            this.tboxEstado.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
+            this.tboxEstado.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
+            this.tboxEstado.BorderRadius = 1;
+            this.tboxEstado.BorderSize = 1;
+            this.tboxEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxEstado.ForeColor = System.Drawing.Color.DimGray;
+            this.tboxEstado.Location = new System.Drawing.Point(17, 324);
+            this.tboxEstado.Margin = new System.Windows.Forms.Padding(4);
+            this.tboxEstado.Multiline = false;
+            this.tboxEstado.Name = "tboxEstado";
+            this.tboxEstado.Padding = new System.Windows.Forms.Padding(7);
+            this.tboxEstado.PasswordChar = false;
+            this.tboxEstado.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.tboxEstado.PlaceholderText = "";
+            this.tboxEstado.ReadOnly = true;
+            this.tboxEstado.Size = new System.Drawing.Size(215, 31);
+            this.tboxEstado.TabIndex = 66;
+            this.tboxEstado.Texts = "";
+            this.tboxEstado.UnderlinedStyle = false;
             // 
             // label8
             // 
@@ -95,7 +141,7 @@ namespace Presentacion.Formularios.Articulos
             // 
             this.tboxDescripcion.BackColor = System.Drawing.SystemColors.Window;
             this.tboxDescripcion.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.tboxDescripcion.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.tboxDescripcion.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.tboxDescripcion.BorderRadius = 1;
             this.tboxDescripcion.BorderSize = 1;
             this.tboxDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -118,7 +164,7 @@ namespace Presentacion.Formularios.Articulos
             // 
             this.tboxDenominacion.BackColor = System.Drawing.SystemColors.Window;
             this.tboxDenominacion.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.tboxDenominacion.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.tboxDenominacion.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.tboxDenominacion.BorderRadius = 1;
             this.tboxDenominacion.BorderSize = 1;
             this.tboxDenominacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -153,7 +199,7 @@ namespace Presentacion.Formularios.Articulos
             // 
             this.tboxArticulo.BackColor = System.Drawing.SystemColors.Window;
             this.tboxArticulo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.tboxArticulo.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.tboxArticulo.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
             this.tboxArticulo.BorderRadius = 1;
             this.tboxArticulo.BorderSize = 1;
             this.tboxArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -171,6 +217,19 @@ namespace Presentacion.Formularios.Articulos
             this.tboxArticulo.TabIndex = 48;
             this.tboxArticulo.Texts = "";
             this.tboxArticulo.UnderlinedStyle = false;
+            // 
+            // iconPictureBox2
+            // 
+            this.iconPictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            this.iconPictureBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(119)))), ((int)(((byte)(135)))));
+            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.List;
+            this.iconPictureBox2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(119)))), ((int)(((byte)(135)))));
+            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox2.Location = new System.Drawing.Point(14, 7);
+            this.iconPictureBox2.Name = "iconPictureBox2";
+            this.iconPictureBox2.Size = new System.Drawing.Size(32, 32);
+            this.iconPictureBox2.TabIndex = 46;
+            this.iconPictureBox2.TabStop = false;
             // 
             // label3
             // 
@@ -206,52 +265,6 @@ namespace Presentacion.Formularios.Articulos
             this.label5.TabIndex = 19;
             this.label5.Text = "Artículo:";
             // 
-            // tboxEstado
-            // 
-            this.tboxEstado.BackColor = System.Drawing.SystemColors.Window;
-            this.tboxEstado.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.tboxEstado.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.tboxEstado.BorderRadius = 1;
-            this.tboxEstado.BorderSize = 1;
-            this.tboxEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxEstado.ForeColor = System.Drawing.Color.DimGray;
-            this.tboxEstado.Location = new System.Drawing.Point(17, 324);
-            this.tboxEstado.Margin = new System.Windows.Forms.Padding(4);
-            this.tboxEstado.Multiline = false;
-            this.tboxEstado.Name = "tboxEstado";
-            this.tboxEstado.Padding = new System.Windows.Forms.Padding(7);
-            this.tboxEstado.PasswordChar = false;
-            this.tboxEstado.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tboxEstado.PlaceholderText = "";
-            this.tboxEstado.ReadOnly = true;
-            this.tboxEstado.Size = new System.Drawing.Size(215, 31);
-            this.tboxEstado.TabIndex = 66;
-            this.tboxEstado.Texts = "";
-            this.tboxEstado.UnderlinedStyle = false;
-            // 
-            // tboxPaginas
-            // 
-            this.tboxPaginas.BackColor = System.Drawing.SystemColors.Window;
-            this.tboxPaginas.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.tboxPaginas.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.tboxPaginas.BorderRadius = 1;
-            this.tboxPaginas.BorderSize = 1;
-            this.tboxPaginas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxPaginas.ForeColor = System.Drawing.Color.DimGray;
-            this.tboxPaginas.Location = new System.Drawing.Point(257, 324);
-            this.tboxPaginas.Margin = new System.Windows.Forms.Padding(4);
-            this.tboxPaginas.Multiline = false;
-            this.tboxPaginas.Name = "tboxPaginas";
-            this.tboxPaginas.Padding = new System.Windows.Forms.Padding(7);
-            this.tboxPaginas.PasswordChar = false;
-            this.tboxPaginas.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tboxPaginas.PlaceholderText = "";
-            this.tboxPaginas.ReadOnly = true;
-            this.tboxPaginas.Size = new System.Drawing.Size(103, 31);
-            this.tboxPaginas.TabIndex = 67;
-            this.tboxPaginas.Texts = "";
-            this.tboxPaginas.UnderlinedStyle = false;
-            // 
             // btnSalir
             // 
             this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -273,19 +286,6 @@ namespace Presentacion.Formularios.Articulos
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // iconPictureBox2
-            // 
-            this.iconPictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
-            this.iconPictureBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(119)))), ((int)(((byte)(135)))));
-            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.List;
-            this.iconPictureBox2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(119)))), ((int)(((byte)(135)))));
-            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox2.Location = new System.Drawing.Point(14, 7);
-            this.iconPictureBox2.Name = "iconPictureBox2";
-            this.iconPictureBox2.Size = new System.Drawing.Size(32, 32);
-            this.iconPictureBox2.TabIndex = 46;
-            this.iconPictureBox2.TabStop = false;
             // 
             // Form_VistaArticulos
             // 

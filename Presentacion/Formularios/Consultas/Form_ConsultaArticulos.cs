@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Negocio.Servicios;
+using Presentacion.Formularios.Articulos;
 
 namespace Presentacion.Formularios.Consultas
 {
@@ -78,6 +79,28 @@ namespace Presentacion.Formularios.Consultas
         private void btnLimpiarBusqueda_Click(object sender, EventArgs e)
         {
             tbxBusqueda.Texts = "";
+        }
+
+        private void btnVerInformacion_Click(object sender, EventArgs e)
+        {
+            Form_VistaArticulos form_VistaArticulos = new Form_VistaArticulos();
+
+            if (dgvArticulos.SelectedRows.Count > 0)
+            {
+                form_VistaArticulos.tboxArticulo.Texts = dgvArticulos.CurrentRow.Cells[2].Value.ToString().Trim();
+                form_VistaArticulos.tboxDenominacion.Texts = dgvArticulos.CurrentRow.Cells[3].Value.ToString().Trim();
+                form_VistaArticulos.tboxDescripcion.Texts = dgvArticulos.CurrentRow.Cells[4].Value.ToString().Trim();
+                form_VistaArticulos.tboxPaginas.Texts = dgvArticulos.CurrentRow.Cells[5].Value.ToString().Trim();
+                form_VistaArticulos.tboxEstado.Texts = dgvArticulos.CurrentRow.Cells[6].Value.ToString().Trim();
+
+                form_VistaArticulos.ShowDialog();
+
+            }
+            else
+            {
+                MessageBox.Show("Debes seleccionar al menos una fila", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
     }
 }

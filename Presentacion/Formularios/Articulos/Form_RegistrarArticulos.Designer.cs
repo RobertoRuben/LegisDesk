@@ -33,20 +33,19 @@ namespace Presentacion.Formularios.Normas
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.numUpDownPagina = new System.Windows.Forms.NumericUpDown();
-            this.rbtnDerogado = new Presentacion.CustomControls.RJRadioButton();
-            this.rbtnVigente = new Presentacion.CustomControls.RJRadioButton();
             this.label7 = new System.Windows.Forms.Label();
-            this.tboxDescripcion = new Presentacion.CustomControls.RJTextBox();
-            this.tboxDenominacion = new Presentacion.CustomControls.RJTextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.tboxArticulo = new Presentacion.CustomControls.RJTextBox();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
-            this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
+            this.rbtnDerogado = new Presentacion.CustomControls.RJRadioButton();
+            this.rbtnVigente = new Presentacion.CustomControls.RJRadioButton();
+            this.tboxDescripcion = new Presentacion.CustomControls.RJTextBox();
+            this.tboxDenominacion = new Presentacion.CustomControls.RJTextBox();
+            this.tboxArticulo = new Presentacion.CustomControls.RJTextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownPagina)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
@@ -94,42 +93,6 @@ namespace Presentacion.Formularios.Normas
             this.numUpDownPagina.Size = new System.Drawing.Size(120, 25);
             this.numUpDownPagina.TabIndex = 64;
             // 
-            // rbtnDerogado
-            // 
-            this.rbtnDerogado.AutoSize = true;
-            this.rbtnDerogado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
-            this.rbtnDerogado.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.rbtnDerogado.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.rbtnDerogado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
-            this.rbtnDerogado.Location = new System.Drawing.Point(109, 323);
-            this.rbtnDerogado.MinimumSize = new System.Drawing.Size(0, 21);
-            this.rbtnDerogado.Name = "rbtnDerogado";
-            this.rbtnDerogado.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbtnDerogado.Size = new System.Drawing.Size(113, 24);
-            this.rbtnDerogado.TabIndex = 54;
-            this.rbtnDerogado.Text = "Derogado";
-            this.rbtnDerogado.UnCheckedColor = System.Drawing.Color.Gray;
-            this.rbtnDerogado.UseVisualStyleBackColor = false;
-            // 
-            // rbtnVigente
-            // 
-            this.rbtnVigente.AutoSize = true;
-            this.rbtnVigente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
-            this.rbtnVigente.Checked = true;
-            this.rbtnVigente.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
-            this.rbtnVigente.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.rbtnVigente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
-            this.rbtnVigente.Location = new System.Drawing.Point(17, 323);
-            this.rbtnVigente.MinimumSize = new System.Drawing.Size(0, 21);
-            this.rbtnVigente.Name = "rbtnVigente";
-            this.rbtnVigente.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rbtnVigente.Size = new System.Drawing.Size(95, 24);
-            this.rbtnVigente.TabIndex = 53;
-            this.rbtnVigente.TabStop = true;
-            this.rbtnVigente.Text = "Vigente";
-            this.rbtnVigente.UnCheckedColor = System.Drawing.Color.Gray;
-            this.rbtnVigente.UseVisualStyleBackColor = false;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -140,52 +103,6 @@ namespace Presentacion.Formularios.Normas
             this.label7.Size = new System.Drawing.Size(63, 19);
             this.label7.TabIndex = 52;
             this.label7.Text = "Estado";
-            // 
-            // tboxDescripcion
-            // 
-            this.tboxDescripcion.BackColor = System.Drawing.SystemColors.Window;
-            this.tboxDescripcion.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.tboxDescripcion.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
-            this.tboxDescripcion.BorderRadius = 1;
-            this.tboxDescripcion.BorderSize = 1;
-            this.tboxDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxDescripcion.ForeColor = System.Drawing.Color.DimGray;
-            this.tboxDescripcion.Location = new System.Drawing.Point(17, 220);
-            this.tboxDescripcion.Margin = new System.Windows.Forms.Padding(4);
-            this.tboxDescripcion.Multiline = true;
-            this.tboxDescripcion.Name = "tboxDescripcion";
-            this.tboxDescripcion.Padding = new System.Windows.Forms.Padding(7);
-            this.tboxDescripcion.PasswordChar = false;
-            this.tboxDescripcion.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tboxDescripcion.PlaceholderText = "";
-            this.tboxDescripcion.ReadOnly = false;
-            this.tboxDescripcion.Size = new System.Drawing.Size(988, 65);
-            this.tboxDescripcion.TabIndex = 51;
-            this.tboxDescripcion.Texts = "";
-            this.tboxDescripcion.UnderlinedStyle = false;
-            // 
-            // tboxDenominacion
-            // 
-            this.tboxDenominacion.BackColor = System.Drawing.SystemColors.Window;
-            this.tboxDenominacion.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.tboxDenominacion.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
-            this.tboxDenominacion.BorderRadius = 1;
-            this.tboxDenominacion.BorderSize = 1;
-            this.tboxDenominacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxDenominacion.ForeColor = System.Drawing.Color.DimGray;
-            this.tboxDenominacion.Location = new System.Drawing.Point(17, 150);
-            this.tboxDenominacion.Margin = new System.Windows.Forms.Padding(4);
-            this.tboxDenominacion.Multiline = false;
-            this.tboxDenominacion.Name = "tboxDenominacion";
-            this.tboxDenominacion.Padding = new System.Windows.Forms.Padding(7);
-            this.tboxDenominacion.PasswordChar = false;
-            this.tboxDenominacion.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tboxDenominacion.PlaceholderText = "";
-            this.tboxDenominacion.ReadOnly = false;
-            this.tboxDenominacion.Size = new System.Drawing.Size(988, 31);
-            this.tboxDenominacion.TabIndex = 50;
-            this.tboxDenominacion.Texts = "";
-            this.tboxDenominacion.UnderlinedStyle = false;
             // 
             // label6
             // 
@@ -198,29 +115,6 @@ namespace Presentacion.Formularios.Normas
             this.label6.Size = new System.Drawing.Size(130, 19);
             this.label6.TabIndex = 49;
             this.label6.Text = "Denominacíon";
-            // 
-            // tboxArticulo
-            // 
-            this.tboxArticulo.BackColor = System.Drawing.SystemColors.Window;
-            this.tboxArticulo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
-            this.tboxArticulo.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
-            this.tboxArticulo.BorderRadius = 1;
-            this.tboxArticulo.BorderSize = 1;
-            this.tboxArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxArticulo.ForeColor = System.Drawing.Color.DimGray;
-            this.tboxArticulo.Location = new System.Drawing.Point(14, 82);
-            this.tboxArticulo.Margin = new System.Windows.Forms.Padding(4);
-            this.tboxArticulo.Multiline = false;
-            this.tboxArticulo.Name = "tboxArticulo";
-            this.tboxArticulo.Padding = new System.Windows.Forms.Padding(7);
-            this.tboxArticulo.PasswordChar = false;
-            this.tboxArticulo.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.tboxArticulo.PlaceholderText = "";
-            this.tboxArticulo.ReadOnly = false;
-            this.tboxArticulo.Size = new System.Drawing.Size(988, 31);
-            this.tboxArticulo.TabIndex = 48;
-            this.tboxArticulo.Texts = "";
-            this.tboxArticulo.UnderlinedStyle = false;
             // 
             // iconPictureBox2
             // 
@@ -291,27 +185,6 @@ namespace Presentacion.Formularios.Normas
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
-            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Xmark;
-            this.btnCancelar.IconColor = System.Drawing.Color.White;
-            this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCancelar.IconSize = 32;
-            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(166, 560);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(148, 40);
-            this.btnCancelar.TabIndex = 63;
-            this.btnCancelar.Text = "    Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            // 
             // btnGuardar
             // 
             this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -334,6 +207,111 @@ namespace Presentacion.Formularios.Normas
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // rbtnDerogado
+            // 
+            this.rbtnDerogado.AutoSize = true;
+            this.rbtnDerogado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            this.rbtnDerogado.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.rbtnDerogado.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.rbtnDerogado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
+            this.rbtnDerogado.Location = new System.Drawing.Point(109, 323);
+            this.rbtnDerogado.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rbtnDerogado.Name = "rbtnDerogado";
+            this.rbtnDerogado.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.rbtnDerogado.Size = new System.Drawing.Size(113, 24);
+            this.rbtnDerogado.TabIndex = 54;
+            this.rbtnDerogado.Text = "Derogado";
+            this.rbtnDerogado.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rbtnDerogado.UseVisualStyleBackColor = false;
+            // 
+            // rbtnVigente
+            // 
+            this.rbtnVigente.AutoSize = true;
+            this.rbtnVigente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            this.rbtnVigente.Checked = true;
+            this.rbtnVigente.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
+            this.rbtnVigente.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.rbtnVigente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
+            this.rbtnVigente.Location = new System.Drawing.Point(17, 323);
+            this.rbtnVigente.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rbtnVigente.Name = "rbtnVigente";
+            this.rbtnVigente.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.rbtnVigente.Size = new System.Drawing.Size(95, 24);
+            this.rbtnVigente.TabIndex = 53;
+            this.rbtnVigente.TabStop = true;
+            this.rbtnVigente.Text = "Vigente";
+            this.rbtnVigente.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rbtnVigente.UseVisualStyleBackColor = false;
+            // 
+            // tboxDescripcion
+            // 
+            this.tboxDescripcion.BackColor = System.Drawing.SystemColors.Window;
+            this.tboxDescripcion.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
+            this.tboxDescripcion.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
+            this.tboxDescripcion.BorderRadius = 1;
+            this.tboxDescripcion.BorderSize = 1;
+            this.tboxDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxDescripcion.ForeColor = System.Drawing.Color.DimGray;
+            this.tboxDescripcion.Location = new System.Drawing.Point(17, 220);
+            this.tboxDescripcion.Margin = new System.Windows.Forms.Padding(4);
+            this.tboxDescripcion.Multiline = true;
+            this.tboxDescripcion.Name = "tboxDescripcion";
+            this.tboxDescripcion.Padding = new System.Windows.Forms.Padding(7);
+            this.tboxDescripcion.PasswordChar = false;
+            this.tboxDescripcion.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.tboxDescripcion.PlaceholderText = "";
+            this.tboxDescripcion.ReadOnly = false;
+            this.tboxDescripcion.Size = new System.Drawing.Size(988, 65);
+            this.tboxDescripcion.TabIndex = 51;
+            this.tboxDescripcion.Texts = "";
+            this.tboxDescripcion.UnderlinedStyle = false;
+            // 
+            // tboxDenominacion
+            // 
+            this.tboxDenominacion.BackColor = System.Drawing.SystemColors.Window;
+            this.tboxDenominacion.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
+            this.tboxDenominacion.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
+            this.tboxDenominacion.BorderRadius = 1;
+            this.tboxDenominacion.BorderSize = 1;
+            this.tboxDenominacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxDenominacion.ForeColor = System.Drawing.Color.DimGray;
+            this.tboxDenominacion.Location = new System.Drawing.Point(17, 150);
+            this.tboxDenominacion.Margin = new System.Windows.Forms.Padding(4);
+            this.tboxDenominacion.Multiline = false;
+            this.tboxDenominacion.Name = "tboxDenominacion";
+            this.tboxDenominacion.Padding = new System.Windows.Forms.Padding(7);
+            this.tboxDenominacion.PasswordChar = false;
+            this.tboxDenominacion.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.tboxDenominacion.PlaceholderText = "";
+            this.tboxDenominacion.ReadOnly = false;
+            this.tboxDenominacion.Size = new System.Drawing.Size(988, 31);
+            this.tboxDenominacion.TabIndex = 50;
+            this.tboxDenominacion.Texts = "";
+            this.tboxDenominacion.UnderlinedStyle = false;
+            // 
+            // tboxArticulo
+            // 
+            this.tboxArticulo.BackColor = System.Drawing.SystemColors.Window;
+            this.tboxArticulo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(193)))), ((int)(((byte)(202)))));
+            this.tboxArticulo.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
+            this.tboxArticulo.BorderRadius = 1;
+            this.tboxArticulo.BorderSize = 1;
+            this.tboxArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxArticulo.ForeColor = System.Drawing.Color.DimGray;
+            this.tboxArticulo.Location = new System.Drawing.Point(14, 82);
+            this.tboxArticulo.Margin = new System.Windows.Forms.Padding(4);
+            this.tboxArticulo.Multiline = false;
+            this.tboxArticulo.Name = "tboxArticulo";
+            this.tboxArticulo.Padding = new System.Windows.Forms.Padding(7);
+            this.tboxArticulo.PasswordChar = false;
+            this.tboxArticulo.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.tboxArticulo.PlaceholderText = "";
+            this.tboxArticulo.ReadOnly = false;
+            this.tboxArticulo.Size = new System.Drawing.Size(988, 31);
+            this.tboxArticulo.TabIndex = 48;
+            this.tboxArticulo.Texts = "";
+            this.tboxArticulo.UnderlinedStyle = false;
+            // 
             // Form_RegistrarArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -341,7 +319,6 @@ namespace Presentacion.Formularios.Normas
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(225)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(1044, 610);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -369,7 +346,6 @@ namespace Presentacion.Formularios.Normas
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private FontAwesome.Sharp.IconButton btnSalir;
-        private FontAwesome.Sharp.IconButton btnCancelar;
         private FontAwesome.Sharp.IconButton btnGuardar;
         public CustomControls.RJTextBox tboxDenominacion;
         public CustomControls.RJTextBox tboxArticulo;

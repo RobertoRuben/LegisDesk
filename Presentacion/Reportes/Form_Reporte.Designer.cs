@@ -31,37 +31,36 @@ namespace Presentacion.Reportes
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Reporte));
-            this.Sp_Listado_Normas_ArticulosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DsNormas = new Presentacion.Reportes.DsNormas();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.Sp_Listado_Normas_ArticulosTableAdapter = new Presentacion.Reportes.DsNormasTableAdapters.Sp_Listado_Normas_ArticulosTableAdapter();
+            this.DsReporte = new Presentacion.Reportes.DsReporte();
+            this.Sp_Listado_Normas_ArticulosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Sp_Listado_Normas_ArticulosTableAdapter = new Presentacion.Reportes.DsReporteTableAdapters.Sp_Listado_Normas_ArticulosTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.DsReporte)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Sp_Listado_Normas_ArticulosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DsNormas)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Sp_Listado_Normas_ArticulosBindingSource
-            // 
-            this.Sp_Listado_Normas_ArticulosBindingSource.DataMember = "Sp_Listado_Normas_Articulos";
-            this.Sp_Listado_Normas_ArticulosBindingSource.DataSource = this.DsNormas;
-            // 
-            // DsNormas
-            // 
-            this.DsNormas.DataSetName = "DsNormas";
-            this.DsNormas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DtsNormas";
+            reportDataSource1.Name = "DsNormas";
             reportDataSource1.Value = this.Sp_Listado_Normas_ArticulosBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Presentacion.Reportes.RptNormas.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(795, 667);
+            this.reportViewer1.Size = new System.Drawing.Size(811, 633);
             this.reportViewer1.TabIndex = 0;
+            // 
+            // DsReporte
+            // 
+            this.DsReporte.DataSetName = "DsReporte";
+            this.DsReporte.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // Sp_Listado_Normas_ArticulosBindingSource
+            // 
+            this.Sp_Listado_Normas_ArticulosBindingSource.DataMember = "Sp_Listado_Normas_Articulos";
+            this.Sp_Listado_Normas_ArticulosBindingSource.DataSource = this.DsReporte;
             // 
             // Sp_Listado_Normas_ArticulosTableAdapter
             // 
@@ -71,16 +70,14 @@ namespace Presentacion.Reportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(795, 667);
+            this.ClientSize = new System.Drawing.Size(811, 633);
             this.Controls.Add(this.reportViewer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Reporte";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Reporte Normas";
+            this.Text = "Reporte de Normas";
             this.Load += new System.EventHandler(this.Form_Reporte_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DsReporte)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Sp_Listado_Normas_ArticulosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DsNormas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -89,7 +86,7 @@ namespace Presentacion.Reportes
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource Sp_Listado_Normas_ArticulosBindingSource;
-        private DsNormas DsNormas;
-        private DsNormasTableAdapters.Sp_Listado_Normas_ArticulosTableAdapter Sp_Listado_Normas_ArticulosTableAdapter;
+        private DsReporte DsReporte;
+        private DsReporteTableAdapters.Sp_Listado_Normas_ArticulosTableAdapter Sp_Listado_Normas_ArticulosTableAdapter;
     }
 }

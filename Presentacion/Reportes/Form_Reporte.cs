@@ -20,8 +20,8 @@ namespace Presentacion.Reportes
 
         private void Form_Reporte_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'DsNormas.Sp_Listado_Normas_Articulos' Puede moverla o quitarla según sea necesario.
-            this.Sp_Listado_Normas_ArticulosTableAdapter.Fill(this.DsNormas.Sp_Listado_Normas_Articulos, codNorma);
+            // TODO: esta línea de código carga datos en la tabla 'DsReporte.Sp_Listado_Normas_Articulos' Puede moverla o quitarla según sea necesario.
+            this.Sp_Listado_Normas_ArticulosTableAdapter.Fill(this.DsReporte.Sp_Listado_Normas_Articulos, codNorma);
 
             this.reportViewer1.RefreshReport();
         }

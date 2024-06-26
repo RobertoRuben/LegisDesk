@@ -89,6 +89,11 @@ namespace Presentacion.Formularios.Normas
             // 
             this.numUpDownPagina.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.numUpDownPagina.Location = new System.Drawing.Point(230, 322);
+            this.numUpDownPagina.Maximum = new decimal(new int[] {
+            50000,
+            0,
+            0,
+            0});
             this.numUpDownPagina.Name = "numUpDownPagina";
             this.numUpDownPagina.Size = new System.Drawing.Size(120, 25);
             this.numUpDownPagina.TabIndex = 64;

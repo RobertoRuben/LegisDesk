@@ -136,6 +136,11 @@ namespace Presentacion.Formularios.Normas
             // 
             this.NumUpDownPaginas.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.NumUpDownPaginas.Location = new System.Drawing.Point(257, 468);
+            this.NumUpDownPaginas.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.NumUpDownPaginas.Name = "NumUpDownPaginas";
             this.NumUpDownPaginas.Size = new System.Drawing.Size(120, 25);
             this.NumUpDownPaginas.TabIndex = 9;

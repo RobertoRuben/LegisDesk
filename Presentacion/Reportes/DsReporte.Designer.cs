@@ -20,9 +20,9 @@ namespace Presentacion.Reportes {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DsNormas")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DsReporte")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DsNormas : global::System.Data.DataSet {
+    public partial class DsReporte : global::System.Data.DataSet {
         
         private Sp_Listado_Normas_ArticulosDataTable tableSp_Listado_Normas_Articulos;
         
@@ -30,7 +30,7 @@ namespace Presentacion.Reportes {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public DsNormas() {
+        public DsReporte() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Presentacion.Reportes {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected DsNormas(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DsReporte(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -127,7 +127,7 @@ namespace Presentacion.Reportes {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DsNormas cln = ((DsNormas)(base.Clone()));
+            DsReporte cln = ((DsReporte)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -199,9 +199,9 @@ namespace Presentacion.Reportes {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DsNormas";
+            this.DataSetName = "DsReporte";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DsNormas.xsd";
+            this.Namespace = "http://tempuri.org/DsReporte.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableSp_Listado_Normas_Articulos = new Sp_Listado_Normas_ArticulosDataTable();
@@ -225,7 +225,7 @@ namespace Presentacion.Reportes {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DsNormas ds = new DsNormas();
+            DsReporte ds = new DsReporte();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -623,9 +623,9 @@ namespace Presentacion.Reportes {
                 this.columnCodNormatividad.AllowDBNull = false;
                 this.columnCodNormatividad.ReadOnly = true;
                 this.columnCodUsuario.AllowDBNull = false;
-                this.columnTipoDeNorma.MaxLength = 150;
+                this.columnTipoDeNorma.MaxLength = 255;
                 this.columnNumeroNorma.AllowDBNull = false;
-                this.columnNumeroNorma.MaxLength = 150;
+                this.columnNumeroNorma.MaxLength = 255;
                 this.columnNombreNorma.AllowDBNull = false;
                 this.columnNombreNorma.MaxLength = 2147483647;
                 this.columnResumen.MaxLength = 2147483647;
@@ -641,7 +641,7 @@ namespace Presentacion.Reportes {
                 this.columnCodArticulo.AutoIncrementSeed = -1;
                 this.columnCodArticulo.AutoIncrementStep = -1;
                 this.columnCodArticulo.ReadOnly = true;
-                this.columnDenominacion.MaxLength = 150;
+                this.columnDenominacion.MaxLength = 255;
                 this.columnDescripcion.MaxLength = 2147483647;
                 this.columnEstadoArticulo.ReadOnly = true;
                 this.columnEstadoArticulo.MaxLength = 11;
@@ -712,7 +712,7 @@ namespace Presentacion.Reportes {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DsNormas ds = new DsNormas();
+                DsReporte ds = new DsReporte();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1170,7 +1170,7 @@ namespace Presentacion.Reportes {
         }
     }
 }
-namespace Presentacion.Reportes.DsNormasTableAdapters {
+namespace Presentacion.Reportes.DsReporteTableAdapters {
     
     
     /// <summary>
@@ -1318,7 +1318,7 @@ namespace Presentacion.Reportes.DsNormasTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Presentacion.Properties.Settings.Default.LegisDeskConnectionString;
+            this._connection.ConnectionString = global::Presentacion.Properties.Settings.Default.BDNORMATIVIDADConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1337,7 +1337,7 @@ namespace Presentacion.Reportes.DsNormasTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DsNormas.Sp_Listado_Normas_ArticulosDataTable dataTable, global::System.Nullable<int> CodNorma) {
+        public virtual int Fill(DsReporte.Sp_Listado_Normas_ArticulosDataTable dataTable, global::System.Nullable<int> CodNorma) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((CodNorma.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(CodNorma.Value));
@@ -1356,7 +1356,7 @@ namespace Presentacion.Reportes.DsNormasTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DsNormas.Sp_Listado_Normas_ArticulosDataTable GetData(global::System.Nullable<int> CodNorma) {
+        public virtual DsReporte.Sp_Listado_Normas_ArticulosDataTable GetData(global::System.Nullable<int> CodNorma) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((CodNorma.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(CodNorma.Value));
@@ -1364,7 +1364,7 @@ namespace Presentacion.Reportes.DsNormasTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            DsNormas.Sp_Listado_Normas_ArticulosDataTable dataTable = new DsNormas.Sp_Listado_Normas_ArticulosDataTable();
+            DsReporte.Sp_Listado_Normas_ArticulosDataTable dataTable = new DsReporte.Sp_Listado_Normas_ArticulosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1438,7 +1438,7 @@ namespace Presentacion.Reportes.DsNormasTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(DsNormas dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DsReporte dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1448,7 +1448,7 @@ namespace Presentacion.Reportes.DsNormasTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(DsNormas dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DsReporte dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1458,7 +1458,7 @@ namespace Presentacion.Reportes.DsNormasTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(DsNormas dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DsReporte dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1492,7 +1492,7 @@ namespace Presentacion.Reportes.DsNormasTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(DsNormas dataSet) {
+        public virtual int UpdateAll(DsReporte dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

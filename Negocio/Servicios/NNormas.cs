@@ -57,10 +57,10 @@ namespace Negocio.Servicios
             
         }
 
-        public static string EliminarNormas(int codNormatividad)
+        public static string EliminarNormas(int codNormatividad, int codUsuario)
         {
             DNormas dNormas = new DNormas();
-            return dNormas.EliminarNormas(codNormatividad);
+            return dNormas.EliminarNormas(codNormatividad, codUsuario);
         }
     }
 }

@@ -158,7 +158,7 @@ namespace Presentacion.Formularios.Normas
 
                     if (dialogResult == DialogResult.Yes)
                     {
-                        string rpta = NNormas.EliminarNormas(Convert.ToInt32(dgvNormas.CurrentRow.Cells[0].Value));
+                        string rpta = NNormas.EliminarNormas(Convert.ToInt32(dgvNormas.CurrentRow.Cells[0].Value), codUsuario);
                         if (rpta.Equals("Ok"))
                         {
                             this.MensajeOk("Se eliminó el registro");

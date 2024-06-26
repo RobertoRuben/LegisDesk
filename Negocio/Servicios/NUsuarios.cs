@@ -55,11 +55,11 @@ namespace Negocio.Servicios
             
         }
 
-        public static string ActualizarUsuario(int codUsuario, int codRol, string nombreUsuario, string contraseña, string estado)
+        public static string ActualizarUsuario(int codUsuario, string nombreRol, string nombreUsuario, string contraseña, string estado)
         {
             DUsuarios dUsuarios = new DUsuarios();
 
-            return dUsuarios.ActualizarUsuarios(codUsuario, nombreUsuario, contraseña, codRol, estado);
+            return dUsuarios.ActualizarUsuarios(codUsuario, nombreUsuario, contraseña, nombreRol, estado);
            
         }
         public static string ActualizarCredenciales(int codUsuario, string nombreUsuario, string contraseña)

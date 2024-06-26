@@ -159,7 +159,7 @@ namespace Datos.Operaciones
 
             return rpta;
         }
-        public string EliminarNormas(int codNormatividad)
+        public string EliminarNormas(int codNormatividad, int codUsuario)
         {
             string rpta;
             SqlConnection sqlCon = new SqlConnection();
@@ -170,6 +170,7 @@ namespace Datos.Operaciones
                 SqlCommand cmd = new SqlCommand("Sp_Normas_Eliminar", sqlCon);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@CodNormatividad", SqlDbType.Int).Value = codNormatividad;
+                cmd.Parameters.Add("@CodUsuario", SqlDbType.Int).Value = codUsuario;
 
                 SqlParameter parametro = new SqlParameter();
                 parametro.ParameterName = "@Rpta";

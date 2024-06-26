@@ -15,10 +15,10 @@ namespace Datos.Conector
 
         private Conexion()
         {
-            this.dataBase = "LegisDesk";
-            this.servidor = "localhost";
+            this.dataBase = "BDNORMATIVIDAD";
+            this.servidor = "192.168.10.12";
             this.usuario = "sa";
-            this.contraseña = "oracle";
+            this.contraseña = "Gasparov2357sgis@";
             this.seguridad = false;
         }
 

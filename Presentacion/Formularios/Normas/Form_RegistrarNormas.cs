@@ -105,6 +105,7 @@ namespace Presentacion.Formularios.Normas
                         Console.WriteLine("N Norma: " + numNorma);
                         Console.WriteLine("Nombre: " + nombreNorma);
                         Console.WriteLine("Resumen: " +resumenNorma);
+                        Console.WriteLine("Fecha Publicacion: " + fecha);
 
                         if (rpta.Equals("Ok"))
                         {

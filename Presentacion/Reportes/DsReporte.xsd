@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="DsNormas" targetNamespace="http://tempuri.org/DsNormas.xsd" xmlns:mstns="http://tempuri.org/DsNormas.xsd" xmlns="http://tempuri.org/DsNormas.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="DsReporte" targetNamespace="http://tempuri.org/DsReporte.xsd" xmlns:mstns="http://tempuri.org/DsReporte.xsd" xmlns="http://tempuri.org/DsReporte.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="LegisDeskConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="LegisDeskConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Presentacion.Properties.Settings.GlobalReference.Default.LegisDeskConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BDNORMATIVIDADConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BDNORMATIVIDADConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Presentacion.Properties.Settings.GlobalReference.Default.BDNORMATIVIDADConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Sp_Listado_Normas_ArticulosTableAdapter" GeneratorDataComponentClassName="Sp_Listado_Normas_ArticulosTableAdapter" Name="Sp_Listado_Normas_Articulos" UserDataComponentName="Sp_Listado_Normas_ArticulosTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="LegisDeskConnectionString (Settings)" DbObjectName="LegisDesk.dbo.Sp_Listado_Normas_Articulos" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="BDNORMATIVIDADConnectionString (Settings)" DbObjectName="BDNORMATIVIDAD.dbo.Sp_Listado_Normas_Articulos" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.Sp_Listado_Normas_Articulos</CommandText>
@@ -47,10 +47,10 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="DsNormas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DsNormas" msprop:Generator_UserDSName="DsNormas">
+  <xs:element name="DsReporte" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DsReporte" msprop:Generator_UserDSName="DsReporte">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Sp_Listado_Normas_Articulos" msprop:Generator_TableClassName="Sp_Listado_Normas_ArticulosDataTable" msprop:Generator_TableVarName="tableSp_Listado_Normas_Articulos" msprop:Generator_TablePropName="Sp_Listado_Normas_Articulos" msprop:Generator_RowDeletingName="Sp_Listado_Normas_ArticulosRowDeleting" msprop:Generator_RowChangingName="Sp_Listado_Normas_ArticulosRowChanging" msprop:Generator_RowEvHandlerName="Sp_Listado_Normas_ArticulosRowChangeEventHandler" msprop:Generator_RowDeletedName="Sp_Listado_Normas_ArticulosRowDeleted" msprop:Generator_UserTableName="Sp_Listado_Normas_Articulos" msprop:Generator_RowChangedName="Sp_Listado_Normas_ArticulosRowChanged" msprop:Generator_RowEvArgName="Sp_Listado_Normas_ArticulosRowChangeEvent" msprop:Generator_RowClassName="Sp_Listado_Normas_ArticulosRow">
+        <xs:element name="Sp_Listado_Normas_Articulos" msprop:Generator_TableClassName="Sp_Listado_Normas_ArticulosDataTable" msprop:Generator_TableVarName="tableSp_Listado_Normas_Articulos" msprop:Generator_RowChangedName="Sp_Listado_Normas_ArticulosRowChanged" msprop:Generator_TablePropName="Sp_Listado_Normas_Articulos" msprop:Generator_RowDeletingName="Sp_Listado_Normas_ArticulosRowDeleting" msprop:Generator_RowChangingName="Sp_Listado_Normas_ArticulosRowChanging" msprop:Generator_RowEvHandlerName="Sp_Listado_Normas_ArticulosRowChangeEventHandler" msprop:Generator_RowDeletedName="Sp_Listado_Normas_ArticulosRowDeleted" msprop:Generator_RowClassName="Sp_Listado_Normas_ArticulosRow" msprop:Generator_UserTableName="Sp_Listado_Normas_Articulos" msprop:Generator_RowEvArgName="Sp_Listado_Normas_ArticulosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CodNormatividad" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCodNormatividad" msprop:Generator_ColumnPropNameInRow="CodNormatividad" msprop:Generator_ColumnPropNameInTable="CodNormatividadColumn" msprop:Generator_UserColumnName="CodNormatividad" type="xs:int" />
@@ -58,14 +58,14 @@
               <xs:element name="TipoDeNorma" msprop:Generator_ColumnVarNameInTable="columnTipoDeNorma" msprop:Generator_ColumnPropNameInRow="TipoDeNorma" msprop:Generator_ColumnPropNameInTable="TipoDeNormaColumn" msprop:Generator_UserColumnName="TipoDeNorma" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="150" />
+                    <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="NumeroNorma" msprop:Generator_ColumnVarNameInTable="columnNumeroNorma" msprop:Generator_ColumnPropNameInRow="NumeroNorma" msprop:Generator_ColumnPropNameInTable="NumeroNormaColumn" msprop:Generator_UserColumnName="NumeroNorma">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="150" />
+                    <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -111,7 +111,7 @@
               <xs:element name="Denominacion" msprop:Generator_ColumnVarNameInTable="columnDenominacion" msprop:Generator_ColumnPropNameInRow="Denominacion" msprop:Generator_ColumnPropNameInTable="DenominacionColumn" msprop:Generator_UserColumnName="Denominacion" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="150" />
+                    <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

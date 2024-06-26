@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datos", "Datos\Datos.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidad\Entidades.csproj", "{03CA85BD-9641-467E-8052-34BAF16AFDA3}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Instalador", "Instalador\Instalador.vdproj", "{B83332AC-393E-4BAD-9A8D-0E23697BDF73}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,8 +33,6 @@ Global
 		{03CA85BD-9641-467E-8052-34BAF16AFDA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03CA85BD-9641-467E-8052-34BAF16AFDA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03CA85BD-9641-467E-8052-34BAF16AFDA3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B83332AC-393E-4BAD-9A8D-0E23697BDF73}.Debug|Any CPU.ActiveCfg = Debug
-		{B83332AC-393E-4BAD-9A8D-0E23697BDF73}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

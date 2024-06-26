@@ -183,13 +183,13 @@ namespace Presentacion.Usuarios
                             return; // Termina la ejecución del método si la validación falla
                         }
                     }
-                    int rolTrabajador = (int)cboxRol.SelectedValue;
+                    string nombreRol = (string)cboxRol.Texts.Trim(); 
                     string nombreUsuario = tboxNombreUsuario.Texts.Trim();
 
                     // Resto del código de actualización
                     rpta = NUsuarios.ActualizarUsuario(
                         codUsuario,
-                        rolTrabajador,
+                        nombreRol,
                         nombreUsuario,
                         contraseñaEncriptada,
                         estado
@@ -203,7 +203,7 @@ namespace Presentacion.Usuarios
                     {
                         this.MensajeError(rpta);
                         Console.WriteLine("CodUsuario: " + codUsuario);
-                        Console.WriteLine("Rol Trabajador: " + rolTrabajador);
+                        Console.WriteLine("Rol Trabajador: " + nombreRol);
                         Console.WriteLine("Nombre Usuario: " + nombreUsuario);
                         Console.WriteLine("Contraseña: " + contraseña);
                         Console.WriteLine("Estado: " + estado);

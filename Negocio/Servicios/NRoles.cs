@@ -26,7 +26,7 @@ namespace Negocio.Servicios
         public static string RegistrarRoles(string nombreRol, int codUsuario)
         {
             DRoles dRol = new DRoles();
-            string existe = dRol.ExisteRol(nombreRol);
+            string existe = dRol.VerificarRoles(nombreRol);
 
             if (existe.Equals("1"))
             {
@@ -52,7 +52,7 @@ namespace Negocio.Servicios
         public static string ActulizarRoles(int codUsuario, int codRol, string nombreRol)
         {
             DRoles dRol = new DRoles();
-            string existe = dRol.ExisteRol(nombreRol);
+            string existe = dRol.VerificarRoles(nombreRol);
 
             if (existe.Equals("1"))
             {

@@ -238,7 +238,7 @@ namespace Datos.Operaciones
             return rpta;
         }
 
-        public string ExisteUsuario(string valor)
+        public string VerificarUsuario(string valor)
         {
             string rpta;
             SqlConnection sqlCon = new SqlConnection();

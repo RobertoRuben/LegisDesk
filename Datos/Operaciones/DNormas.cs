@@ -193,7 +193,7 @@ namespace Datos.Operaciones
 
             return rpta;
         }
-        public string ExisteNumeroNorma(string valor)
+        public string ExisteNorma(string valor)
         {
             string rpta;
             SqlConnection sqlCon = new SqlConnection();

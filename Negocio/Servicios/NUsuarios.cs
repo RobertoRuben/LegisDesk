@@ -33,7 +33,7 @@ namespace Negocio.Servicios
         public static string RegistrarUsuario(int codTrabajador, string nombreUsuario, string contraseña, string estado, int codUsuario,int codRol)
         {
             DUsuarios dUsuarios = new DUsuarios();
-            string existe = dUsuarios.ExisteUsuario(nombreUsuario);
+            string existe = dUsuarios.VerificarUsuario(nombreUsuario);
 
             if (existe.Equals("1"))
             {

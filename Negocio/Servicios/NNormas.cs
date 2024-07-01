@@ -22,7 +22,7 @@ namespace Negocio.Servicios
             string medioPublicacion, string linkDocumentos, string estado)
         {
             DNormas dNormas = new DNormas();
-            string existe = dNormas.ExisteNumeroNorma(numeroNorma);
+            string existe = dNormas.ExisteNorma(numeroNorma);
 
             if (existe.Equals("1"))
             {

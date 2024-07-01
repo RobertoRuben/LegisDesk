@@ -196,7 +196,7 @@ namespace Datos.Operaciones
             return rpta;
         }
 
-        public string ExisteCategoria(string valor)
+        public string VerificarCategorias(string valor)
         {
             string rpta;
             SqlConnection sqlCon = new SqlConnection();

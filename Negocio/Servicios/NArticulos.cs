@@ -22,7 +22,7 @@ namespace Negocio.Servicios
         public static string RegistrarArticulos(int codNormatividad, string denominacion, string descripcion, string estado, int numArticulo, int codUsuario, int pagina)
         {
             DArticulos dArticulos = new DArticulos();
-            string existe = dArticulos.ExisteArticuloEnNorma(codNormatividad, numArticulo);
+            string existe = dArticulos.VerificarArticuloEnNorma(codNormatividad, numArticulo);
             Console.WriteLine($"Resultado de ExisteArticuloEnNorma: {existe}");
 
             if (existe.Equals("1"))

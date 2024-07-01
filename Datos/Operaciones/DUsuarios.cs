@@ -113,8 +113,12 @@ namespace Datos.Operaciones
                 parametro.SqlDbType = SqlDbType.Int;
                 parametro.Direction = ParameterDirection.Output;
                 cmd.Parameters.Add(parametro);
+
                 sqlCon.Open();
-                rpta = cmd.ExecuteNonQuery() == 1 ? "Ok" : "No se pudo insertar el registro";
+                cmd.ExecuteNonQuery();
+                rpta = Convert.ToInt32(parametro.Value) == 1 ? "Ok" : "No se pudo insertar el registro";
+
+                Console.WriteLine("RptaProcdimiento: " + rpta);
             }
             catch(Exception e)
             {
@@ -128,7 +132,7 @@ namespace Datos.Operaciones
             return rpta;
         }
 
-        public string ActualizarUsuarios(int codUsuario, string nombre, string contraseña, int codRol, string estado)
+        public string ActualizarUsuarios(int codUsuario, string nombre, string contraseña, string nombreRol, string estado)
         {
             string rpta;
             SqlConnection sqlCon = new SqlConnection();
@@ -136,12 +140,12 @@ namespace Datos.Operaciones
             try
             {
                 sqlCon = Conexion.getInstancia().CrearConexion();
-                SqlCommand cmd = new SqlCommand("Sp_Usuario_Actualizar", sqlCon);
+                SqlCommand cmd = new SqlCommand("Sp_Usuario_Actualizar_v2", sqlCon);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@CodUsuario", SqlDbType.Int).Value = codUsuario;
                 cmd.Parameters.Add("@NombreUsuario", SqlDbType.NVarChar).Value = nombre;
                 cmd.Parameters.Add("@Contraseña", SqlDbType.NVarChar).Value = contraseña;
-                cmd.Parameters.Add("@CodRol", SqlDbType.Int).Value = codRol;
+                cmd.Parameters.Add("@NombreRol", SqlDbType.NVarChar).Value = nombreRol;
                 cmd.Parameters.Add("@Estado", SqlDbType.NVarChar).Value = estado;
 
                 SqlParameter parametro = new SqlParameter();
@@ -234,7 +238,7 @@ namespace Datos.Operaciones
             return rpta;
         }
 
-        public string ExisteUsuario(string valor)
+        public string VerificarUsuario(string valor)
         {
             string rpta;
             SqlConnection sqlCon = new SqlConnection();

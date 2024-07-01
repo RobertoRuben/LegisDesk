@@ -25,7 +25,7 @@ namespace Negocio.Servicios
         public static string RegistrarCategoriaNormas(string nombreCategoria, int codUsuario)
         {
             DCategoriaNormas dCategoriaNorma = new DCategoriaNormas();
-            string existe = dCategoriaNorma.ExisteCategoria(nombreCategoria);
+            string existe = dCategoriaNorma.VerificarCategorias(nombreCategoria);
 
             if (existe.Equals("1"))
             {
@@ -44,7 +44,7 @@ namespace Negocio.Servicios
         public static string ActualizarCategoriaNormas(int codCategoria, string nombreCategoria, int codUsuario)
         {
             DCategoriaNormas dCategoriaNorma = new DCategoriaNormas();
-            string existe = dCategoriaNorma.ExisteCategoria(nombreCategoria);
+            string existe = dCategoriaNorma.VerificarCategorias(nombreCategoria);
 
             if (existe.Equals("1"))
             {

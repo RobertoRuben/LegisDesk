@@ -164,6 +164,7 @@ namespace Presentacion.Formularios.Normas
             this.linkEnlace.TabIndex = 68;
             this.linkEnlace.TabStop = true;
             this.linkEnlace.Text = "linkLabel1";
+            this.linkEnlace.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkEnlace_LinkClicked);
             // 
             // tboxMedioPublicacion
             // 

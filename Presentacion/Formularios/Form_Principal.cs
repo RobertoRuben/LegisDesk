@@ -46,6 +46,25 @@ namespace Presentacion
             lblUsuario.Text = usuario;
             lblRol.Text = rol;
             lblFormularioHijo.Text = "Bienvenido " + nombre;
+
+            if (rol.Equals("Administrador"))
+            {
+                btnConsultas.Visible = true;
+                btnNormas.Visible = true;
+                btnUsuarios.Visible = true;
+            }
+            else if (rol.Equals("Editor"))
+            {
+                btnConsultas.Visible = true;
+                btnNormas.Visible = true;
+                btnUsuarios.Visible = false;
+            }
+            else if (rol.Equals("Usuario"))
+            {
+                btnConsultas.Visible = true;
+                btnNormas.Visible = false;
+                btnUsuarios.Visible = false;
+            }
         }
 
         private void PersonalizarDiseño()
@@ -122,7 +141,7 @@ namespace Presentacion
             Form_ConsultasNormas form_ConsultasNormas = new Form_ConsultasNormas();
             ActivateButton(sender, RGBColors.color);
             lblFormularioHijo.Text = "Consulta de Normas";
-            MostrarSubMenu(pSubMenuNormas);
+            OcultarSubMenu();
             AbrirFormularioHijo(form_ConsultasNormas);
             
         }

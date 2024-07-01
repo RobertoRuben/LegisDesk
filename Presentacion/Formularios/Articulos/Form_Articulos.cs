@@ -191,13 +191,15 @@ namespace Presentacion.Formularios.Articulos
                 form_VistaArticulos.tboxPaginas.Texts = dgvArticulos.CurrentRow.Cells[5].Value.ToString().Trim();
                 form_VistaArticulos.tboxEstado.Texts = dgvArticulos.CurrentRow.Cells[6].Value.ToString().Trim();
 
+                form_VistaArticulos.ShowDialog();
+
             }
             else
             {
                 MessageBox.Show("Debes seleccionar al menos una fila", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            form_VistaArticulos.ShowDialog();
+            
         }
 
     }

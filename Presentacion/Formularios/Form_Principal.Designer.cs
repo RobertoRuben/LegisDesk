@@ -34,7 +34,6 @@ namespace Presentacion
             this.pMenuLateral = new System.Windows.Forms.Panel();
             this.pSubMenuUsuarios = new System.Windows.Forms.Panel();
             this.btnRoles = new FontAwesome.Sharp.IconButton();
-            this.btnTrabajadores = new FontAwesome.Sharp.IconButton();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
             this.btnUsuarios = new FontAwesome.Sharp.IconButton();
             this.pSubMenuNormas = new System.Windows.Forms.Panel();
@@ -85,7 +84,6 @@ namespace Presentacion
             // pSubMenuUsuarios
             // 
             this.pSubMenuUsuarios.Controls.Add(this.btnRoles);
-            this.pSubMenuUsuarios.Controls.Add(this.btnTrabajadores);
             this.pSubMenuUsuarios.Dock = System.Windows.Forms.DockStyle.Top;
             this.pSubMenuUsuarios.Location = new System.Drawing.Point(0, 415);
             this.pSubMenuUsuarios.Name = "pSubMenuUsuarios";
@@ -102,7 +100,7 @@ namespace Presentacion
             this.btnRoles.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnRoles.IconColor = System.Drawing.Color.Black;
             this.btnRoles.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnRoles.Location = new System.Drawing.Point(0, 40);
+            this.btnRoles.Location = new System.Drawing.Point(0, 0);
             this.btnRoles.Name = "btnRoles";
             this.btnRoles.Padding = new System.Windows.Forms.Padding(80, 0, 0, 0);
             this.btnRoles.Size = new System.Drawing.Size(220, 40);
@@ -111,26 +109,6 @@ namespace Presentacion
             this.btnRoles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRoles.UseVisualStyleBackColor = true;
             this.btnRoles.Click += new System.EventHandler(this.btnRoles_Click);
-            // 
-            // btnTrabajadores
-            // 
-            this.btnTrabajadores.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTrabajadores.FlatAppearance.BorderSize = 0;
-            this.btnTrabajadores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTrabajadores.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTrabajadores.ForeColor = System.Drawing.Color.White;
-            this.btnTrabajadores.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnTrabajadores.IconColor = System.Drawing.Color.Black;
-            this.btnTrabajadores.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnTrabajadores.Location = new System.Drawing.Point(0, 0);
-            this.btnTrabajadores.Name = "btnTrabajadores";
-            this.btnTrabajadores.Padding = new System.Windows.Forms.Padding(80, 0, 0, 0);
-            this.btnTrabajadores.Size = new System.Drawing.Size(220, 40);
-            this.btnTrabajadores.TabIndex = 1;
-            this.btnTrabajadores.Text = "Trabajadores";
-            this.btnTrabajadores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTrabajadores.UseVisualStyleBackColor = true;
-            this.btnTrabajadores.Click += new System.EventHandler(this.btnTrabajadores_Click);
             // 
             // btnSalir
             // 
@@ -505,7 +483,6 @@ namespace Presentacion
         private System.Windows.Forms.Label lblFormularioHijo;
         private System.Windows.Forms.Panel pSubMenuUsuarios;
         private FontAwesome.Sharp.IconButton btnRoles;
-        private FontAwesome.Sharp.IconButton btnTrabajadores;
         private FontAwesome.Sharp.IconButton btnPerfil;
         private System.Windows.Forms.Label lblRol;
         private System.Windows.Forms.Label lblUsuario;

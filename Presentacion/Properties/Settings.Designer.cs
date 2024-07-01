@@ -32,5 +32,16 @@ namespace Presentacion.Properties {
                 return ((string)(this["LegisDeskConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.10.12;Initial Catalog=BDNORMATIVIDAD;User ID=sa;Password=Gasp" +
+            "arov2357sgis@")]
+        public string BDNORMATIVIDADConnectionString {
+            get {
+                return ((string)(this["BDNORMATIVIDADConnectionString"]));
+            }
+        }
     }
 }

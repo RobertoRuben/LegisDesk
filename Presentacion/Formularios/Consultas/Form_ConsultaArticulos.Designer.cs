@@ -48,7 +48,7 @@ namespace Presentacion.Formularios.Consultas
             this.label9 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.tbxBusqueda = new Presentacion.CustomControls.RJTextBox();
-            this.btnNuevo = new FontAwesome.Sharp.IconButton();
+            this.btnVerInformacion = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             this.panel2.SuspendLayout();
@@ -67,7 +67,7 @@ namespace Presentacion.Formularios.Consultas
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.dgvArticulos);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.btnNuevo);
+            this.panel1.Controls.Add(this.btnVerInformacion);
             this.panel1.Location = new System.Drawing.Point(9, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1027, 587);
@@ -309,26 +309,27 @@ namespace Presentacion.Formularios.Consultas
             this.tbxBusqueda.Texts = "";
             this.tbxBusqueda.UnderlinedStyle = false;
             // 
-            // btnNuevo
+            // btnVerInformacion
             // 
-            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
-            this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnNuevo.FlatAppearance.BorderSize = 0;
-            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.btnNuevo.IconColor = System.Drawing.Color.White;
-            this.btnNuevo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnNuevo.IconSize = 32;
-            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(8, 536);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(148, 40);
-            this.btnNuevo.TabIndex = 70;
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnVerInformacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnVerInformacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(168)))), ((int)(((byte)(86)))));
+            this.btnVerInformacion.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnVerInformacion.FlatAppearance.BorderSize = 0;
+            this.btnVerInformacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerInformacion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnVerInformacion.ForeColor = System.Drawing.Color.White;
+            this.btnVerInformacion.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnVerInformacion.IconColor = System.Drawing.Color.White;
+            this.btnVerInformacion.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnVerInformacion.IconSize = 32;
+            this.btnVerInformacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVerInformacion.Location = new System.Drawing.Point(8, 536);
+            this.btnVerInformacion.Name = "btnVerInformacion";
+            this.btnVerInformacion.Size = new System.Drawing.Size(148, 40);
+            this.btnVerInformacion.TabIndex = 70;
+            this.btnVerInformacion.Text = "      Ver Detalles";
+            this.btnVerInformacion.UseVisualStyleBackColor = false;
+            this.btnVerInformacion.Click += new System.EventHandler(this.btnVerInformacion_Click);
             // 
             // Form_ConsultaArticulos
             // 
@@ -371,6 +372,6 @@ namespace Presentacion.Formularios.Consultas
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label13;
         private CustomControls.RJTextBox tbxBusqueda;
-        private FontAwesome.Sharp.IconButton btnNuevo;
+        private FontAwesome.Sharp.IconButton btnVerInformacion;
     }
 }

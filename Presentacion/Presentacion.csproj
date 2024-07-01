@@ -209,10 +209,10 @@
     <Compile Include="Formularios\Usuarios\Form_RegistrarUsuario.Designer.cs">
       <DependentUpon>Form_RegistrarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\DsNormas.Designer.cs">
+    <Compile Include="Reportes\DsReporte.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DsNormas.xsd</DependentUpon>
+      <DependentUpon>DsReporte.xsd</DependentUpon>
     </Compile>
     <Compile Include="Reportes\Form_Reporte.cs">
       <SubType>Form</SubType>
@@ -317,16 +317,16 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Reportes\DsNormas.xsc">
-      <DependentUpon>DsNormas.xsd</DependentUpon>
+    <None Include="Reportes\DsReporte.xsc">
+      <DependentUpon>DsReporte.xsd</DependentUpon>
     </None>
-    <None Include="Reportes\DsNormas.xsd">
-      <SubType>Designer</SubType>
+    <None Include="Reportes\DsReporte.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DsNormas.Designer.cs</LastGenOutput>
+      <LastGenOutput>DsReporte.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
-    <None Include="Reportes\DsNormas.xss">
-      <DependentUpon>DsNormas.xsd</DependentUpon>
+    <None Include="Reportes\DsReporte.xss">
+      <DependentUpon>DsReporte.xsd</DependentUpon>
     </None>
     <None Include="Resources\calendarWhite.png" />
   </ItemGroup>

@@ -15,11 +15,11 @@ namespace Datos.Conector
 
         private Conexion()
         {
-            this.dataBase = "LegisDesk";
-            this.servidor = "localhost";
-            this.usuario = "UserLegis";
-            this.contraseña = "Muni@Esperanza";
-            this.seguridad = true;
+            this.dataBase = "BDNORMATIVIDAD";
+            this.servidor = "192.168.10.12";
+            this.usuario = "sa";
+            this.contraseña = "Gasparov2357sgis@";
+            this.seguridad = false;
         }
 
         public SqlConnection CrearConexion()

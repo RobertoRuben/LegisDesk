@@ -21,7 +21,7 @@ namespace Presentacion.Formularios.Normas
             {
                 Process.Start(new ProcessStartInfo
                 {
-                    FileName = linkEnlace.Text, // Asumiendo que el texto del LinkLabel es la URL
+                    FileName = linkEnlace.Text, 
                     UseShellExecute = true
                 });
             }

@@ -37,7 +37,7 @@ namespace Datos.Operaciones
 
             return tabla;
         }
-        public DataTable ListarUltimoRegisro()
+        public DataTable ListarUltimoRegistro()
         {
             SqlDataReader resultado;
             DataTable tabla = new DataTable();
@@ -76,7 +76,6 @@ namespace Datos.Operaciones
                 SqlCommand cmd = new SqlCommand("Sp_Articulos_Buscar", sqlCon);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                // Agregar parámetros
                 cmd.Parameters.Add("@CodNormatividad", SqlDbType.Int).Value = codNormatividad;
                 cmd.Parameters.Add("@Palabra", SqlDbType.NVarChar).Value = palabra;
 
@@ -126,7 +125,6 @@ namespace Datos.Operaciones
             }
             catch (Exception e)
             {
-                // Capturar detalles adicionales de la excepción
                 StringBuilder sb = new StringBuilder();
                 sb.AppendLine(e.Message);
                 sb.AppendLine(e.StackTrace);
@@ -225,7 +223,7 @@ namespace Datos.Operaciones
             return rpta;
         }
 
-        public string ExisteArticuloEnNorma(int codNormatividad, int numArticulo)
+        public string VerificarArticuloEnNorma(int codNormatividad, int numArticulo)
         {
             string rpta;
             SqlConnection sqlCon = new SqlConnection();

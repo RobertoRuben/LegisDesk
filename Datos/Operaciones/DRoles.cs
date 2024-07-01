@@ -174,7 +174,7 @@ namespace Datos.Operaciones
             }
             return rpta;
         }
-        public string ExisteRol(string valor)
+        public string VerificarRoles(string valor)
         {
             string rpta;
             SqlConnection sqlCon = new SqlConnection();
